@@ -5,25 +5,20 @@
 	color: inherit;
 }
 
-html[data-dark-theme="true"] body {
-  background-color: #121212;
-  color: #fff;
-}
 
 html{
 	font-size: 17px;
 	transition: font-size .3s;
-	font-style: normal;
 }
 
 body {
+	min-width: 320px;
 	line-height: 1.4705882353;
 	font-weight: 400;
 	letter-spacing: -0.022em;
-	font-family: "sf pro text", "sf pro icons", Helvetica Neue, Helvetica, Arial, sans-serif;
-	background-color: var(--sk-body-background-color, rgb(255, 255, 255));
-	color: var(--sk-body-text-color, rgb(29, 29, 31));
-	transition: background .3s;
+	font-family: "sf pro text";
+	background-color: $sk-body-background-color;
+	color: $sk-body-text-color;
 }
 
 *,

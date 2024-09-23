@@ -1,1 +1,63 @@
 // header
+.header {
+  width: 100%;
+
+  // 834 부터 모바일 헤더
+  .gnb {
+    max-width: 1024px;
+    padding: 0 22px;
+    margin: 0 auto;
+
+    &-item {
+      color: $r-globalnav-color;
+      transition: color .5s;
+      font-size: .67rem;
+      letter-spacing: -.01em;
+      line-height: 1;
+
+      a {
+        padding: 0 8px;
+      }
+
+      &:hover {
+        color: $r-globalnav-color-hover;
+      }
+
+      svg {
+        fill: currentColor;
+      }
+    }
+
+    &-list {
+      width: auto;
+      height: 44px;
+      @include flexbox(between);
+    }
+  }
+
+  .lnb {
+    width: 100%;
+    .title{
+      color: #fff;
+      font-size: 21px;
+      line-height: 1.1428571429;
+      font-weight: 600;
+      letter-spacing: .011em;
+    }
+    .group-lnb {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 22px;
+      display: flex;
+      justify-content: space-between;
+
+    }
+
+    &-list {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-item {}
+  }
+}

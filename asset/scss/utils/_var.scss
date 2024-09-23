@@ -1,115 +1,119 @@
-:root{
-  --sk-glyph: rgb(255,255,255);
-  --sk-glyph-gray: rgb(245,245,247);
-  --sk-glyph-gray-alpha: rgba(255,255,255,0.92);
-  --sk-glyph-gray-secondary: rgb(134,134,139);
-  --sk-glyph-gray-secondary-alpha: rgba(255,255,255,0.56);
-  --sk-glyph-gray-secondary-alt: rgb(210,210,215);
-  --sk-glyph-gray-secondary-alt-alpha: rgba(255,255,255,0.8);
-  --sk-glyph-gray-tertiary: rgb(110,110,115);
-  --sk-glyph-gray-tertiary-alpha: rgba(255,255,255,0.4);
-  --sk-glyph-blue: rgb(41,151,255);
-  --sk-glyph-orange: rgb(255,121,27);
-  --sk-glyph-green: rgb(3,161,14);
-  --sk-glyph-red: rgb(255,48,55);
-  --sk-fill: rgb(0,0,0);
-  --sk-fill-secondary: rgb(22,22,23);
-  --sk-fill-tertiary: rgb(29,29,31);
-  --sk-fill-gray: rgb(245,245,247);
-  --sk-fill-gray-alpha: rgba(255,255,255,0.92);
-  --sk-fill-gray-secondary: rgb(110,110,115);
-  --sk-fill-gray-secondary-alpha: rgba(255,255,255,0.4);
-  --sk-fill-gray-tertiary: rgb(66,66,69);
-  --sk-fill-gray-tertiary-alpha: rgba(255,255,255,0.24);
-  --sk-fill-gray-quaternary: rgb(51,51,54);
-  --sk-fill-gray-quaternary-alpha: rgba(255,255,255,0.2);
-  --sk-fill-orange-secondary: rgb(41,13,0);
-  --sk-fill-green-secondary: rgb(0,43,3);
-  --sk-fill-red: rgb(255,48,55);
-  --sk-fill-red-secondary: rgb(51,0,0);
-  --sk-fill-yellow: rgb(173,130,0);
-  --sk-fill-yellow-secondary: rgb(43,32,0);
-  --sk-enviro-neutral: rgb(0,0,0);
-  --sk-body-background-color: rgb(0,0,0);
-  --sk-body-text-color: rgb(245,245,247);
-  --sk-headline-text-color: rgb(245,245,247);
-  --sk-body-link-color: rgb(41,151,255);
-  --sk-link-disabled-opacity: 0.36;
-  --sk-focus-color-alt: rgb(255,255,255);
-
-  --finish-white-titanium: #f2f1ed;
-  --finish-natural-titanium: #c2bcb2;
-  --finish-blue-titanium: #3d4555;
-  --finish-black-titanium: #3c3c3d;
-  --finish-desert-titanium: #bfa48f;
-  --finish-black: #3c4042;
-  --finish-alpine-green: #576856;
-  --finish-blue: #9aadf6;
-  --finish-deep-purple: #594f63;
-  --finish-gold: #f4e8ce;
-  --finish-graphite: #54524f;
-  --finish-green: #b0d4d2;
-  --finish-midnight: #222930;
-  --finish-pink: #f2adda;
-  --finish-product-red: #fc0324;
-  --finish-purple: #e6ddeb;
-  --finish-sierra-blue: #a7c1d9;
-  --finish-silver: #f0f2f2;
-  --finish-space-black: #403e3d;
-  --finish-space-gray: #555;
-  --finish-starlight: #faf6f2;
-  --finish-yellow: #f9e479;
-  --finish-white: #fafafa;
-  --finish-iphone-15-blue: #d5dde0;
-  --finish-iphone-15-green: #cfd9c9;
-  --finish-iphone-15-yellow: #ece6c6;
-  --finish-iphone-15-pink: #ebd0d2;
-  --finish-iphone-13-pro-gold: #fae7cf;
-  --finish-iphone-13-pro-silver: #f1f2ed;
-  --finish-iphone-13-blue: #276787;
-  --finish-iphone-13-midnight: #232a31;
-  --finish-iphone-13-product-red: #bf0013;
-  --finish-iphone-se-3-midnight: #232a31;
-  --finish-iphone-se-3-product-red: #bf0013;
-
-  --staggered-delay: 0.15;
-  --staggered-opacity-duration: 0.9;
-  --staggered-translate-y: 30px;
-  --staggered-translate-y-duration: 0.7;
-
-  --product-viewer-loader-background-color: rgba(0,0,0,.1);
-  --product-viewer-loader-progress-indicator-background-color: #fff;
-  --product-viewer-loader-preview-background-color: #000;
-  --product-viewer-fallback-slide-bg-color: #000;
+$r-globalnav-color: rgba(255, 255, 255, .8);
+$r-globalnav-color-secondary: #E8E8ED;
+$r-globalnav-color-hover: #FFFFFF;
 
 
-  --aap-gallery-label-background-color: rgba(0,0,0,0.3);
-  --aap-active-fill-color: rgb(245,245,247);
-  --aap-focus-color: var(--sk-focus-color);
-  --aap-dotnav-background: rgba(245,245,247,0.8);
-  --aap-dotnav-background-hover: rgba(255,255,255,0.48);
-  --aap-paddlenav-arrow-color: rgba(255,255,255,0.8);
-  --aap-paddlenav-arrow-color-hover: rgba(255,255,255,0.88);
-  --aap-paddlenav-background-hover: rgba(66,66,69,0.8);
+$sk-glyph: rgb(255, 255, 255);
+$sk-glyph-gray: rgb(245, 245, 247);
+$sk-glyph-gray-alpha: rgba(255, 255, 255, 0.92);
+$sk-glyph-gray-secondary: rgb(134, 134, 139);
+$sk-glyph-gray-secondary-alpha: rgba(255, 255, 255, 0.56);
+$sk-glyph-gray-secondary-alt: rgb(210, 210, 215);
+$sk-glyph-gray-secondary-alt-alpha: rgba(255, 255, 255, 0.8);
+$sk-glyph-gray-tertiary: rgb(110, 110, 115);
+$sk-glyph-gray-tertiary-alpha: rgba(255, 255, 255, 0.4);
+$sk-glyph-blue: rgb(41, 151, 255);
+$sk-glyph-orange: rgb(255, 121, 27);
+$sk-glyph-green: rgb(3, 161, 14);
+$sk-glyph-red: rgb(255, 48, 55);
+$sk-fill: rgb(0, 0, 0);
+$sk-fill-secondary: rgb(22, 22, 23);
+$sk-fill-tertiary: rgb(29, 29, 31);
+$sk-fill-gray: rgb(245, 245, 247);
+$sk-fill-gray-alpha: rgba(255, 255, 255, 0.92);
+$sk-fill-gray-secondary: rgb(110, 110, 115);
+$sk-fill-gray-secondary-alpha: rgba(255, 255, 255, 0.4);
+$sk-fill-gray-tertiary: rgb(66, 66, 69);
+$sk-fill-gray-tertiary-alpha: rgba(255, 255, 255, 0.24);
+$sk-fill-gray-quaternary: rgb(51, 51, 54);
+$sk-fill-gray-quaternary-alpha: rgba(255, 255, 255, 0.2);
+$sk-fill-orange-secondary: rgb(41, 13, 0);
+$sk-fill-green-secondary: rgb(0, 43, 3);
+$sk-fill-red: rgb(255, 48, 55);
+$sk-fill-red-secondary: rgb(51, 0, 0);
+$sk-fill-yellow: rgb(173, 130, 0);
+$sk-fill-yellow-secondary: rgb(43, 32, 0);
+$sk-enviro-neutral: rgb(0, 0, 0);
+$sk-body-background-color: rgb(0, 0, 0);
+$sk-body-text-color: rgb(245, 245, 247);
+$sk-headline-text-color: rgb(245, 245, 247);
+$sk-body-link-color: rgb(41, 151, 255);
+$sk-link-disabled-opacity: 0.36;
+$sk-focus-color-alt: rgb(255, 255, 255);
 
-  --aap-product-viewer-label-background-color: rgba(0,0,0,0.3);
-  --aap-icon-color: #f5f5f7;
-  --aap-bubble-background-color: #f5f5f7;
-  --aap-icon-active-color: #1d1d1f;
-
-  --aap-background-color: rgba(66,66,69,0.7);
-  --aap-inner-glow-color: rgba(232,232,237,0.11);
-  --aap-text-color: rgb(245,245,247);
-  --aap-accent-color: rgb(0,113,227);
-  --aap-button-hover: rgba(73,73,76,0.726);
-  --aap-button-active: rgba(57,57,60,0.742);
 
 
-  --global-section-background-color-alt: rgb(245,245,247);
-  --global-section-background-color-alt-dark: rgb(29,29,31);
-  --global-section-padding: 160px;
-  --global-section-aap-padding: 216px;
 
-  --sk-footnote-reduced-font-size: 0.45em;
-  --sk-footnote-reduced-offset-top: -0.86em;
-}
+$finish-white-titanium: #f2f1ed;
+$finish-natural-titanium: #c2bcb2;
+$finish-blue-titanium: #3d4555;
+$finish-black-titanium: #3c3c3d;
+$finish-desert-titanium: #bfa48f;
+$finish-black: #3c4042;
+$finish-alpine-green: #576856;
+$finish-blue: #9aadf6;
+$finish-deep-purple: #594f63;
+$finish-gold: #f4e8ce;
+$finish-graphite: #54524f;
+$finish-green: #b0d4d2;
+$finish-midnight: #222930;
+$finish-pink: #f2adda;
+$finish-product-red: #fc0324;
+$finish-purple: #e6ddeb;
+$finish-sierra-blue: #a7c1d9;
+$finish-silver: #f0f2f2;
+$finish-space-black: #403e3d;
+$finish-space-gray: #555;
+$finish-starlight: #faf6f2;
+$finish-yellow: #f9e479;
+$finish-white: #fafafa;
+$finish-iphone-15-blue: #d5dde0;
+$finish-iphone-15-green: #cfd9c9;
+$finish-iphone-15-yellow: #ece6c6;
+$finish-iphone-15-pink: #ebd0d2;
+$finish-iphone-13-pro-gold: #fae7cf;
+$finish-iphone-13-pro-silver: #f1f2ed;
+$finish-iphone-13-blue: #276787;
+$finish-iphone-13-midnight: #232a31;
+$finish-iphone-13-product-red: #bf0013;
+$finish-iphone-se-3-midnight: #232a31;
+$finish-iphone-se-3-product-red: #bf0013;
+
+$staggered-delay: 0.15;
+$staggered-opacity-duration: 0.9;
+$staggered-translate-y: 30px;
+$staggered-translate-y-duration: 0.7;
+
+$product-viewer-loader-background-color: rgba(0, 0, 0, .1);
+$product-viewer-loader-progress-indicator-background-color: #fff;
+$product-viewer-loader-preview-background-color: #000;
+$product-viewer-fallback-slide-bg-color: #000;
+
+
+$aap-gallery-label-background-color: rgba(0, 0, 0, 0.3);
+$aap-active-fill-color: rgb(245, 245, 247);
+$aap-dotnav-background: rgba(245, 245, 247, 0.8);
+$aap-dotnav-background-hover: rgba(255, 255, 255, 0.48);
+$aap-paddlenav-arrow-color: rgba(255, 255, 255, 0.8);
+$aap-paddlenav-arrow-color-hover: rgba(255, 255, 255, 0.88);
+$aap-paddlenav-background-hover: rgba(66, 66, 69, 0.8);
+
+$aap-product-viewer-label-background-color: rgba(0, 0, 0, 0.3);
+$aap-icon-color: #f5f5f7;
+$aap-bubble-background-color: #f5f5f7;
+$aap-icon-active-color: #1d1d1f;
+
+$aap-background-color: rgba(66, 66, 69, 0.7);
+$aap-inner-glow-color: rgba(232, 232, 237, 0.11);
+$aap-text-color: rgb(245, 245, 247);
+$aap-accent-color: rgb(0, 113, 227);
+$aap-button-hover: rgba(73, 73, 76, 0.726);
+$aap-button-active: rgba(57, 57, 60, 0.742);
+
+
+$global-section-background-color-alt: rgb(245, 245, 247);
+$global-section-background-color-alt-dark: rgb(29, 29, 31);
+$global-section-padding: 160px;
+$global-section-aap-padding: 216px;
+
+
