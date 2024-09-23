@@ -1,0 +1,39 @@
+// common의 용도
+.blind {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	margin: -1px;
+}
+
+::selection {
+	// background-color: $color-primary;
+	// color: $color-white;
+}
+
+body{
+	transition: opacity .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+body.dimmed{
+	overflow: hidden;
+	opacity: 1;
+}
+body.dimmed::after {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, .8);
+	opacity: 1;
+	content: '';
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
