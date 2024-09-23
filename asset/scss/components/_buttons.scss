@@ -1,0 +1,22 @@
+.btn{
+  @include flexbox;
+  $sk-button-background: #0071e3;
+  $sk-button-background-hover: #0076DF;
+  $sk-button-background-active: #006EDB;
+  $sk-button-color: rgb(255, 255, 255);
+  background: $sk-button-background;
+  color: $sk-button-color;
+  border-radius: 980px;
+  padding: 0 13px;
+  min-width: 23px;
+  height: 24px;
+  font-size: .65rem;
+  &:hover{
+    background: $sk-button-background-active;
+  }
+}
+
+.btn-arrow{
+  width: 16px;
+  height: 9px;
+}

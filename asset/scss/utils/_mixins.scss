@@ -4,7 +4,7 @@
   @if $breakpoint == 'm' {
     @media (min-width: 500px) { @content; }
   } @else if $breakpoint == 't' {
-    @media (min-width: 700px) { @content; }
+    @media (max-width: 833px) { @content; }
   } @else if $breakpoint == 'd' {
     @media (min-width: 1000px) { @content; }
   }
