@@ -438,4 +438,165 @@ body.dimmed::after {
   100% {
     points: 15.265 8.165 8 0.835 0.735 8.165;
   }
+}
+
+.footer {
+  background: rgb(29, 29, 31);
+}
+.footer .nowrap {
+  white-space: nowrap;
+}
+.footer .footer-inner {
+  margin: 0 auto;
+  max-width: 980px;
+  padding: 0 22px;
+  font-family: "SF-Pro-Text", sans-serif;
+  color: rgba(255, 255, 255, 0.56);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.3333733333;
+  font-size: 12px;
+}
+@media (max-width: 833px) {
+  .footer .footer-inner {
+    padding: 0 16px;
+  }
+}
+.footer .group-note {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+  padding: 17px 0 27px;
+}
+.footer .group-note .bold {
+  color: rgba(255, 255, 255, 0.8);
+}
+.footer .group-note .note-head {
+  padding-bottom: 0.8em;
+}
+.footer .group-note .note-list {
+  list-style: decimal;
+  list-style-position: outside;
+  padding: 0 17px;
+}
+.footer .group-note .note-list li {
+  list-style: inherit;
+  padding-bottom: 0.8em;
+}
+.footer .group-note .note-list li a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: underline;
+}
+.footer .group-note .note-list li p + p {
+  padding-top: 0.8em;
+}
+.footer .group-menu .nav-directory {
+  height: 440px;
+  max-height: 440px;
+}
+.footer .group-menu .nav-directory .directory-area .directory-box + .directory-area {
+  margin-top: 20px;
+}
+.footer .group-menu .nav-directory .directory-area .title {
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+}
+.footer .group-menu .nav-directory .directory-area .directory-list .directory-item + .directory-item {
+  margin-top: 10px;
+}
+.footer .group-copy {
+  padding: 37px 0 11px;
+}
+@media (max-width: 833px) {
+  .footer .group-copy {
+    padding: 17px 9px;
+  }
+}
+.footer .group-copy .shop-area {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+  margin-bottom: 16px;
+  padding-bottom: 19px;
+}
+@media (max-width: 833px) {
+  .footer .group-copy .shop-area {
+    border: 0;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+  }
+}
+.footer .group-copy .shop-area a {
+  color: rgb(41, 151, 255);
+  text-decoration: underline;
+}
+.footer .group-copy .info-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media (max-width: 833px) {
+  .footer .group-copy .info-area {
+    gap: 12px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.footer .group-copy .info-area a {
+  color: rgba(255, 255, 255, 0.8);
+}
+.footer .group-copy .info-area a:hover {
+  text-decoration: underline;
+}
+.footer .group-copy .info-area .copy-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+}
+@media (max-width: 833px) {
+  .footer .group-copy .info-area .copy-wrap {
+    gap: 9px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.footer .group-copy .info-area .copy-wrap .info-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 9px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.footer .group-copy .info-area .copy-wrap .info-list .info-item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 9px;
+}
+.footer .group-copy .info-area .copy-wrap .info-list .info-item::after {
+  content: "";
+  height: 10px;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.footer .group-copy .info-area .copy-wrap .info-list .info-item:last-child::after {
+  content: none;
 }/*# sourceMappingURL=style.css.map */

@@ -29,3 +29,30 @@ chevronIcon.addEventListener('click', () => {
     polyline.setAttribute('data-chevron-animate', 'expand');  // 상태 변경
   }
 });
+
+// fetch('../asset/json/footer.json')
+// .then((res) => res.json())
+// .then((json) => {
+// let html = ``;
+
+// // 각 heading과 그에 따른 items 처리
+// json.forEach((section) => {
+// html += `<div class="directory-area">`;
+// html += `<strong class="title">${section.heading}</strong>`;
+// html += `<ul class="directory-list">`;
+
+// // 각 section의 items 처리
+// section.items.forEach((item) => {
+// html += `<li class="directory-item"><a href="#">${item}</a></li>`;
+// });
+
+// html += `</ul>`;
+// html += `</div>`;
+// });
+
+// const container = document.querySelector('.nav-directory');
+// container.innerHTML = html;
+// })
+// .catch((error) => {
+// console.error('FOOTER JSON ERROR:', error);
+// });
