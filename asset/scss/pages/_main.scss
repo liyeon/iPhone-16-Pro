@@ -1,6 +1,32 @@
 //main
 
-
+.sc-intro{
+  .group-intro{
+    @include column-flexbox;
+    position: relative;
+    padding-top: 189px;
+    padding-bottom: var(--global-section-padding);
+    .headline{
+      font-size: 28px;
+      line-height: 1.1428571429;
+      font-weight: 600;
+      letter-spacing: .007em;
+    }
+    .img-headline{
+      height: 54px;
+      margin-bottom: 86px;
+      @include flexbox;
+    }
+    .media-area{
+      position: absolute;
+      top: 0;
+      z-index: -1;
+    }
+    .price-area{
+      margin-top: 279px;
+    }
+  }
+}
 .sc-explore {
   padding-top: var(--global-section-padding);
   background: #161617;

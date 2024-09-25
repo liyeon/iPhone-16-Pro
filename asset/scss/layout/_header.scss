@@ -1,11 +1,5 @@
 // header
 
-body {
-  @include responsive('t') {
-    background: #003c4a;
-  }
-}
-
 .header {
   width: 100%;
 
