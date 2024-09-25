@@ -119,3 +119,35 @@ $global-section-padding: 160px;
 $global-section-aap-padding: 216px;
 
 
+:root {
+  --global-section-background-color-alt: rgb(245,245,247);
+  --global-section-background-color-alt-dark: rgb(29,29,31);
+  --global-section-padding: 160px;
+  --global-section-aap-padding: 216px
+}
+
+@media(max-width: 1068px) {
+  :root {
+      --global-section-padding:128px
+  }
+}
+
+@media(max-width: 734px) {
+  :root {
+      --global-section-padding:96px
+  }
+}
+
+@media(max-width: 1068px) {
+  :root {
+      --global-section-aap-padding:206px
+  }
+}
+
+@media(max-width: 734px) {
+  :root {
+      --global-section-aap-padding:196px
+  }
+}
+
+

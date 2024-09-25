@@ -113,9 +113,7 @@ body {
       font-size: 21px;
       line-height: 1.1428571429;
       font-weight: 600;
-      letter-spacing: .015em;
-      font-family: "SF-Pro-Text";
-
+      letter-spacing: .011em;
       @include responsive('t') {
         font-size: 19px;
       }
