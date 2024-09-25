@@ -9,7 +9,7 @@
 
   <style>
     main {
-      height: 600vh;
+      height: 200vh;
     }
   </style>
 </head>
@@ -305,8 +305,9 @@
         <nav class="nav-directory">
           <div class="directory-area">
             <div class="directory-box">
-              <strong>Shop and Learn</strong>
+              <strong class="title">Shop and Learn</strong>
               <ul class="directory-list">
+                <li class="directory-item"><a href="#">Store</a></li>
                 <li class="directory-item"><a href="#">Mac</a></li>
                 <li class="directory-item"><a href="#">iPad</a></li>
                 <li class="directory-item"><a href="#">iPhone</a></li>
@@ -320,8 +321,9 @@
               </ul>
             </div>
             <div class="directory-box">
-              <strong>Apple Wallet</strong>
+              <strong class="title">Apple Wallet</strong>
               <ul class="directory-list">
+                <li class="directory-item"><a href="#">Wallet</a></li>
                 <li class="directory-item"><a href="#">Apple Card</a></li>
                 <li class="directory-item"><a href="#">Apple Pay</a></li>
                 <li class="directory-item"><a href="#">Apple Cash</a></li>
@@ -329,9 +331,8 @@
             </div>
           </div>
           <div class="directory-area">
-
             <div class="directory-box">
-              <strong>Account</strong>
+              <strong class="title">Account</strong>
               <ul class="directory-list">
                 <li class="directory-item"><a href="#">Manage Your Apple ID</a></li>
                 <li class="directory-item"><a href="#">Apple Store Account</a></li>
@@ -339,7 +340,7 @@
               </ul>
             </div>
             <div class="directory-box">
-              <strong>Entertainment</strong>
+              <strong class="title">Entertainment</strong>
               <ul class="directory-list">
                 <li class="directory-item"><a href="#">Apple One</a></li>
                 <li class="directory-item"><a href="#">Apple TV+</a></li>
@@ -356,7 +357,7 @@
           <div class="directory-area">
 
             <div class="directory-box">
-              <strong>Apple Store</strong>
+              <strong class="title">Apple Store</strong>
               <ul class="directory-list">
                 <li class="directory-item"><a href="#">Find a Store</a></li>
                 <li class="directory-item"><a href="#">Genius Bar</a></li>
@@ -376,14 +377,14 @@
           <div class="directory-area">
 
             <div class="directory-box">
-              <strong>For Business</strong>
+              <strong class="title">For Business</strong>
               <ul class="directory-list">
                 <li class="directory-item"><a href="#">Apple and Business</a></li>
                 <li class="directory-item"><a href="#">Shop for Business</a></li>
               </ul>
             </div>
             <div class="directory-box">
-              <strong>For Education</strong>
+              <strong class="title">For Education</strong>
               <ul class="directory-list">
                 <li class="directory-item"><a href="#">Apple and Education</a></li>
                 <li class="directory-item"><a href="#">Shop for K-12</a></li>
@@ -391,7 +392,7 @@
               </ul>
             </div>
             <div class="directory-box">
-              <strong>For Healthcare</strong>
+              <strong class="title">For Healthcare</strong>
               <ul class="directory-list">
                 <li class="directory-item"><a href="#">Apple in Healthcare</a></li>
                 <li class="directory-item"><a href="#">Mac in Healthcare</a></li>
@@ -400,7 +401,7 @@
               </ul>
             </div>
             <div class="directory-box">
-              <strong>For Government</strong>
+              <strong class="title">For Government</strong>
               <ul class="directory-list">
                 <li class="directory-item"><a href="#">Shop for Government</a></li>
                 <li class="directory-item"><a href="#">Shop for Veterans and Military</a></li>
@@ -410,7 +411,7 @@
           <div class="directory-area">
 
             <div class="directory-box">
-              <strong>Apple Values</strong>
+              <strong class="title">Apple Values</strong>
               <ul class="directory-list">
                 <li class="directory-item"><a href="#">Accessibility</a></li>
                 <li class="directory-item"><a href="#">Education</a></li>
@@ -422,7 +423,7 @@
               </ul>
             </div>
             <div class="directory-box">
-              <strong>About Apple</strong>
+              <strong class="title">About Apple</strong>
               <ul class="directory-list">
                 <li class="directory-item"><a href="#">Newsroom</a></li>
                 <li class="directory-item"><a href="#">Apple Leadership</a></li>
@@ -472,7 +473,25 @@
       </div>
     </div>
   </footer>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    function toggleMenu() {
+      if (window.innerWidth <= 833) {  // 833px 이하일 때만 작동
+        $('.directory-box .title').click(function (e) {
+          if ($(this).parent().hasClass('active')) {
+            $(this).parent().removeClass('active');
+          } else {
+            $('.directory-box').removeClass('active');
+            $(this).parent().addClass('active');
+          }
+        });
+      }
+    }
 
+    toggleMenu();
+    // 창 크기가 변경될 때마다 다시 확인
+    window.addEventListener('resize', toggleMenu);
+  </script>
 </body>
 
 </html>

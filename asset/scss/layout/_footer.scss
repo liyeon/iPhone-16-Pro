@@ -63,25 +63,125 @@
 
   //group-note
   .group-menu {
-    .nav-breadcrumbs {}
+    .nav-breadcrumbs {
+      margin: 17px 0;
+      @include flexbox(start, end);
+      gap: 11px;
+      @include responsive('t'){
+        border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+        padding-bottom: 18px;
+        margin-bottom: 0;
+      }
+      .link-breadcrumbs-logo{
+        background-color: rgba(255, 255, 255, .92);
+        width: 14px;
+        height: 18px;
+        mask-image: url(../images/icons/icon.svg);
+      }
+      .breadcrumbs-list{
+        @include flexbox(start);
+        gap: 11px;
+
+      }
+      .breadcrumbs-item{
+        @include flexbox(center);
+        gap: 11px;
+        &::before{
+          content: '';
+          margin-top: 2px;
+          width: 6px;
+          height: 11px;
+          background-color: rgba(255, 255, 255, .4);
+          mask-image: url(../images/icons/icon_arrow.svg);
+        }
+      }
+    }
 
     .nav-directory {
-      height: 440px;
-      max-height: 440px;
+      @include flexbox(between,start);
+      @include responsive('t'){
+        flex-direction: column;
+      }
       .directory-area {
-        .directory-box+.directory-area{
-          margin-top: 20px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        
+        @include responsive('t'){
+          width: 100%;
+          gap: 0;
         }
         .title {
           color: rgba(255, 255, 255, 0.92);
           font-weight: 600;
           margin-bottom: 10px;
           display: block;
+          @include responsive('t'){
+            width: 100%;
+            padding: 10px 0;
+            margin-bottom: 0;
+            cursor: pointer;
+            @include flexbox(between);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+            &::after{
+              content: '';
+              width: 6px;
+              height: 11px;
+              margin-right: 7px;
+              background-color: rgba(255, 255, 255, 0.92);
+              mask-image: url(../images/icons/icon_arrow.svg);
+              rotate: (90deg);
+              transition: rotate .3s;
+            }
+          }
+        }
+        @include responsive('t'){
+          .directory-box{
+            &.active{
+              .title{
+                border-color: transparent;
+                &::after{
+                  rotate: (-90deg);
+                }
+              }
+              .directory-list{
+                display: block;
+              }
+            }
+          }
         }
 
         .directory-list {
+          @include responsive('t'){
+            display: none;
+            width: 100%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+            position: relative;
+            padding: 10px 0 25px;
+            &::after{
+              content: "";
+              position: absolute;
+              bottom: 0;
+              height: 1px;
+              background-color: rgba(255, 255, 255, 0.24);
+            }
+          }
+          .directory-item{
+            a{
+              @include responsive('t'){
+                color: rgba(255, 255, 255, 0.8);
+                padding: 10px 14px;
+              }
+            }
+          }
           .directory-item+.directory-item {
             margin-top: 10px;
+          }
+          .directory-item:hover{
+            a{
+              text-decoration: underline;
+            }
           }
         }
 
@@ -90,7 +190,7 @@
   }
 
   .group-copy {
-    padding: 37px 0 11px;
+    padding: 22px 0 11px;
 
     @include responsive('t') {
       padding: 17px 9px;
