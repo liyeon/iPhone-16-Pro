@@ -475,22 +475,15 @@
   </footer>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
-    function toggleMenu() {
-      if (window.innerWidth <= 833) {  // 833px 이하일 때만 작동
-        $('.directory-box .title').click(function (e) {
-          if ($(this).parent().hasClass('active')) {
-            $(this).parent().removeClass('active');
-          } else {
-            $('.directory-box').removeClass('active');
-            $(this).parent().addClass('active');
-          }
-        });
-      }
+  $('.directory-box .title').click(function (e) {
+    if ($(this).parent().hasClass('active')) {
+      $(this).parent().removeClass('active');
+    } else {
+      $('.directory-box').removeClass('active');
+      $(this).parent().addClass('active');
     }
+  });
 
-    toggleMenu();
-    // 창 크기가 변경될 때마다 다시 확인
-    window.addEventListener('resize', toggleMenu);
   </script>
 </body>
 
