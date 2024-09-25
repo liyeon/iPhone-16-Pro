@@ -776,7 +776,111 @@ body.dimmed::after {
   font-weight: 600;
   letter-spacing: -0.005em;
   margin-bottom: 53px;
-  font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: rgb(245, 245, 247);
+}
+@media (max-width: 1068px) {
+  .sc-explore .headline {
+    font-size: 48px;
+    margin-bottom: 38px;
+  }
+}
+@media (max-width: 734px) {
+  .sc-explore .headline {
+    font-size: 32px;
+    margin-bottom: 34px;
+  }
+}
+@media (max-width: 480px) {
+  .sc-explore .headline {
+    font-size: 28px;
+  }
+}
+.sc-explore .group-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (max-width: 1068px) {
+  .sc-explore .group-nav {
+    display: grid;
+    gap: 30px;
+  }
+}
+@media (max-width: 734px) {
+  .sc-explore .group-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.sc-explore .title {
+  color: #86868b;
+  margin-bottom: 15px;
+  font-size: 17px;
+  line-height: 1.2353641176;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: "SF-Pro-Text";
+}
+@media (max-width: 734px) {
+  .sc-explore .title {
+    font-size: 14px;
+  }
+}
+.sc-explore .nav-explore {
+  margin-right: 88px;
+}
+@media (max-width: 1068px) {
+  .sc-explore .nav-explore {
+    grid-column: 1/3;
+  }
+}
+.sc-explore .nav-explore .nav-list .nav-item {
+  font-size: 28px;
+}
+@media (max-width: 734px) {
+  .sc-explore .nav-explore .nav-list .nav-item {
+    font-size: 21px;
+  }
+}
+.sc-explore .nav-explore .nav-list .nav-item.small {
+  font-size: 17px;
+  margin-top: 30px;
+}
+@media (max-width: 1068px) {
+  .sc-explore .nav-explore .nav-list .nav-item.small {
+    margin-top: 22px;
+  }
+}
+@media (max-width: 734px) {
+  .sc-explore .nav-explore .nav-list .nav-item.small {
+    font-size: 14px;
+    margin-top: 19px;
+  }
+}
+.sc-explore .nav-explore .nav-list .nav-item.small:last-of-type {
+  margin-top: 0;
+}
+.sc-explore .nav-shop {
+  margin-right: 44px;
+}
+.sc-explore .nav-list .nav-item {
+  margin-bottom: 14px;
+  font-size: 17px;
+  line-height: 1.2353641176;
+  font-weight: 600;
+  letter-spacing: -0.022em;
+  font-family: "SF-Pro-Text";
+}
+@media (max-width: 734px) {
+  .sc-explore .nav-list .nav-item {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
 }
 
 .viewport-content {
