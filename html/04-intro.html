@@ -6,6 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="../../asset/css/style.css" />
+  <!-- gsap -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -14,32 +19,38 @@
       <div class="group-intro">
         <h2 class="headline">iPhone 16 Pro</h2>
         <picture class="img-headline">
-          <!-- <source srcset="../asset/images/welcome/headline_xsmall_2x.png" media="(max-width:480px)">
+          <!-- <source srcset="../asset/images/welcome/headline_xsmall_2x.png" media="(max-width:480px)"> -->
           <source srcset="../asset/images/welcome/headline_small_2x.png" media="(max-width:734px)">
           <source srcset="../asset/images/welcome/headline_medium_2x.png" media="(max-width:1068px)">
-          <source srcset="../asset/images/welcome/headline_large_2x.png" media="(max-width:1440px)"> -->
+          <source srcset="../asset/images/welcome/headline_large_2x.png" media="(max-width:1440px)">
           <img src="../asset/images/welcome/headline.png" alt="Hello, Apple Intelligence.">
         </picture>
         <div class="media-area">
-          <!-- <div class="video-box">
-            <video muted loop>
+          <div class="video-box">
+            <video muted autoplay id="introVideo">
               <source src="../asset/video/intro/01-hero.mp4" type="video/mp4">
             </video>
-          </div> -->
-          <div class="img-box">
-            <img src="../asset/images/welcome/intro.jpg" alt="iPhone 16 Pro">
           </div>
+          <picture class="img-box">
+            <!-- <source srcset="../asset/images/welcome/intro_xsmall_2x.jpg" media="(max-width:480px)"> -->
+            <source srcset="../asset/images/welcome/intro_small_2x.jpg" media="(max-width:734px)">
+            <source srcset="../asset/images/welcome/intro_medium_2x.jpg" media="(max-width:1068px)">
+            <source srcset="../asset/images/welcome/intro_large_2x.jpg" media="(max-width:1440px)">
+            <img src="../asset/images/welcome/intro.jpg" alt="iPhone 16 Pro">
+          </picture>
         </div>
         <div class="price-area">
-          <a href="#" class="btn">Buy</a>
-          <div class="detail-pricing">
-            <p class="pricing-product">
+          <div class="btn-box">
+            <a href="#" class="btn btn-price">Buy</a>
+          </div>
+          <div class="price-box">
+            <p class="product">
               From $999 or or $41.62/mo.&nbsp;for&nbsp;24&nbsp;mo.</span>
               <sup class="footnote footnote-number">
                 <a href="#footnote-2" aria-label="Footnote 1" data-modal-close="">1</a>
               </sup>
             </p>
-            <p class="-secondary">Apple&nbsp;Intelligence coming this fall
+            <p class="secondary">Apple&nbsp;Intelligence coming this fall
               <sup class="footnote footnote-number">
                 <a href="#footnote-3" aria-label="Footnote 2">2</a>
               </sup>
@@ -50,6 +61,24 @@
       </div>
     </section>
   </main>
+
+  <script>
+    gsap.defaults({
+      ease: "none",
+    });
+
+    //intro
+    const intro = gsap.timeline({});
+    const introVideo = document.querySelector('#introVideo');
+    introVideo.addEventListener('ended', () => {
+      intro
+        .to(".sc-intro .video-box", { autoAlpha: 0 }) // 동영상 숨기기
+        .to(".sc-intro .headline", { opacity: 1, }, "-=0.5")  // headline 나타나기
+        .to(".sc-intro .img-headline", { opacity: 1, }, "-=0.25") // img-headline이 headline이 나타나면서 동시에
+        .to(".sc-intro .price-area", { opacity: 1, }, "-=0.25");  // price-area도 img-headline이 나타나면서 동시에
+    });
+
+  </script>
 </body>
 
 </html>

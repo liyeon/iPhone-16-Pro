@@ -20,6 +20,21 @@
   }
 }
 
+@mixin resM {
+  @media (max-width: 734px) { @content; }
+}
+
+@mixin resT {
+  @media (max-width: 1068px) { @content; }
+}
+
+@mixin resD {
+  @media (max-width: 1440px) { @content; }
+}
+
+
+
+
 // @include responsive('t'){~~~}
 @mixin ellipsis($lines: 1) {
   @if ($lines==1) {

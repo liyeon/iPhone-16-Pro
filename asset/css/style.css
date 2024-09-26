@@ -776,14 +776,20 @@ body.dimmed::after {
   position: relative;
   padding-top: 189px;
   padding-bottom: var(--global-section-padding);
+  overflow: hidden;
+  --intro-width:1920px;
+  --intro-height:1048px;
 }
 .sc-intro .group-intro .headline {
+  opacity: 0;
   font-size: 28px;
   line-height: 1.1428571429;
   font-weight: 600;
   letter-spacing: 0.007em;
+  margin-bottom: 28px;
 }
 .sc-intro .group-intro .img-headline {
+  opacity: 0;
   height: 54px;
   margin-bottom: 86px;
   display: -webkit-box;
@@ -798,11 +804,79 @@ body.dimmed::after {
 }
 .sc-intro .group-intro .media-area {
   position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   top: 0;
   z-index: -1;
+  width: var(--intro-width);
+  height: var(--intro-height);
+}
+@media (max-width: 1440px) {
+  .sc-intro .group-intro .media-area {
+    --intro-width: 1440px;
+    --intro-height: 864px;
+  }
+}
+@media (max-width: 1068px) {
+  .sc-intro .group-intro .media-area {
+    --intro-width: 1068px;
+    --intro-height: 698px;
+  }
+}
+@media (max-width: 734px) {
+  .sc-intro .group-intro .media-area {
+    --intro-width: 734px;
+    --intro-height: 424px;
+  }
+}
+.sc-intro .group-intro .media-area .video-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.sc-intro .group-intro .media-area .img-box {
+  width: 100%;
+  height: 100%;
 }
 .sc-intro .group-intro .price-area {
-  margin-top: 279px;
+  opacity: 0;
+  padding-top: 200px;
+  margin-top: var(--global-section-padding);
+}
+.sc-intro .group-intro .price-area .btn-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.sc-intro .group-intro .price-area .btn-box .btn-price {
+  padding: 8px 15px;
+  font-size: 17px;
+  height: auto;
+  width: auto;
+}
+.sc-intro .group-intro .price-area .price-box {
+  text-align: center;
+  color: #86868b;
+  margin-top: 30px;
+}
+.sc-intro .group-intro .price-area .price-box .product {
+  font-weight: 600;
+}
+.sc-intro .group-intro .price-area .price-box .footnote {
+  position: relative;
+  -webkit-font-feature-settings: "numr";
+          font-feature-settings: "numr";
+  text-decoration: underline;
+  font-size: small;
 }
 
 .sc-explore {
