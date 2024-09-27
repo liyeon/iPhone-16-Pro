@@ -20,6 +20,9 @@
   }
 }
 
+@mixin resSM {
+  @media (max-width: 480px) { @content; }
+}
 @mixin resM {
   @media (max-width: 734px) { @content; }
 }

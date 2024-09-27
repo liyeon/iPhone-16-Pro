@@ -4,24 +4,69 @@
   .group-intro{
     @include column-flexbox;
     position: relative;
+    min-height: 1048px;
     padding-top: 189px;
     padding-bottom: var(--global-section-padding);
     overflow: hidden;
     --intro-width:1920px;
     --intro-height:1048px;
+
+    
+    @include resD{
+      min-height: 864px;
+      padding-top: 157px;
+    }
+    @include resT{
+      min-height: 698px;
+      padding-top: 151px;
+    }
+    @include resM{
+      min-height: 424px;
+      padding-top: 81px;
+    }
+    @include resSM{
+      min-height: 724px;
+      padding-top: 31px;
+    }
     .headline{
-      opacity: 0;
       font-size: 28px;
       line-height: 1.1428571429;
       font-weight: 600;
       letter-spacing: .007em;
       margin-bottom: 28px;
+      @include resD{
+        font-size:24px;
+        margin-bottom: 22px;
+      }
+      @include resT{
+        font-size:21px;
+        margin-bottom: 16px;
+      }
     }
     .img-headline{
-      opacity: 0;
       height: 54px;
       margin-bottom: 86px;
       @include flexbox;
+      @include resD{
+        width: 693px;
+        height: 41px;
+        margin-bottom: 74px
+      }
+      @include resT{
+        width: 462px;
+        height: 27px;
+        margin-bottom: 48px
+      }
+      @include resM{
+        width: 311px;
+        height: 19px;
+        margin-bottom: 29px;
+      }
+      @include resSM{
+        width: 100%;
+        height: 26px;
+        margin-bottom: 43px;
+      }
     }
     .media-area{
       @include pos-center-x;
@@ -41,12 +86,17 @@
         --intro-width: 734px;
         --intro-height: 424px;
       }
+      @include resSM{
+        --intro-width: 480px;
+        --intro-height: 724px;
+      }
       .video-box{
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
+        opacity: .5;
       }
       .img-box{
         width: 100%;
@@ -55,7 +105,6 @@
 
     }
     .price-area{
-      opacity: 0;
       padding-top: 200px;
       margin-top: var(--global-section-padding);
       .btn-box{
@@ -67,10 +116,25 @@
           width: auto;
         }
       }
+      @include resD{
+        padding-top: 181px;
+      }
+      @include resT{
+        padding-top: 122px;
+      }
+      @include resM{
+        padding-top: 92px;
+      }
+      @include resSM{
+        padding-top: 200px;
+      }
       .price-box{
         text-align: center;
         color: #86868b;
         margin-top: 30px;
+        @include resM{
+          margin-top: 20px;
+        }
         .product{
           font-weight: 600;
         }
