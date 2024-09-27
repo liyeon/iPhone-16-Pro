@@ -8,22 +8,14 @@
 
 @media (max-width: 1068px) {
   :root {
-    --global-section-padding:128px ;
+    --global-section-padding:128px;
+    --global-section-aap-padding:206px;
   }
 }
 @media (max-width: 734px) {
   :root {
-    --global-section-padding:96px ;
-  }
-}
-@media (max-width: 1068px) {
-  :root {
-    --global-section-aap-padding:206px ;
-  }
-}
-@media (max-width: 734px) {
-  :root {
-    --global-section-aap-padding:196px ;
+    --global-section-padding:96px;
+    --global-section-aap-padding:196px;
   }
 }
 @font-face {
@@ -47,6 +39,18 @@
 @font-face {
   font-family: "SF-Pro-Text";
   src: url("../fonts/sf-pro-text_semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF-Pro-Icons";
+  src: url("../fonts/sf-pro-icons_light.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF-Pro-Icons";
+  src: url("../fonts/sf-pro-icons_semibold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
 }
@@ -905,7 +909,6 @@ body.dimmed::after {
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.5;
 }
 .sc-intro .group-intro .media-area .img-box {
   width: 100%;
@@ -1091,12 +1094,111 @@ body.dimmed::after {
   }
 }
 
+.sc-highlights {
+  padding-top: var(--global-section-padding);
+  padding-bottom: var(--global-section-aap-padding);
+  background: rgb(29, 29, 31);
+}
+.sc-highlights .sc-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 80px;
+}
+.sc-highlights .highlightSwiper {
+  width: 100%;
+  --high-height:680px;
+  height: var(--high-height);
+}
+@media (max-width: 1068px) {
+  .sc-highlights .highlightSwiper {
+    --high-height:628px;
+  }
+}
+@media (max-width: 734px) {
+  .sc-highlights .highlightSwiper {
+    --high-height:560px;
+  }
+}
+@media (max-width: 480px) {
+  .sc-highlights .highlightSwiper {
+    --high-height:480px;
+  }
+}
+.sc-highlights .highlightSwiper .swiper-wrapper .swiper-slide {
+  border-radius: 28px;
+  background: #000;
+}
+.sc-highlights .headline-typo {
+  font-size: 56px;
+  line-height: 1.07143;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: rgb(245, 245, 247);
+}
+.sc-highlights .btn-film {
+  color: rgb(41, 151, 255);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  padding-right: 25px;
+}
+.sc-highlights .btn-film::before, .sc-highlights .btn-film::after {
+  content: "";
+  position: absolute;
+  right: 0;
+}
+.sc-highlights .btn-film::before {
+  right: 1px;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgb(41, 151, 255);
+  border-radius: 100%;
+}
+.sc-highlights .btn-film::after {
+  width: 20px;
+  height: 20px;
+  background-color: rgb(41, 151, 255);
+  -webkit-mask-image: url(../images/icons/icon_play.svg);
+          mask-image: url(../images/icons/icon_play.svg);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+}
+.sc-highlights .btn-controls {
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 1000px;
+  opacity: 0;
+  -webkit-transition: background-color 100ms linear, opacity 200ms ease-out 0ms, -webkit-transform 200ms ease-out 0ms;
+  transition: background-color 100ms linear, opacity 200ms ease-out 0ms, -webkit-transform 200ms ease-out 0ms;
+  transition: background-color 100ms linear, opacity 200ms ease-out 0ms, transform 200ms ease-out 0ms;
+  transition: background-color 100ms linear, opacity 200ms ease-out 0ms, transform 200ms ease-out 0ms, -webkit-transform 200ms ease-out 0ms;
+  -webkit-transition: background-color linear 100ms, opacity 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms), -webkit-transform 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms);
+  transition: background-color linear 100ms, opacity 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms), -webkit-transform 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms);
+  transition: background-color linear 100ms, opacity 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms), transform 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms);
+  transition: background-color linear 100ms, opacity 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms), transform 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms), -webkit-transform 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms);
+}
+.sc-highlights .btn-controls svg {
+  color: currentColor;
+}
+
 .viewport-content {
   margin: 0 auto;
-  -webkit-margin-start: auto;
-          margin-inline-start: auto;
-  -webkit-margin-end: auto;
-          margin-inline-end: auto;
   width: 87.5%;
   max-width: 1680px;
 }/*# sourceMappingURL=style.css.map */

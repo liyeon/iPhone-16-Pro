@@ -96,7 +96,6 @@
         left: 0;
         width: 100%;
         height: 100%;
-        opacity: .5;
       }
       .img-box{
         width: 100%;
@@ -245,11 +244,83 @@
     }
   }
 }
-
+.sc-highlights{
+  padding-top: var(--global-section-padding);
+  padding-bottom: var(--global-section-aap-padding);
+  background: rgb(29,29,31);
+  .sc-top{
+    @include flexbox(between,end);
+    padding-bottom: 80px;
+  }
+  .highlightSwiper{
+    width: 100%;
+    --high-height:680px;
+    height: var(--high-height);
+    @include resT{
+      --high-height:628px;
+    }
+    @include resM{
+      --high-height:560px;
+    }
+    @include resSM{
+      --high-height:480px;
+    }
+    .swiper-wrapper{
+      .swiper-slide{
+        border-radius: 28px;
+        background: #000;
+      }
+    }
+  }
+  .headline-typo{
+    font-size: 56px;
+    line-height: 1.07143;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    color : $sk-body-text-color;
+  }
+  .btn-film{
+    color:$sk-body-link-color;
+    @include flexbox;
+    position: relative;
+    padding-right: 25px;
+    &::before,&::after{
+      content: '';
+      position: absolute;
+      right: 0;
+    }
+    &::before{
+      right: 1px;
+      width: 18px;
+      height: 18px;
+      border: 2px solid $sk-body-link-color;
+      border-radius: 100%;
+    }
+    &::after{
+      width: 20px;
+      height: 20px;
+      background-color: $sk-body-link-color;
+      mask-image: url(../images/icons/icon_play.svg);
+      mask-repeat: no-repeat;
+    }
+  }
+  .btn-controls{
+    color: #fff;
+    display: flex;
+    width: 1000px;
+    opacity: 0;
+    // transform: scale(0.5);
+    transition: background-color 100ms linear,opacity 200ms ease-out 0ms,transform 200ms ease-out 0ms;
+    // transform: scale(1);
+    transition: background-color linear 100ms,opacity 400ms cubic-bezier(0.3,2,0.5,1) calc(var(--animation-offset)*var(--aap-stagger-fast)*1ms),transform 400ms cubic-bezier(0.3,2,0.5,1) calc(var(--animation-offset)*var(--aap-stagger-fast)*1ms);
+    
+    svg{
+      color: currentColor;
+    }
+  }
+}
 .viewport-content {
   margin: 0 auto;
-  margin-inline-start: auto;
-  margin-inline-end: auto;
   width: 87.5%;
   max-width: 1680px;
 }

@@ -128,26 +128,17 @@ $global-section-aap-padding: 216px;
 
 @media(max-width: 1068px) {
   :root {
-      --global-section-padding:128px
+      --global-section-padding:128px;
+      --global-section-aap-padding:206px;
   }
 }
 
 @media(max-width: 734px) {
   :root {
-      --global-section-padding:96px
+      --global-section-padding:96px;
+      --global-section-aap-padding:196px;
   }
 }
 
-@media(max-width: 1068px) {
-  :root {
-      --global-section-aap-padding:206px
-  }
-}
-
-@media(max-width: 734px) {
-  :root {
-      --global-section-aap-padding:196px
-  }
-}
 
 
