@@ -782,8 +782,8 @@ body.dimmed::after {
   padding-top: 189px;
   padding-bottom: var(--global-section-padding);
   overflow: hidden;
-  --intro-width:1920px;
-  --intro-height:1048px;
+  --intro-width: 1920px;
+  --intro-height: 1048px;
 }
 @media (max-width: 1440px) {
   .sc-intro .group-intro {
@@ -803,7 +803,7 @@ body.dimmed::after {
     padding-top: 81px;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 482px) {
   .sc-intro .group-intro {
     min-height: 724px;
     padding-top: 31px;
@@ -862,7 +862,7 @@ body.dimmed::after {
     margin-bottom: 29px;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 482px) {
   .sc-intro .group-intro .img-headline {
     width: 100%;
     height: 26px;
@@ -897,7 +897,7 @@ body.dimmed::after {
     --intro-height: 424px;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 482px) {
   .sc-intro .group-intro .media-area {
     --intro-width: 480px;
     --intro-height: 724px;
@@ -950,7 +950,7 @@ body.dimmed::after {
     padding-top: 92px;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 482px) {
   .sc-intro .group-intro .price-area {
     padding-top: 200px;
   }
@@ -1098,6 +1098,9 @@ body.dimmed::after {
   padding-top: var(--global-section-padding);
   padding-bottom: var(--global-section-aap-padding);
   background: rgb(29, 29, 31);
+  position: relative;
+  /* bullets 스타일 */
+  /* bullet의 프로그레스바 */
 }
 .sc-highlights .sc-top {
   display: -webkit-box;
@@ -1111,38 +1114,246 @@ body.dimmed::after {
           justify-content: space-between;
   padding-bottom: 80px;
 }
-.sc-highlights .highlightSwiper {
-  width: 100%;
-  --high-height:680px;
-  height: var(--high-height);
-}
 @media (max-width: 1068px) {
-  .sc-highlights .highlightSwiper {
-    --high-height:628px;
+  .sc-highlights .sc-top {
+    padding-bottom: 64px;
   }
 }
 @media (max-width: 734px) {
-  .sc-highlights .highlightSwiper {
-    --high-height:560px;
+  .sc-highlights .sc-top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding-bottom: 48px;
+    gap: 16px;
   }
 }
-@media (max-width: 480px) {
-  .sc-highlights .highlightSwiper {
-    --high-height:480px;
+.sc-highlights .highlights-swiper {
+  width: 100%;
+  --high-height: 740px;
+  height: var(--high-height);
+  -webkit-transition: height 0.3s;
+  transition: height 0.3s;
+}
+@media (max-width: 1068px) {
+  .sc-highlights .highlights-swiper {
+    --high-height: 628px;
   }
 }
-.sc-highlights .highlightSwiper .swiper-wrapper .swiper-slide {
+@media (max-width: 734px) {
+  .sc-highlights .highlights-swiper {
+    --high-height: 560px;
+  }
+}
+@media (max-width: 482px) {
+  .sc-highlights .highlights-swiper {
+    --high-height: 480px;
+  }
+}
+.sc-highlights .highlights-swiper .caption {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 28px;
+  line-height: 1.1428571429;
+  font-weight: 600;
+  letter-spacing: 0.007em;
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+  --caption-opacity: 0;
+  --caption-x: 100%;
+  --caption-width: 480px;
+  --caption-margin: 48px;
+  max-width: var(--caption-width);
+  opacity: var(--caption-opacity);
+  margin: var(--caption-margin);
+  -webkit-transform: translateX(var(--caption-x));
+          transform: translateX(var(--caption-x));
+}
+@media (max-width: 1068px) {
+  .sc-highlights .highlights-swiper .caption {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: 24px;
+  }
+}
+@media (max-width: 734px) {
+  .sc-highlights .highlights-swiper .caption {
+    font-size: 21px;
+  }
+}
+@media (max-width: 482px) {
+  .sc-highlights .highlights-swiper .caption {
+    --caption-width: 210px;
+    margin: 32px 25px;
+    font-size: 17px;
+  }
+}
+.sc-highlights .highlights-swiper .content-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+.sc-highlights .highlights-swiper .content-box video,
+.sc-highlights .highlights-swiper .content-box img,
+.sc-highlights .highlights-swiper .content-box picture {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.sc-highlights .highlights-swiper .swiper-wrapper .swiper-slide {
   border-radius: 28px;
   background: #000;
+  position: relative;
+  overflow: hidden;
 }
-.sc-highlights .headline-typo {
+.sc-highlights .group-control {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 75px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 280px;
+  gap: 14px;
+}
+.sc-highlights .btn-controls {
+  height: 55px;
+  aspect-ratio: 1/1;
+  color: #f5f5f7;
+  background: rgba(66, 66, 69, 0.7);
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: background-color 100ms linear, opacity 200ms ease-out 0ms, -webkit-transform 200ms ease-out 0ms;
+  transition: background-color 100ms linear, opacity 200ms ease-out 0ms, -webkit-transform 200ms ease-out 0ms;
+  transition: background-color 100ms linear, opacity 200ms ease-out 0ms, transform 200ms ease-out 0ms;
+  transition: background-color 100ms linear, opacity 200ms ease-out 0ms, transform 200ms ease-out 0ms, -webkit-transform 200ms ease-out 0ms;
+  -webkit-transition: background-color linear 100ms, opacity 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms), -webkit-transform 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms);
+  transition: background-color linear 100ms, opacity 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms), -webkit-transform 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms);
+  transition: background-color linear 100ms, opacity 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms), transform 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms);
+  transition: background-color linear 100ms, opacity 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms), transform 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms), -webkit-transform 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms);
+}
+.sc-highlights .btn-controls svg {
+  fill: currentColor;
+}
+.sc-highlights .btn-controls svg.play {
+  display: block;
+}
+.sc-highlights .btn-controls svg.pause {
+  display: none;
+}
+.sc-highlights .btn-controls svg.replay {
+  display: none;
+}
+.sc-highlights .swiper-pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: auto;
+  height: 55px;
+  position: static;
+  border-radius: 32px;
+  background: rgba(66, 66, 69, 0.7);
+  gap: 8px;
+}
+.sc-highlights .swiper-pagination-bullet {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  background-color: rgba(245, 245, 247, 0.8);
+  opacity: 1;
+  overflow: hidden;
+  -webkit-transition: width 0.7s;
+  transition: width 0.7s;
+  cursor: pointer;
+  border-radius: 20px;
+  --width:0;
+}
+.sc-highlights .swiper-pagination-bullet-active {
+  width: 48px;
+  border-radius: 20px;
+}
+.sc-highlights .swiper-pagination-bullet::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--width);
+  height: 100%;
+  background-color: rgb(245, 245, 247);
+  -webkit-transition: width 5s linear, background-color 5s;
+  transition: width 5s linear, background-color 5s;
+  border-radius: 20px;
+}
+
+.viewport-content {
+  margin: 0 auto;
+  width: 87.5%;
+  max-width: 1680px;
+}
+
+.headline-typo {
   font-size: 56px;
   line-height: 1.07143;
   font-weight: 600;
   letter-spacing: -0.005em;
   color: rgb(245, 245, 247);
 }
-.sc-highlights .btn-film {
+@media (max-width: 1068px) {
+  .headline-typo {
+    font-size: 48px;
+  }
+}
+@media (max-width: 734px) {
+  .headline-typo {
+    font-size: 32px;
+  }
+}
+@media (max-width: 482px) {
+  .headline-typo {
+    font-size: 28px;
+  }
+}
+
+.btn-film {
   color: rgb(41, 151, 255);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1156,49 +1367,39 @@ body.dimmed::after {
   position: relative;
   padding-right: 25px;
 }
-.sc-highlights .btn-film::before, .sc-highlights .btn-film::after {
+@media (max-width: 734px) {
+  .btn-film {
+    font-size: 14px;
+  }
+}
+.btn-film::before, .btn-film::after {
   content: "";
   position: absolute;
   right: 0;
+  aspect-ratio: 1/1;
 }
-.sc-highlights .btn-film::before {
+.btn-film::before {
   right: 1px;
   width: 18px;
-  height: 18px;
   border: 2px solid rgb(41, 151, 255);
   border-radius: 100%;
 }
-.sc-highlights .btn-film::after {
+@media (max-width: 734px) {
+  .btn-film::before {
+    width: 14px;
+    border-width: 1px;
+  }
+}
+.btn-film::after {
   width: 20px;
-  height: 20px;
   background-color: rgb(41, 151, 255);
   -webkit-mask-image: url(../images/icons/icon_play.svg);
           mask-image: url(../images/icons/icon_play.svg);
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
 }
-.sc-highlights .btn-controls {
-  color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 1000px;
-  opacity: 0;
-  -webkit-transition: background-color 100ms linear, opacity 200ms ease-out 0ms, -webkit-transform 200ms ease-out 0ms;
-  transition: background-color 100ms linear, opacity 200ms ease-out 0ms, -webkit-transform 200ms ease-out 0ms;
-  transition: background-color 100ms linear, opacity 200ms ease-out 0ms, transform 200ms ease-out 0ms;
-  transition: background-color 100ms linear, opacity 200ms ease-out 0ms, transform 200ms ease-out 0ms, -webkit-transform 200ms ease-out 0ms;
-  -webkit-transition: background-color linear 100ms, opacity 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms), -webkit-transform 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms);
-  transition: background-color linear 100ms, opacity 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms), -webkit-transform 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms);
-  transition: background-color linear 100ms, opacity 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms), transform 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms);
-  transition: background-color linear 100ms, opacity 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms), transform 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms), -webkit-transform 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms);
-}
-.sc-highlights .btn-controls svg {
-  color: currentColor;
-}
-
-.viewport-content {
-  margin: 0 auto;
-  width: 87.5%;
-  max-width: 1680px;
+@media (max-width: 734px) {
+  .btn-film::after {
+    width: 16px;
+  }
 }/*# sourceMappingURL=style.css.map */
