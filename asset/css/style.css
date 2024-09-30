@@ -1222,12 +1222,39 @@ body.dimmed::after {
   background: #000;
   position: relative;
   overflow: hidden;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.sc-highlights .highlights-swiper .swiper-wrapper .swiper-slide:nth-child(1) {
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+.sc-highlights .highlights-swiper .swiper-wrapper .swiper-slide:nth-child(2) {
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+}
+.sc-highlights .highlights-swiper .swiper-wrapper .swiper-slide:nth-child(3) {
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
+}
+.sc-highlights .highlights-swiper .swiper-wrapper .swiper-slide:nth-child(4) {
+  -webkit-transition-delay: 0.8s;
+          transition-delay: 0.8s;
+}
+.sc-highlights .highlights-swiper .swiper-wrapper .swiper-slide:nth-child(5) {
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+.sc-highlights .highlights-swiper .swiper-wrapper .swiper-slide:nth-child(6) {
+  -webkit-transition-delay: 1.2s;
+          transition-delay: 1.2s;
 }
 .sc-highlights .group-control {
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  z-index: 1;
   bottom: 75px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1267,15 +1294,10 @@ body.dimmed::after {
 }
 .sc-highlights .btn-controls svg {
   fill: currentColor;
+  display: none;
 }
-.sc-highlights .btn-controls svg.play {
+.sc-highlights .btn-controls svg.active {
   display: block;
-}
-.sc-highlights .btn-controls svg.pause {
-  display: none;
-}
-.sc-highlights .btn-controls svg.replay {
-  display: none;
 }
 .sc-highlights .swiper-pagination {
   display: -webkit-box;
@@ -1319,8 +1341,8 @@ body.dimmed::after {
   width: var(--width);
   height: 100%;
   background-color: rgb(245, 245, 247);
-  -webkit-transition: width 5s linear, background-color 5s;
-  transition: width 5s linear, background-color 5s;
+  -webkit-transition: width 7s linear, background-color 7s ease-in;
+  transition: width 7s linear, background-color 7s ease-in;
   border-radius: 20px;
 }
 
@@ -1366,6 +1388,9 @@ body.dimmed::after {
           justify-content: center;
   position: relative;
   padding-right: 25px;
+}
+.btn-film:hover {
+  text-decoration: underline;
 }
 @media (max-width: 734px) {
   .btn-film {

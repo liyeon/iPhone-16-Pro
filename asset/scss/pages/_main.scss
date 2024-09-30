@@ -384,6 +384,12 @@
         background: #000;
         position: relative;
         overflow: hidden;
+        transition: opacity .3s;
+      }
+      @for $i from 1 through 6 {
+        .swiper-slide:nth-child(#{$i}) {
+          transition-delay: #{0.2 * $i}s;
+        }
       }
     }
   }
@@ -391,12 +397,14 @@
 
   .group-control {
     @include pos-center-x;
+    z-index: 1;
     bottom: 75px;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 280px;
     gap: 14px;
+
   }
 
   .btn-controls {
@@ -414,17 +422,9 @@
 
     svg {
       fill: currentColor;
-
-      &.play {
+      display: none;
+      &.active{
         display: block;
-      }
-
-      &.pause {
-        display: none;
-      }
-
-      &.replay {
-        display: none;
       }
     }
   }
@@ -463,11 +463,13 @@
     left: 0;
     width: var(--width);
     height: 100%;
+    // background-color: rgb(255, 0, 0);
     background-color: rgb(245, 245, 247);
-    transition: width 5s linear, background-color 5s;
+    transition: width 7s linear, background-color 7s ease-in;
     border-radius: 20px;
   }
 }
+
 
 .viewport-content {
   margin: 0 auto;
@@ -500,7 +502,9 @@
   @include flexbox;
   position: relative;
   padding-right: 25px;
-
+  &:hover{
+    text-decoration: underline;
+  }
   @include resM {
     font-size: 14px;
   }
