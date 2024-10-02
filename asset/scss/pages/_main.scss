@@ -487,37 +487,26 @@
 .sc-closer {
   padding-top: var(--global-section-padding);
   padding-bottom: var(--global-section-padding);
-
+  overflow: hidden;
   .group-product {
-    position: relative;
-    --p-width: 1260px;
-    --p-height: 680px;
-    --product-viewer-height: var(--p-height)
-  }
-
-  @media(min-width: 1441px)and (min-width:1441px) {
-    html.no-enhanced-rt .section-product-viewer {
-      --p-width: 1680px;
-      --p-height: 740px
-    }
-  }
-
-  @media(max-width: 1068px)and (max-width:1068px) {
-    html.no-enhanced-rt .section-product-viewer {
+    @include pos-center-x;
+    width: var(--p-width);
+    height: var(--p-height);
+    --p-width: 1680px;
+    --p-height: 740px;
+    @include resD  {
+      --p-width: 1260px;
+      --p-height: 680px;
+    } 
+    @include resT{
       --p-width: 1068px;
       --p-height: 628px
     }
-  }
-
-  @media(max-width: 734px)and (max-width:734px) {
-    html.no-enhanced-rt .section-product-viewer {
+    @include resM{
       --p-width: 734px;
       --p-height: 560px
     }
-  }
-
-  @media(max-width: 480px)and (max-width:480px) {
-    html.no-enhanced-rt .section-product-viewer {
+    @include resSM{
       --p-width: 480px;
       --p-height: 480px
     }
@@ -525,7 +514,12 @@
 
   .product-item {
     display: none;
-
+    
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
     &#product1 {
       display: block;
     }
