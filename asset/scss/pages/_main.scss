@@ -486,12 +486,15 @@
 
 .sc-closer {
   padding-top: var(--global-section-padding);
-  padding-bottom: var(--global-section-padding);
+  padding-bottom: var(--global-section-aap-padding);
   overflow: hidden;
   .group-product {
-    @include pos-center-x;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
     width: var(--p-width);
     height: var(--p-height);
+    overflow-x: hidden;
     --p-width: 1680px;
     --p-height: 740px;
     @include resD  {
@@ -513,81 +516,105 @@
   }
 
   .product-item {
-    display: none;
-    
-    img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-    &#product1 {
-      display: block;
-    }
-  }
-}
 
-.group-nav {
-  @include pos-center-x;
-  background: #f76161;
-  @include column-flexbox;
-  gap: 10px;
-  .product-name {
-    font-size: 12px;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-    padding: 4px 6px;
-    max-width: 87.5vw;
-    text-align: center;
-    span {
-      display: none;
-      &:last-child{
-        display: block;
-      }
+    &.on {
+      opacity: 1;
     }
   }
 
-  .product-nav {
-    display: flex;
-    width: 220px;
-    height: 55px;
-    background: #2dffa8;
-    a {
-      border: 2px solid rgba(0, 0, 0, 0);
-      border-radius: 50%;
-      box-sizing: border-box;
-      display: inline-flex;
-      margin-bottom: 2.7em;
-      width: 28px;
-      height: 28px;
-      position: relative;
+  .group-nav {
+    @include pos-center-x;
+    @include column-flexbox;
+    gap: 10px;
 
-      ::after {
-        content: "";
-        display: block;
-        position: absolute;
-        height: inherit;
-        width: inherit;
-        --colornav-swatch-size: 28px;
-        --colornav-border-color: conic-gradient(from 90deg, rgba(255, 255, 255, 0.08) 0deg, rgba(255, 255, 255, 0.48) 64.8deg, rgba(255, 255, 255, 0.48) 115.2deg, rgba(255, 255, 255, 0.08) 180deg, rgba(255, 255, 255, 0) 208.8deg, rgba(255, 255, 255, 0) 331.2deg, rgba(255, 255, 255, 0.08) 360deg);
-        background-image: var(--colornav-border-color);
-        mask-image: radial-gradient(circle at 50%, at 50%, transparent calc(var(--colornav-swatch-size) / 2 - 1.5px), black calc(var(--colornav-swatch-size) / 2 - 0.5px));
-        mask-image: radial-gradient(circle at 50% 50%, transparent calc(var(--colornav-swatch-size) / 2 - 1.5px), black calc(var(--colornav-swatch-size) / 2 - 0.5px));
-        mask-size: 100% 100%;
-        mask-clip: initial;
-        border-radius: inherit;
-      }
+    .product-name {
+      font-size: 12px;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 5px;
+      padding: 4px 6px;
+      max-width: 87.5vw;
+      text-align: center;
 
       span {
-        background: conic-gradient(from 0deg at 50%, at 50%, #202121 0%, #dbdad7 25%, #a6a198 50%, #a8907e 75%, #202121 100%);
-        background: conic-gradient(from 0deg at 50% 50%, #202121 0%, #dbdad7 25%, #a6a198 50%, #a8907e 75%, #202121 100%);
-        background-position: 50%;
-        background-repeat: no-repeat;
-        background-size: 100%;
+        display: none;
+
+        &.on {
+          display: block;
+        }
+      }
+    }
+
+    .product-tab-list {
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      justify-content: space-between;
+      width: 220px;
+      height: 55px;
+      background: rgba(66, 66, 69, 0.7);
+      border-radius: 35px;
+
+      .product-tab-item {
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        position: relative;
+        overflow: hidden;
+        --product-bg: #000;
+        cursor: pointer;
+
+        &.active {
+          border: 2px solid rgb(245, 245, 247);
+        }
+
+        &::before {
+          content: '';
+          @include pos-center;
+          width: 28px;
+          aspect-ratio: 1/1;
+          border-radius: 100%;
+          z-index: 1;
+          background: var(--product-bg);
+          box-shadow: 0px -1px 0px 0px rgba(255, 255, 255, 0.3) inset;
+        }
+      }
+
+      [data-tab="#product1"] {
+        --product-bg: conic-gradient(from 0deg at 50% 50%, #202121 0%, #dbdad7 25%, #a6a198 50%, #a8907e 75%, #202121 100%);
+      }
+
+      [data-tab="#product2"] {
+        --product-bg: #181919;
+      }
+
+      [data-tab="#product3"] {
+        --product-bg: #d3d1cd;
+      }
+
+      [data-tab="#product4"] {
+        --product-bg: #959086;
+      }
+
+      [data-tab="#product5"] {
+        --product-bg: #977e6b;
       }
     }
   }
 }
+
 
 .viewport-content {
   margin: 0 auto;
