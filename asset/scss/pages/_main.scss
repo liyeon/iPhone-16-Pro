@@ -494,7 +494,7 @@
     transform: translateX(-50%);
     width: var(--p-width);
     height: var(--p-height);
-    overflow-x: hidden;
+    overflow: hidden;
     --p-width: 1680px;
     --p-height: 740px;
     @include resD  {
@@ -615,6 +615,10 @@
   }
 }
 
+.sc-titanium{
+  padding-top: var(--global-section-padding);
+  // background: radial-gradient(100% 50% at center,#2c201a,#000);
+}
 
 .viewport-content {
   margin: 0 auto;
@@ -645,7 +649,26 @@
     font-size: 28px;
   }
 }
+.headline-filter{
+  text-align: center;
+  color: #c8c2bd;
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 72px;
+  @include resT {
+    font-size: 64px;
+  }
+  
+  @include resM {
+    font-size:40px;
+  }
 
+  .filter{
+    padding: 80px 0;
+    color: #fff;
+  }
+}
 .btn-film {
   color: $sk-body-link-color;
   @include flexbox;

@@ -1374,7 +1374,7 @@ body.dimmed::after {
           transform: translateX(-50%);
   width: var(--p-width);
   height: var(--p-height);
-  overflow-x: hidden;
+  overflow: hidden;
   --p-width: 1680px;
   --p-height: 740px;
 }
@@ -1515,6 +1515,10 @@ body.dimmed::after {
   --product-bg: #977e6b;
 }
 
+.sc-titanium {
+  padding-top: var(--global-section-padding);
+}
+
 .viewport-content {
   margin: 0 auto;
   width: 87.5%;
@@ -1547,6 +1551,29 @@ body.dimmed::after {
   .headline-typo {
     font-size: 28px;
   }
+}
+
+.headline-filter {
+  text-align: center;
+  color: #c8c2bd;
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 72px;
+}
+@media (max-width: 1068px) {
+  .headline-filter {
+    font-size: 64px;
+  }
+}
+@media (max-width: 734px) {
+  .headline-filter {
+    font-size: 40px;
+  }
+}
+.headline-filter .filter {
+  padding: 80px 0;
+  color: #fff;
 }
 
 .btn-film {
