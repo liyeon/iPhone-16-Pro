@@ -1102,7 +1102,7 @@ body.dimmed::after {
   /* bullets 스타일 */
   /* bullet의 프로그레스바 */
 }
-.sc-highlights .sc-top {
+.sc-highlights .group-top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1114,16 +1114,16 @@ body.dimmed::after {
           justify-content: space-between;
   padding-bottom: 80px;
 }
-.sc-highlights .sc-top .headline-typo {
+.sc-highlights .group-top .headline-typo {
   padding-bottom: 0;
 }
 @media (max-width: 1068px) {
-  .sc-highlights .sc-top {
+  .sc-highlights .group-top {
     padding-bottom: 64px;
   }
 }
 @media (max-width: 734px) {
-  .sc-highlights .sc-top {
+  .sc-highlights .group-top {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1517,6 +1517,158 @@ body.dimmed::after {
 
 .sc-titanium {
   padding-top: var(--global-section-padding);
+}
+.sc-titanium .group-media {
+  margin: 0 auto;
+}
+.sc-titanium .group-media .video-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.sc-titanium .group-gradient {
+  background: radial-gradient(100% 50% at center, #2c201a, #000);
+}
+.sc-titanium .group-gradient .viewport-content .typography-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 15vh 15vw;
+  gap: 15vw;
+  font-size: 21px;
+  line-height: 1.4;
+  letter-spacing: 0.011em;
+}
+@media (max-width: 1440px) {
+  .sc-titanium .group-gradient .viewport-content .typography-area {
+    margin: 15vh 6vw;
+  }
+}
+@media (max-width: 1068px) {
+  .sc-titanium .group-gradient .viewport-content .typography-area {
+    font-size: 17px;
+    margin: 7.41vh 4.8vw;
+    gap: 11vw;
+  }
+}
+@media (max-width: 734px) {
+  .sc-titanium .group-gradient .viewport-content .typography-area {
+    margin: 7vh 8vw;
+    font-size: 19px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 8vw;
+    line-height: 1.2;
+  }
+}
+@media (max-width: 482px) {
+  .sc-titanium .group-gradient .viewport-content .typography-area {
+    font-size: 17px;
+  }
+}
+.sc-titanium .group-gradient .viewport-content .typography-area .typography {
+  font-weight: 600;
+  color: rgb(134, 134, 139);
+}
+.sc-titanium .group-gradient .viewport-content .typography-area .typography strong {
+  color: rgb(245, 245, 247);
+}
+.sc-titanium .group-gradient .display-area {
+  position: relative;
+  padding-bottom: 90px;
+}
+@media (max-width: 1068px) {
+  .sc-titanium .group-gradient .display-area {
+    padding-bottom: 70px;
+  }
+}
+@media (max-width: 734px) {
+  .sc-titanium .group-gradient .display-area {
+    padding-bottom: 60px;
+  }
+}
+.sc-titanium .group-gradient .display-area .display-swiper .swiper-wrapper {
+  margin-left: -25%;
+}
+@media (max-width: 1068px) {
+  .sc-titanium .group-gradient .display-area .display-swiper .swiper-wrapper {
+    margin-left: -15%;
+  }
+}
+.sc-titanium .group-gradient .display-area .display-swiper .swiper-wrapper .swiper-slide {
+  width: 550px;
+}
+@media (max-width: 1440px) {
+  .sc-titanium .group-gradient .display-area .display-swiper .swiper-wrapper .swiper-slide {
+    width: 520px;
+  }
+}
+@media (max-width: 1068px) {
+  .sc-titanium .group-gradient .display-area .display-swiper .swiper-wrapper .swiper-slide {
+    width: 462px;
+  }
+}
+@media (max-width: 734px) {
+  .sc-titanium .group-gradient .display-area .display-swiper .swiper-wrapper .swiper-slide {
+    width: 295px;
+  }
+}
+.sc-titanium .group-gradient .display-area .display-swiper .swiper-wrapper .swiper-slide figure .thumb {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 18px;
+  overflow: hidden;
+}
+.sc-titanium .group-gradient .display-area .display-swiper .swiper-wrapper .swiper-slide figure figcaption {
+  font-size: 17px;
+  line-height: 1.4705882353;
+  font-weight: 600;
+  letter-spacing: -0.022em;
+  padding: 32px 5px 20px 34px;
+  font-family: "SF Pro Text";
+  width: 70%;
+  background: linear-gradient(90deg, #efcdbb, #dab8a4 50%, #a3735e calc(100% - 5px), rgba(0, 0, 0, 0) calc(100% - 4px));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+@media (max-width: 734px) {
+  .sc-titanium .group-gradient .display-area .display-swiper .swiper-wrapper .swiper-slide figure figcaption {
+    width: 80%;
+    font-size: 14px;
+    padding: 20px 5px 0px 34px;
+  }
+}
+.sc-titanium .group-gradient .display-area .swiper-navigation {
+  position: absolute;
+  right: 6%;
+  bottom: 0;
+  width: 90px;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+}
+.sc-titanium .group-gradient .display-area .swiper-navigation .swiper-button-next, .sc-titanium .group-gradient .display-area .swiper-navigation .swiper-button-prev {
+  position: static;
+  width: 36px;
+  height: 36px;
+  background-color: rgba(66, 66, 69, 0.72);
+  border-radius: 100%;
+}
+.sc-titanium .group-gradient .display-area .swiper-navigation .swiper-button-next::after, .sc-titanium .group-gradient .display-area .swiper-navigation .swiper-button-prev::after {
+  font-size: 12px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .viewport-content {

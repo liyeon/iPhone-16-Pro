@@ -294,7 +294,7 @@
   background: rgb(29, 29, 31);
   position: relative;
 
-  .sc-top {
+  .group-top {
     @include flexbox(between, end);
     padding-bottom: 80px;
 
@@ -488,6 +488,7 @@
   padding-top: var(--global-section-padding);
   padding-bottom: var(--global-section-aap-padding);
   overflow: hidden;
+
   .group-product {
     position: relative;
     left: 50%;
@@ -497,19 +498,23 @@
     overflow: hidden;
     --p-width: 1680px;
     --p-height: 740px;
-    @include resD  {
+
+    @include resD {
       --p-width: 1260px;
       --p-height: 680px;
-    } 
-    @include resT{
+    }
+
+    @include resT {
       --p-width: 1068px;
       --p-height: 628px
     }
-    @include resM{
+
+    @include resM {
       --p-width: 734px;
       --p-height: 560px
     }
-    @include resSM{
+
+    @include resSM {
       --p-width: 480px;
       --p-height: 480px
     }
@@ -523,6 +528,7 @@
     height: 100%;
     opacity: 0;
     transition: opacity 0.5s ease;
+
     img {
       width: 100%;
       height: 100%;
@@ -615,9 +621,140 @@
   }
 }
 
-.sc-titanium{
+.sc-titanium {
   padding-top: var(--global-section-padding);
-  // background: radial-gradient(100% 50% at center,#2c201a,#000);
+
+  .group-media {
+    margin: 0 auto;
+
+    .video-area {
+      @include flexbox;
+    }
+  }
+
+  .group-gradient {
+    background: radial-gradient(100% 50% at center, #2c201a, #000);
+
+    .viewport-content .typography-area {
+      display: flex;
+      margin: 15vh 15vw;
+      gap: 15vw;
+      font-size: 21px;
+      line-height: 1.4;
+      letter-spacing: .011em;
+
+      @include resD {
+        margin: 15vh 6vw;
+      }
+
+      @include resT {
+        font-size: 17px;
+        margin: 7.41vh 4.8vw;
+        gap: 11vw;
+      }
+
+      @include resM {
+        margin: 7vh 8vw;
+        font-size: 19px;
+        flex-direction: column;
+        gap: 8vw;
+        line-height: 1.2;
+      }
+
+      @include resSM {
+        font-size: 17px;
+      }
+
+      .typography {
+        font-weight: 600;
+        color: rgb(134, 134, 139);
+
+        strong {
+          color: rgb(245, 245, 247);
+        }
+      }
+    }
+
+    .display-area {
+      position: relative;
+      padding-bottom: 90px;
+      @include resT{
+        padding-bottom: 70px;
+      }
+      @include resM{
+        padding-bottom: 60px;
+      }
+      .display-swiper {
+        .swiper-wrapper {
+          margin-left: -25%;
+          @include resT{
+            margin-left: -15%;
+          }
+          .swiper-slide {
+            width: 550px;
+            @include resD{
+              width: 520px;
+            }
+            @include resT{
+              width: 462px;
+            }
+            @include resM{
+              width: 295px;
+            }
+            figure {
+              .thumb {
+                width: 100%;
+                aspect-ratio: 1/1;
+                border-radius: 18px;
+                overflow: hidden;
+              }
+              figcaption {
+                font-size: 17px;
+                line-height: 1.4705882353;
+                font-weight: 600;
+                letter-spacing: -0.022em;
+                padding: 32px 5px 20px 34px;
+                font-family: 'SF Pro Text';
+                width: 70%;
+                background: linear-gradient(90deg, #efcdbb, #dab8a4 50%, #a3735e calc(100% - 5px), rgba(0, 0, 0, 0) calc(100% - 4px));
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+                @include resM{
+                  width: 80%;
+                  font-size: 14px;
+                  padding: 20px 5px 0px 34px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .swiper-navigation{
+        position: absolute;
+        right: 6%;
+        bottom: 0;
+        width: 90px;
+        height: auto;
+        display: flex;
+        gap: 15px;
+        .swiper-button-next,.swiper-button-prev{
+          position: static;
+          width: 36px;
+          height: 36px;
+          background-color: rgba(66,66,69,0.72);
+          border-radius: 100%;
+        }
+        .swiper-button-next::after,.swiper-button-prev::after{
+          font-size: 12px;
+          font-weight: bold;
+          color: rgba(255,255,255,0.8);
+        }
+      }
+    }
+  }
+
+
 }
 
 .viewport-content {
@@ -649,26 +786,29 @@
     font-size: 28px;
   }
 }
-.headline-filter{
+
+.headline-filter {
   text-align: center;
   color: #c8c2bd;
   font-size: 80px;
   font-weight: 600;
   line-height: 1.1;
   margin-bottom: 72px;
+
   @include resT {
     font-size: 64px;
   }
-  
+
   @include resM {
-    font-size:40px;
+    font-size: 40px;
   }
 
-  .filter{
+  .filter {
     padding: 80px 0;
     color: #fff;
   }
 }
+
 .btn-film {
   color: $sk-body-link-color;
   @include flexbox;
