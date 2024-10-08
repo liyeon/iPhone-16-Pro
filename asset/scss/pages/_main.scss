@@ -639,68 +639,55 @@
       display: flex;
       margin: 15vh 15vw;
       gap: 15vw;
-      font-size: 21px;
-      line-height: 1.4;
-      letter-spacing: .011em;
-
       @include resD {
         margin: 15vh 6vw;
       }
-
       @include resT {
-        font-size: 17px;
         margin: 7.41vh 4.8vw;
         gap: 11vw;
       }
-
       @include resM {
         margin: 7vh 8vw;
-        font-size: 19px;
         flex-direction: column;
         gap: 8vw;
-        line-height: 1.2;
-      }
-
-      @include resSM {
-        font-size: 17px;
-      }
-
-      .typography {
-        font-weight: 600;
-        color: rgb(134, 134, 139);
-
-        strong {
-          color: rgb(245, 245, 247);
-        }
       }
     }
 
     .display-area {
       position: relative;
       padding-bottom: 90px;
-      @include resT{
+
+      @include resT {
         padding-bottom: 70px;
       }
-      @include resM{
+
+      @include resM {
         padding-bottom: 60px;
       }
+
       .display-swiper {
         .swiper-wrapper {
           margin-left: -25%;
-          @include resT{
+
+          @include resT {
             margin-left: -15%;
           }
+
           .swiper-slide {
             width: 550px;
-            @include resD{
+
+            @include resD {
               width: 520px;
             }
-            @include resT{
+
+            @include resT {
               width: 462px;
             }
-            @include resM{
+
+            @include resM {
               width: 295px;
             }
+
             figure {
               .thumb {
                 width: 100%;
@@ -708,6 +695,7 @@
                 border-radius: 18px;
                 overflow: hidden;
               }
+
               figcaption {
                 font-size: 17px;
                 line-height: 1.4705882353;
@@ -720,7 +708,8 @@
                 background-clip: text;
                 -webkit-background-clip: text;
                 color: transparent;
-                @include resM{
+
+                @include resM {
                   width: 80%;
                   font-size: 14px;
                   padding: 20px 5px 0px 34px;
@@ -730,7 +719,8 @@
           }
         }
       }
-      .swiper-navigation{
+
+      .swiper-navigation {
         position: absolute;
         right: 6%;
         bottom: 0;
@@ -738,23 +728,81 @@
         height: auto;
         display: flex;
         gap: 15px;
-        .swiper-button-next,.swiper-button-prev{
+
+        .swiper-button-next,
+        .swiper-button-prev {
           position: static;
           width: 36px;
           height: 36px;
-          background-color: rgba(66,66,69,0.72);
+          background-color: rgba(66, 66, 69, 0.72);
           border-radius: 100%;
         }
-        .swiper-button-next::after,.swiper-button-prev::after{
+
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
           font-size: 12px;
           font-weight: bold;
-          color: rgba(255,255,255,0.8);
+          color: rgba(255, 255, 255, 0.8);
         }
       }
     }
   }
 
 
+}
+
+.sc-intelligence{
+  padding-top: var(--global-section-padding);
+  .group-header{
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;   
+    overflow: hidden;
+    .typo-area{
+      @include resM{
+        scale: 1.5;
+        margin-bottom: 50px;
+      }
+    }
+    .hand-area{}
+  }
+  .group-typo{
+    .typography-area{
+      margin: 0 auto;
+      max-width: 50%;
+      margin-top: 80px;
+      @include resM{
+        max-width: 83%;
+      }
+      .typography{
+        text-align: center;
+      }
+    }
+  }
+}
+
+.typography-area {
+  font-size: 21px;
+  line-height: 1.4;
+  letter-spacing: .011em;
+  @include resT {
+    font-size: 17px;
+  }
+  @include resM {
+    font-size: 19px;
+    line-height: 1.2;
+  }
+  @include resSM {
+    font-size: 17px;
+  }
+  .typography {
+    font-weight: 600;
+    color: rgb(134, 134, 139);
+    strong {
+      color: rgb(245, 245, 247);
+    }
+  }
 }
 
 .viewport-content {
@@ -807,6 +855,10 @@
     padding: 80px 0;
     color: #fff;
   }
+}
+
+.filter-container {
+  display: none;
 }
 
 .btn-film {

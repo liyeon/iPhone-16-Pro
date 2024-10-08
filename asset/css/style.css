@@ -1541,9 +1541,6 @@ body.dimmed::after {
   display: flex;
   margin: 15vh 15vw;
   gap: 15vw;
-  font-size: 21px;
-  line-height: 1.4;
-  letter-spacing: 0.011em;
 }
 @media (max-width: 1440px) {
   .sc-titanium .group-gradient .viewport-content .typography-area {
@@ -1552,7 +1549,6 @@ body.dimmed::after {
 }
 @media (max-width: 1068px) {
   .sc-titanium .group-gradient .viewport-content .typography-area {
-    font-size: 17px;
     margin: 7.41vh 4.8vw;
     gap: 11vw;
   }
@@ -1560,26 +1556,12 @@ body.dimmed::after {
 @media (max-width: 734px) {
   .sc-titanium .group-gradient .viewport-content .typography-area {
     margin: 7vh 8vw;
-    font-size: 19px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 8vw;
-    line-height: 1.2;
   }
-}
-@media (max-width: 482px) {
-  .sc-titanium .group-gradient .viewport-content .typography-area {
-    font-size: 17px;
-  }
-}
-.sc-titanium .group-gradient .viewport-content .typography-area .typography {
-  font-weight: 600;
-  color: rgb(134, 134, 139);
-}
-.sc-titanium .group-gradient .viewport-content .typography-area .typography strong {
-  color: rgb(245, 245, 247);
 }
 .sc-titanium .group-gradient .display-area {
   position: relative;
@@ -1658,17 +1640,85 @@ body.dimmed::after {
   display: flex;
   gap: 15px;
 }
-.sc-titanium .group-gradient .display-area .swiper-navigation .swiper-button-next, .sc-titanium .group-gradient .display-area .swiper-navigation .swiper-button-prev {
+.sc-titanium .group-gradient .display-area .swiper-navigation .swiper-button-next,
+.sc-titanium .group-gradient .display-area .swiper-navigation .swiper-button-prev {
   position: static;
   width: 36px;
   height: 36px;
   background-color: rgba(66, 66, 69, 0.72);
   border-radius: 100%;
 }
-.sc-titanium .group-gradient .display-area .swiper-navigation .swiper-button-next::after, .sc-titanium .group-gradient .display-area .swiper-navigation .swiper-button-prev::after {
+.sc-titanium .group-gradient .display-area .swiper-navigation .swiper-button-next::after,
+.sc-titanium .group-gradient .display-area .swiper-navigation .swiper-button-prev::after {
   font-size: 12px;
   font-weight: bold;
   color: rgba(255, 255, 255, 0.8);
+}
+
+.sc-intelligence {
+  padding-top: var(--global-section-padding);
+}
+.sc-intelligence .group-header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+@media (max-width: 734px) {
+  .sc-intelligence .group-header .typo-area {
+    scale: 1.5;
+    margin-bottom: 50px;
+  }
+}
+.sc-intelligence .group-typo .typography-area {
+  margin: 0 auto;
+  max-width: 50%;
+  margin-top: 80px;
+}
+@media (max-width: 734px) {
+  .sc-intelligence .group-typo .typography-area {
+    max-width: 83%;
+  }
+}
+.sc-intelligence .group-typo .typography-area .typography {
+  text-align: center;
+}
+
+.typography-area {
+  font-size: 21px;
+  line-height: 1.4;
+  letter-spacing: 0.011em;
+}
+@media (max-width: 1068px) {
+  .typography-area {
+    font-size: 17px;
+  }
+}
+@media (max-width: 734px) {
+  .typography-area {
+    font-size: 19px;
+    line-height: 1.2;
+  }
+}
+@media (max-width: 482px) {
+  .typography-area {
+    font-size: 17px;
+  }
+}
+.typography-area .typography {
+  font-weight: 600;
+  color: rgb(134, 134, 139);
+}
+.typography-area .typography strong {
+  color: rgb(245, 245, 247);
 }
 
 .viewport-content {
@@ -1726,6 +1776,10 @@ body.dimmed::after {
 .headline-filter .filter {
   padding: 80px 0;
   color: #fff;
+}
+
+.filter-container {
+  display: none;
 }
 
 .btn-film {
