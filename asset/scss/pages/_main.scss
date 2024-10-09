@@ -639,13 +639,16 @@
       display: flex;
       margin: 15vh 15vw;
       gap: 15vw;
+
       @include resD {
         margin: 15vh 6vw;
       }
+
       @include resT {
         margin: 7.41vh 4.8vw;
         gap: 11vw;
       }
+
       @include resM {
         margin: 7vh 8vw;
         flex-direction: column;
@@ -702,7 +705,6 @@
                 font-weight: 600;
                 letter-spacing: -0.022em;
                 padding: 32px 5px 20px 34px;
-                font-family: 'SF Pro Text';
                 width: 70%;
                 background: linear-gradient(90deg, #efcdbb, #dab8a4 50%, #a3735e calc(100% - 5px), rgba(0, 0, 0, 0) calc(100% - 4px));
                 background-clip: text;
@@ -751,32 +753,317 @@
 
 }
 
-.sc-intelligence{
+.sc-intelligence {
   padding-top: var(--global-section-padding);
-  .group-header{
+
+  .group-header {
     width: 100%;
     display: flex;
-    flex-direction: column; 
-    align-items: center;   
+    flex-direction: column;
+    align-items: center;
     overflow: hidden;
-    .typo-area{
-      @include resM{
+
+    .typo-area {
+      @include resM {
         scale: 1.5;
         margin-bottom: 50px;
       }
     }
-    .hand-area{}
+
+    .hand-area {}
   }
-  .group-typo{
-    .typography-area{
+
+  .group-typo {
+    .typography-area {
       margin: 0 auto;
       max-width: 50%;
       margin-top: 80px;
-      @include resM{
+
+      @include resM {
         max-width: 83%;
       }
-      .typography{
+
+      .typography {
         text-align: center;
+      }
+    }
+  }
+
+  .group-gallery {
+    padding-top: var(--global-section-padding);
+
+    .gallery-tab-list {
+      width: 80%;
+      margin: 0 auto;
+      @include flexbox;
+      gap: 25px;
+
+      @include resT {
+        display: none;
+      }
+
+      .gallery-tab-item {
+        display: flex;
+
+        &.active {
+          a {
+            color: #fff;
+            border-color: #fff;
+          }
+        }
+
+        a {
+          text-align: center;
+          color: #86868b;
+          border-bottom: 1px solid #86868b;
+          padding: 10px 32px 13px;
+        }
+      }
+    }
+
+    .gallery-item-area {
+      margin: 0 auto;
+      width: 70%;
+
+      @include resSM {
+        width: 90%;
+      }
+
+      .gallery-item {
+        @include resT {
+          margin-top: 70px;
+        }
+
+        &#gallery1 .box {
+          &:nth-child(2) {
+            background-image: url(../images/apple-intelligence/productivity.jpg);
+            background-size: 650px;
+            background-position-y: calc(100% - 50px);
+
+            @include resM {
+              background-size: 500px;
+            }
+          }
+
+          &:nth-child(3) {
+            background-image: url(../images/apple-intelligence/productivity_inbox.jpg);
+          }
+        }
+
+        &#gallery2 .box {
+          &:nth-child(2) {
+            background-image: url(../images/apple-intelligence/express_playground.jpg);
+            background-size: 188px 136px;
+            background-position-y: calc(100% - 20px);
+          }
+
+          &:nth-child(3) {
+            background-image: url(../images/apple-intelligence/express_clean.jpg);
+          }
+        }
+
+        &#gallery3 .box {
+          &:nth-child(2) {
+            background-image: url(../images/apple-intelligence/siri_language.jpg);
+            background-size: 118px 105px;
+            background-position-y: calc(100% - 40px);
+
+            @include resM {
+              background-position-y: calc(100% - 30px);
+            }
+          }
+
+          &:nth-child(3) {
+            background-image: url(../images/apple-intelligence/siri_instructions.jpg);
+          }
+        }
+
+        .typo-wrap {
+          text-align: center;
+
+          .title {
+            display: none;
+
+            @include resT {
+              display: block;
+              font-size: 14px;
+            }
+          }
+
+          .desc {
+            max-width: 50%;
+            font-size: 21px;
+            margin: 30px auto;
+            // opacity: 0;
+            transition: opacity 500ms ease-out;
+
+            @include resT {
+              margin: 0 auto 30px;
+              font-size: 17px;
+            }
+
+            @include resM {
+              font-size: 19px;
+              max-width: 100%;
+            }
+          }
+        }
+
+        .item-wrap {
+          display: grid;
+          gap: 24px;
+          grid-template-areas:
+            "box1 box2"
+            "box1 box3";
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 330px 330px;
+          width: 100%;
+          min-width: 280px;
+
+          @include resT {
+            grid-template-areas:
+              "box1"
+              "box2"
+              "box3";
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+          }
+
+          .box {
+            background: #000;
+            border-radius: 18px;
+            padding: 40px 0;
+            @include column-flexbox;
+            gap: 20px;
+
+            &-desc {
+              width: 65%;
+              font-size: 14px;
+              line-height: 1.2857742857;
+              text-align: center;
+              color: #86868b;
+
+              @include resT {
+                padding: 0 24px;
+                width: 85%;
+              }
+
+              strong {
+                color: #f5f5f7;
+              }
+            }
+
+            &:nth-child(1) {
+              grid-area: box1;
+
+              .frame {
+                position: relative;
+                width: 220px;
+                aspect-ratio: 9/19;
+                border-radius: 50px;
+                overflow: hidden;
+
+                @include resT {
+                  width: 162px;
+                  border-radius: 32px;
+                }
+
+                .inside-item,
+                .frame-item {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                }
+
+                .frame-item {
+                  z-index: 1;
+                }
+
+                .inside-item {
+                  top: 5px;
+                  height: 97%;
+                }
+              }
+            }
+
+            &:nth-child(2) {
+              grid-area: box2;
+            }
+
+            &:nth-child(3) {
+              grid-area: box3;
+              background-size: 150px;
+              background-position-y: 170px;
+
+              @include resT {
+                background-position-y: 120px;
+                background-size: 209px;
+              }
+
+              @include resM {
+                background-position-y: 180px;
+                background-size: 150px;
+              }
+            }
+
+            &:not(:first-child) {
+              padding-bottom: 200px;
+              background-repeat: no-repeat;
+              background-position-x: center;
+
+              @include resM {
+                padding-bottom: 150px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .group-privacy {
+    padding: var(--global-section-padding) 0;
+    .headline {
+      margin: 0 auto;
+      padding-top: 120px;
+      max-width: 50%;
+      font-size: 48px;
+      line-height: 1.0834933333;
+      font-weight: 600;
+      text-align: center;
+      background-image: url(../images/apple-intelligence/icon_privacy.png);
+      background-repeat: no-repeat;
+      background-size: 62px 82px;
+      background-position: center top;
+      @include resT{
+        font-size: 40px;
+      }
+      @include resM{
+        font-size: 32px;
+        max-width: 60%;
+      }
+      @include resSM{
+        text-align: left;
+        background-position: left top;
+      }
+    }
+    .viewport-content{
+      max-width: 50%;
+      @include resT{
+        max-width: 70%;
+      }
+    }
+    .typography-area{
+      margin: 40px 0;
+      font-size: 17px;
+      display: flex;
+      gap: 40px;
+      @include resM{
+        margin-top: 24px;
+        flex-direction: column;
+        gap: 10px;text-align: center;
       }
     }
   }
@@ -786,19 +1073,24 @@
   font-size: 21px;
   line-height: 1.4;
   letter-spacing: .011em;
+
   @include resT {
     font-size: 17px;
   }
+
   @include resM {
     font-size: 19px;
     line-height: 1.2;
   }
+
   @include resSM {
     font-size: 17px;
   }
+
   .typography {
     font-weight: 600;
     color: rgb(134, 134, 139);
+
     strong {
       color: rgb(245, 245, 247);
     }
@@ -852,7 +1144,7 @@
   }
 
   .filter {
-    padding: 80px 0;
+    padding: 80px;
     color: #fff;
   }
 }
@@ -861,6 +1153,24 @@
   display: none;
 }
 
+.link-more{
+  color: $sk-body-link-color;
+  @include flexbox;
+  gap: 5px;
+  position: relative;
+  &::after {
+    content: '';
+    margin-top: 5px;
+    width: 6px;
+    height: 13px;
+    background-color: $sk-body-link-color;
+    mask-image: url(../images/icons/icon_arrow.svg);
+    mask-repeat: no-repeat;
+  }
+  &:hover{
+    text-decoration: underline;
+  }
+}
 .btn-film {
   color: $sk-body-link-color;
   @include flexbox;
@@ -906,4 +1216,8 @@
     mask-image: url(../images/icons/icon_play.svg);
     mask-repeat: no-repeat;
   }
+}
+
+.gradient {
+  background: linear-gradient(180deg, rgb(0, 0, 0) 0%, #131313 50%);
 }

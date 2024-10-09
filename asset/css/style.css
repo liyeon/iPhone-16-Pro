@@ -1615,7 +1615,6 @@ body.dimmed::after {
   font-weight: 600;
   letter-spacing: -0.022em;
   padding: 32px 5px 20px 34px;
-  font-family: "SF Pro Text";
   width: 70%;
   background: linear-gradient(90deg, #efcdbb, #dab8a4 50%, #a3735e calc(100% - 5px), rgba(0, 0, 0, 0) calc(100% - 4px));
   background-clip: text;
@@ -1690,6 +1689,294 @@ body.dimmed::after {
 }
 .sc-intelligence .group-typo .typography-area .typography {
   text-align: center;
+}
+.sc-intelligence .group-gallery {
+  padding-top: var(--global-section-padding);
+}
+.sc-intelligence .group-gallery .gallery-tab-list {
+  width: 80%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 25px;
+}
+@media (max-width: 1068px) {
+  .sc-intelligence .group-gallery .gallery-tab-list {
+    display: none;
+  }
+}
+.sc-intelligence .group-gallery .gallery-tab-list .gallery-tab-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.sc-intelligence .group-gallery .gallery-tab-list .gallery-tab-item.active a {
+  color: #fff;
+  border-color: #fff;
+}
+.sc-intelligence .group-gallery .gallery-tab-list .gallery-tab-item a {
+  text-align: center;
+  color: #86868b;
+  border-bottom: 1px solid #86868b;
+  padding: 10px 32px 13px;
+}
+.sc-intelligence .group-gallery .gallery-item-area {
+  margin: 0 auto;
+  width: 70%;
+}
+@media (max-width: 482px) {
+  .sc-intelligence .group-gallery .gallery-item-area {
+    width: 90%;
+  }
+}
+@media (max-width: 1068px) {
+  .sc-intelligence .group-gallery .gallery-item-area .gallery-item {
+    margin-top: 70px;
+  }
+}
+.sc-intelligence .group-gallery .gallery-item-area .gallery-item#gallery1 .box:nth-child(2) {
+  background-image: url(../images/apple-intelligence/productivity.jpg);
+  background-size: 650px;
+  background-position-y: calc(100% - 50px);
+}
+@media (max-width: 734px) {
+  .sc-intelligence .group-gallery .gallery-item-area .gallery-item#gallery1 .box:nth-child(2) {
+    background-size: 500px;
+  }
+}
+.sc-intelligence .group-gallery .gallery-item-area .gallery-item#gallery1 .box:nth-child(3) {
+  background-image: url(../images/apple-intelligence/productivity_inbox.jpg);
+}
+.sc-intelligence .group-gallery .gallery-item-area .gallery-item#gallery2 .box:nth-child(2) {
+  background-image: url(../images/apple-intelligence/express_playground.jpg);
+  background-size: 188px 136px;
+  background-position-y: calc(100% - 20px);
+}
+.sc-intelligence .group-gallery .gallery-item-area .gallery-item#gallery2 .box:nth-child(3) {
+  background-image: url(../images/apple-intelligence/express_clean.jpg);
+}
+.sc-intelligence .group-gallery .gallery-item-area .gallery-item#gallery3 .box:nth-child(2) {
+  background-image: url(../images/apple-intelligence/siri_language.jpg);
+  background-size: 118px 105px;
+  background-position-y: calc(100% - 40px);
+}
+@media (max-width: 734px) {
+  .sc-intelligence .group-gallery .gallery-item-area .gallery-item#gallery3 .box:nth-child(2) {
+    background-position-y: calc(100% - 30px);
+  }
+}
+.sc-intelligence .group-gallery .gallery-item-area .gallery-item#gallery3 .box:nth-child(3) {
+  background-image: url(../images/apple-intelligence/siri_instructions.jpg);
+}
+.sc-intelligence .group-gallery .gallery-item-area .gallery-item .typo-wrap {
+  text-align: center;
+}
+.sc-intelligence .group-gallery .gallery-item-area .gallery-item .typo-wrap .title {
+  display: none;
+}
+@media (max-width: 1068px) {
+  .sc-intelligence .group-gallery .gallery-item-area .gallery-item .typo-wrap .title {
+    display: block;
+    font-size: 14px;
+  }
+}
+.sc-intelligence .group-gallery .gallery-item-area .gallery-item .typo-wrap .desc {
+  max-width: 50%;
+  font-size: 21px;
+  margin: 30px auto;
+  -webkit-transition: opacity 500ms ease-out;
+  transition: opacity 500ms ease-out;
+}
+@media (max-width: 1068px) {
+  .sc-intelligence .group-gallery .gallery-item-area .gallery-item .typo-wrap .desc {
+    margin: 0 auto 30px;
+    font-size: 17px;
+  }
+}
+@media (max-width: 734px) {
+  .sc-intelligence .group-gallery .gallery-item-area .gallery-item .typo-wrap .desc {
+    font-size: 19px;
+    max-width: 100%;
+  }
+}
+.sc-intelligence .group-gallery .gallery-item-area .gallery-item .item-wrap {
+  display: grid;
+  gap: 24px;
+  grid-template-areas: "box1 box2" "box1 box3";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 330px 330px;
+  width: 100%;
+  min-width: 280px;
+}
+@media (max-width: 1068px) {
+  .sc-intelligence .group-gallery .gallery-item-area .gallery-item .item-wrap {
+    grid-template-areas: "box1" "box2" "box3";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
+.sc-intelligence .group-gallery .gallery-item-area .gallery-item .item-wrap .box {
+  background: #000;
+  border-radius: 18px;
+  padding: 40px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+}
+.sc-intelligence .group-gallery .gallery-item-area .gallery-item .item-wrap .box-desc {
+  width: 65%;
+  font-size: 14px;
+  line-height: 1.2857742857;
+  text-align: center;
+  color: #86868b;
+}
+@media (max-width: 1068px) {
+  .sc-intelligence .group-gallery .gallery-item-area .gallery-item .item-wrap .box-desc {
+    padding: 0 24px;
+    width: 85%;
+  }
+}
+.sc-intelligence .group-gallery .gallery-item-area .gallery-item .item-wrap .box-desc strong {
+  color: #f5f5f7;
+}
+.sc-intelligence .group-gallery .gallery-item-area .gallery-item .item-wrap .box:nth-child(1) {
+  grid-area: box1;
+}
+.sc-intelligence .group-gallery .gallery-item-area .gallery-item .item-wrap .box:nth-child(1) .frame {
+  position: relative;
+  width: 220px;
+  aspect-ratio: 9/19;
+  border-radius: 50px;
+  overflow: hidden;
+}
+@media (max-width: 1068px) {
+  .sc-intelligence .group-gallery .gallery-item-area .gallery-item .item-wrap .box:nth-child(1) .frame {
+    width: 162px;
+    border-radius: 32px;
+  }
+}
+.sc-intelligence .group-gallery .gallery-item-area .gallery-item .item-wrap .box:nth-child(1) .frame .inside-item,
+.sc-intelligence .group-gallery .gallery-item-area .gallery-item .item-wrap .box:nth-child(1) .frame .frame-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.sc-intelligence .group-gallery .gallery-item-area .gallery-item .item-wrap .box:nth-child(1) .frame .frame-item {
+  z-index: 1;
+}
+.sc-intelligence .group-gallery .gallery-item-area .gallery-item .item-wrap .box:nth-child(1) .frame .inside-item {
+  top: 5px;
+  height: 97%;
+}
+.sc-intelligence .group-gallery .gallery-item-area .gallery-item .item-wrap .box:nth-child(2) {
+  grid-area: box2;
+}
+.sc-intelligence .group-gallery .gallery-item-area .gallery-item .item-wrap .box:nth-child(3) {
+  grid-area: box3;
+  background-size: 150px;
+  background-position-y: 170px;
+}
+@media (max-width: 1068px) {
+  .sc-intelligence .group-gallery .gallery-item-area .gallery-item .item-wrap .box:nth-child(3) {
+    background-position-y: 120px;
+    background-size: 209px;
+  }
+}
+@media (max-width: 734px) {
+  .sc-intelligence .group-gallery .gallery-item-area .gallery-item .item-wrap .box:nth-child(3) {
+    background-position-y: 180px;
+    background-size: 150px;
+  }
+}
+.sc-intelligence .group-gallery .gallery-item-area .gallery-item .item-wrap .box:not(:first-child) {
+  padding-bottom: 200px;
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+@media (max-width: 734px) {
+  .sc-intelligence .group-gallery .gallery-item-area .gallery-item .item-wrap .box:not(:first-child) {
+    padding-bottom: 150px;
+  }
+}
+.sc-intelligence .group-privacy {
+  padding: var(--global-section-padding) 0;
+}
+.sc-intelligence .group-privacy .headline {
+  margin: 0 auto;
+  padding-top: 120px;
+  max-width: 50%;
+  font-size: 48px;
+  line-height: 1.0834933333;
+  font-weight: 600;
+  text-align: center;
+  background-image: url(../images/apple-intelligence/icon_privacy.png);
+  background-repeat: no-repeat;
+  background-size: 62px 82px;
+  background-position: center top;
+}
+@media (max-width: 1068px) {
+  .sc-intelligence .group-privacy .headline {
+    font-size: 40px;
+  }
+}
+@media (max-width: 734px) {
+  .sc-intelligence .group-privacy .headline {
+    font-size: 32px;
+    max-width: 60%;
+  }
+}
+@media (max-width: 482px) {
+  .sc-intelligence .group-privacy .headline {
+    text-align: left;
+    background-position: left top;
+  }
+}
+.sc-intelligence .group-privacy .viewport-content {
+  max-width: 50%;
+}
+@media (max-width: 1068px) {
+  .sc-intelligence .group-privacy .viewport-content {
+    max-width: 70%;
+  }
+}
+.sc-intelligence .group-privacy .typography-area {
+  margin: 40px 0;
+  font-size: 17px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 40px;
+}
+@media (max-width: 734px) {
+  .sc-intelligence .group-privacy .typography-area {
+    margin-top: 24px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
 }
 
 .typography-area {
@@ -1774,12 +2061,41 @@ body.dimmed::after {
   }
 }
 .headline-filter .filter {
-  padding: 80px 0;
+  padding: 80px;
   color: #fff;
 }
 
 .filter-container {
   display: none;
+}
+
+.link-more {
+  color: rgb(41, 151, 255);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 5px;
+  position: relative;
+}
+.link-more::after {
+  content: "";
+  margin-top: 5px;
+  width: 6px;
+  height: 13px;
+  background-color: rgb(41, 151, 255);
+  -webkit-mask-image: url(../images/icons/icon_arrow.svg);
+          mask-image: url(../images/icons/icon_arrow.svg);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+}
+.link-more:hover {
+  text-decoration: underline;
 }
 
 .btn-film {
@@ -1834,4 +2150,9 @@ body.dimmed::after {
   .btn-film::after {
     width: 16px;
   }
+}
+
+.gradient {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgb(0, 0, 0)), color-stop(50%, #131313));
+  background: linear-gradient(180deg, rgb(0, 0, 0) 0%, #131313 50%);
 }/*# sourceMappingURL=style.css.map */
