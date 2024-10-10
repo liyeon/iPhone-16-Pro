@@ -20,3 +20,96 @@
   width: 16px;
   height: 9px;
 }
+
+.link-more {
+  color: $sk-body-link-color;
+  @include flexbox;
+  gap: 5px;
+  position: relative;
+
+  &::after {
+    content: '';
+    margin-top: 5px;
+    width: 6px;
+    height: 13px;
+    background-color: $sk-body-link-color;
+    mask-image: url(../images/icons/icon_arrow.svg);
+    mask-repeat: no-repeat;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.btn-film {
+  color: $sk-body-link-color;
+  @include flexbox;
+  position: relative;
+  padding-right: 25px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @include resM {
+    font-size: 14px;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    aspect-ratio: 1/1;
+  }
+
+  &::before {
+    right: 1px;
+    width: 18px;
+    border: 2px solid $sk-body-link-color;
+    border-radius: 100%;
+
+    @include resM {
+      width: 14px;
+      border-width: 1px;
+    }
+  }
+
+  &::after {
+    width: 20px;
+
+    @include resM {
+      width: 16px;
+    }
+
+    background-color: $sk-body-link-color;
+    mask-image: url(../images/icons/icon_play.svg);
+    mask-repeat: no-repeat;
+  }
+}
+
+.btn-plus{
+  @include flexbox;
+  width: max-content;
+  gap: 20px;
+  color: #fff;
+  border-radius: 32px;
+  height: 56px;
+  background: rgba(66,66,69,0.7);
+  backdrop-filter: blur(7px);
+  padding: 0 15px 0 20px;
+  font-size: 14px;
+  @include pos-center-x;
+  &::after{
+    content: '';
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    background-color: rgb(0,113,227);
+    background-image: url(../images/icons/icon_plus.svg);
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
