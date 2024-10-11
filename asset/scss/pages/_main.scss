@@ -1018,11 +1018,9 @@
 }
 
 .sc-dolby {
-  position: relative;
-
   .group-horse {
     .horse-area {
-      height: 200vh;
+      height: 300vh;
       border: 10px solid salmon;
       .sticky-container{
         height: 400vh;
@@ -1054,10 +1052,11 @@
         overflow: hidden;
         position: relative;
         width: 55%;
+        max-width: 888px;
         aspect-ratio: 29/14;
-        transform: scale(2.3);
+        transform: scale(3);
         --opacity: .3;
-
+        
         &::before {
           content: '';
           position: absolute;
@@ -1069,14 +1068,17 @@
           opacity: var(--opacity);
           z-index: 1;
         }
-
+        @include resD {
+          width: 80%;
+          max-width: 767px;
+        }
         @include resT {
           width: 580px;
-          transform: scale(4)
+          transform: scale(5)
         }
 
         @include resM {
-          transform: scale(6);
+          transform: scale(7);
           width: 75%;
         }
 
@@ -1109,11 +1111,51 @@
 
     .viewport-content {
       border: 10px solid rgb(148, 90, 255);
-      position: relative;
       .figcaption {
         color: #86868b;
         font-size: 14px;
         text-align: center;
+        @include resM{
+          margin: 0 auto;
+          max-width: 70%;
+        }
+        @include resSM{
+          max-width: 90%;
+        }
+      }
+      .typography-area{
+        width: 65%;
+        max-width: 888px;
+        margin: 80px auto 0;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-row-gap: 32px;
+        grid-column-gap: 80px;
+        justify-content: space-between;
+        .typography.large{
+          font-size: 40px;
+        }
+        @include resD{
+          width: 80%;
+        }
+        @include resT{
+          margin-top: 60px;
+          grid-template-columns: repeat(1, 1fr);
+          .typography{
+            max-width: 450px;
+          }
+          .typography.large{
+            font-size: 24px;
+          }
+        }
+        @include resM{
+          margin-top: 40px;
+          .typography{
+            max-width: 300px;
+          }
+        }
+        @include resSM{
+        }
       }
     }
   }
