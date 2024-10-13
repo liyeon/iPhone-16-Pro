@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../asset/css/style.css" />
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <style>
+    .sc-zoom {
+      margin-top: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="sc-zoom">
+    <h2 class="blind">camera zoom</h2>
+    <div class="group-zoom">
+      <div class="zoom-area">
+        <div class="sticky-container">
+          <div class="sticky">
+            <h3 class="headline">
+              New 48MP<br>Ultra Wide camera.<br>
+              Viva la resolution.
+            </h3>
+            <div class="bg-wrap">
+              <img src="../asset/images/hw-frame.png" alt class="frame">
+              <img src="../asset/images/hero_camera.jpg" alt class="item">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="viewport-content">
+        <div class="typography-area">
+          <p class="typography">
+            iPhone 16 Pro adds a second 48MP camera to the Pro camera system. The new 48MP Ultra Wide camera has a more advanced quad-pixel sensor for super-high-resolution 48MP ProRAW and HEIF photos with autofocus.
+          </p>
+          <p class="typography">
+            So you can <strong>capture a mesmerizing new level of detail</strong> in macro photos and sweeping, wide-angle shots.
+          </p>
+        </div>
+        <div class="gallery-area">
+
+        </div>
+      </div>
+    </div>
+    <button class="btn-plus">
+      Zoom in on 5x Telephoto
+    </button>
+  </section>
+
+  <script>
+    const zoomSwiper = new Swiper('.camera-swiper', {
+      slidesPerView: 1,
+      grabCursor: true,
+      centeredSlides: true,
+      navigation: {
+        nextEl: '.sc-camera .swiper-button-next',
+        prevEl: '.sc-camera .swiper-button-prev',
+      },
+    });
+    const zoomCover = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".zoom-area",
+        start: "top top",
+        end: "bottom bottom",
+        // markers: true,
+        scrub: 1,
+        invalidateOnRefresh: true,
+      },
+    });
+
+    zoomCover
+      .to(".zoom-area .bg-wrap", {
+        '--opacity': 0,
+      })
+      .to(".zoom-area .headline", {
+        yPercent: -200,
+        autoAlpha: 0
+      }, "<")
+      .to(".zoom-area .bg-wrap", {
+        scale: 1,
+        marginLeft:0
+      });
+  </script>
+</body>
+
+</html>

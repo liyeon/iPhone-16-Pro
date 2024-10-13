@@ -1036,102 +1036,7 @@
   }
 
   .group-horse {
-    .horse-area {
 
-      // height: 300vh;
-      // border: 10px solid salmon;
-      .sticky-container {
-        height: 400vh;
-        // border: 10px solid palegoldenrod;
-      }
-
-      .sticky {
-        @include flexbox;
-      }
-
-      .horse-wrapper {
-        height: 100vh;
-      }
-
-      .headline {
-        @include pos-center;
-        z-index: 2;
-        font-size: 80px;
-        font-weight: 600;
-        line-height: 1.1;
-        text-align: center;
-
-        @include resT {
-          font-size: 64px;
-        }
-
-        @include resM {
-          font-size: 40px;
-        }
-      }
-
-      .bg-wrap {
-        overflow: hidden;
-        position: relative;
-        width: 55%;
-        max-width: 888px;
-        aspect-ratio: 29/14;
-        transform: scale(3);
-        --opacity: .3;
-
-        &::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: #000;
-          opacity: var(--opacity);
-          z-index: 1;
-        }
-
-        @include resD {
-          width: 80%;
-          max-width: 767px;
-        }
-
-        @include resT {
-          width: 580px;
-          transform: scale(5)
-        }
-
-        @include resM {
-          transform: scale(7);
-          width: 75%;
-        }
-
-        @include resSM {
-          width: 85%;
-        }
-
-        .frame,
-        .item {
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
-
-        .frame {
-          width: 100%;
-          height: 100%;
-          z-index: 1;
-        }
-
-        .item {
-          @include pos-center;
-          width: 98%;
-          height: 99%;
-          border-radius: 15%;
-
-        }
-      }
-    }
 
     .viewport-content {
 
@@ -1217,16 +1122,17 @@
       margin: 0 auto;
       margin-top: 64px;
       text-align: center;
-      
-      @include resD{
+
+      @include resD {
         width: 65%;
       }
+
       @include resT {
         width: 80%;
         text-align: left;
         margin-top: 32px;
       }
-      
+
       @include resM {
         width: 83.888%;
         margin-top: 24px;
@@ -1238,9 +1144,11 @@
       width: 66.667%;
       max-width: 1111px;
       margin-top: 64px;
-      @include resD{
+
+      @include resD {
         width: 83.888%;
       }
+
       @include resT {
         width: 83.888%;
         margin-top: 32px;
@@ -1250,42 +1158,44 @@
         width: 83.888%;
       }
     }
+
     .cine-list {
       display: flex;
       gap: 40px;
       margin-top: 64px;
       flex-wrap: wrap;
       line-height: 1.2857742857;
-  
+
       @include resT {
         column-gap: 80px;
         row-gap: 40px;
         margin-top: 32px;
       }
-  
+
       @include resM {
         flex-direction: column;
         margin-top: 24px;
       }
-  
+
       .cine-item {
         flex: 1;
+
         @include resT {
           min-width: 165px;
           max-width: 220px;
         }
-  
+
         @include resM {
           max-width: 80%;
         }
-  
+
         @include resSM {
           max-width: 100%;
         }
-  
+
         dt {
           font-size: 21px;
-  
+
           &::after {
             content: "";
             width: 100%;
@@ -1294,15 +1204,15 @@
             display: block;
             margin: 8px 0 10px;
           }
-  
+
           @include resM {
             font-size: 19px;
           }
         }
-  
+
         dd {
           color: #86868b;
-  
+
           @include resT {
             font-size: 14px;
           }
@@ -1310,51 +1220,223 @@
       }
     }
   }
-  .group-shot{
+
+  .group-shot {
     margin-top: 160px;
-    .headline{
-      @include resM{
+
+    .headline {
+      @include resM {
         text-align: left;
         margin-left: 14.8888888%;
         width: 70%;
       }
     }
-    .typography-area{
+
+    .typography-area {
       margin: 0 auto;
       width: 50%;
       text-align: center;
       margin-top: 17px;
-      @include resD{
+
+      @include resD {
         width: 64%;
       }
-      @include resT{
+
+      @include resT {
         width: 70%;
       }
-      @include resM{
+
+      @include resM {
         text-align: left;
       }
     }
-    .video-area{
+
+    .video-area {
       margin: 0 auto;
       width: 75%;
       margin-top: 64px;
-      @include resT{
+
+      @include resT {
         margin-top: 40px;
       }
-      @include resM{
+
+      @include resM {
         width: 90%;
       }
-      @include resSM{
+
+      @include resSM {
         width: 100%;
       }
-      iframe{
+
+      iframe {
         aspect-ratio: 16/9;
         width: 100%;
       }
-      .ytp-large-play-button-red-bg .ytp-large-play-button-bg{
-        display: none!important;
+
+      .ytp-large-play-button-red-bg .ytp-large-play-button-bg {
+        display: none !important;
       }
     }
   }
 
+}
+
+.sc-dolby .horse-area,
+.sc-zoom .zoom-area {
+
+  // height: 300vh;
+  // border: 10px solid salmon;
+  .sticky-container {
+    height: 400vh;
+    // border: 10px solid palegoldenrod;
+  }
+
+  .sticky {
+    @include flexbox;
+  }
+
+  .horse-wrapper {
+    height: 100vh;
+  }
+
+  .headline {
+    @include pos-center;
+    z-index: 2;
+    font-size: 80px;
+    font-weight: 600;
+    line-height: 1.1;
+    text-align: center;
+
+    @include resT {
+      font-size: 64px;
+    }
+
+    @include resM {
+      font-size: 40px;
+    }
+  }
+
+  .bg-wrap {
+    overflow: hidden;
+    position: relative;
+    width: 55%;
+    max-width: 888px;
+    aspect-ratio: 29/14;
+    transform: scale(3);
+    --opacity: .3;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #000;
+      opacity: var(--opacity);
+      z-index: 1;
+    }
+
+    @include resD {
+      width: 80%;
+      max-width: 767px;
+    }
+
+    @include resT {
+      width: 580px;
+      transform: scale(5)
+    }
+
+    @include resM {
+      transform: scale(8);
+      width: 75%;
+    }
+    
+    @include resSM {
+      transform: scale(8);
+      width: 85%;
+    }
+
+    .frame,
+    .item {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .frame {
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .item {
+      @include pos-center;
+      width: 98%;
+      height: 99%;
+      border-radius: 15%;
+
+    }
+  }
+}
+
+.sc-zoom {
+  .group-zoom {
+    .headline {
+      width: 100%;
+    }
+    .viewport-content{
+      margin-top: -18vh;
+      @include resT{
+        margin-top: -30vh;
+      }
+      @include resM{
+        margin-top: -30vh;
+      }
+      @include resSM{
+        margin-top: -38vh;
+      }
+      .typography-area{
+        margin: 0 auto;
+        max-width: 980px;
+        width: 83.3333%;
+        display: flex;
+        justify-content: space-between;
+        .typography{
+          max-width: 40%;
+        }
+        @include resM{
+          width: 80%;
+          flex-direction: column;
+          gap: 20px;
+          .typography{
+            max-width: 100%;
+          }
+        }
+        @include resSM{
+          width: 95%;
+        }
+      }
+    }
+  }
+
+  .zoom-area {
+    .bg-wrap {
+      transform: scale(5);
+      margin-left: 17%;
+      max-width: 1111px;
+      @include resT {
+        margin-left: 17%;
+      }
+  
+      @include resM {
+        transform: scale(8);
+        margin-left: 35%;
+      }
+      @include resSM{
+        transform: scale(10);
+        margin-left: 39%;
+      }
+    }
+  }
 }
