@@ -648,6 +648,7 @@
 
 .sc-intelligence {
   padding-top: var(--global-section-padding);
+
   .group-header {
     width: 100%;
     display: flex;
@@ -1018,20 +1019,40 @@
 }
 
 .sc-dolby {
+  .headline {
+    font-size: 64px;
+    line-height: 1.125;
+    font-weight: 600;
+    text-align: center;
+
+    @include resT {
+      font-size: 40px;
+    }
+
+    @include resM {
+      font-size: 32px;
+      width: 83.888%;
+    }
+  }
+
   .group-horse {
     .horse-area {
-      height: 300vh;
-      border: 10px solid salmon;
-      .sticky-container{
+
+      // height: 300vh;
+      // border: 10px solid salmon;
+      .sticky-container {
         height: 400vh;
-        border: 10px solid palegoldenrod;
+        // border: 10px solid palegoldenrod;
       }
+
       .sticky {
         @include flexbox;
       }
-      .horse-wrapper{
+
+      .horse-wrapper {
         height: 100vh;
       }
+
       .headline {
         @include pos-center;
         z-index: 2;
@@ -1048,6 +1069,7 @@
           font-size: 40px;
         }
       }
+
       .bg-wrap {
         overflow: hidden;
         position: relative;
@@ -1056,7 +1078,7 @@
         aspect-ratio: 29/14;
         transform: scale(3);
         --opacity: .3;
-        
+
         &::before {
           content: '';
           position: absolute;
@@ -1068,10 +1090,12 @@
           opacity: var(--opacity);
           z-index: 1;
         }
+
         @include resD {
           width: 80%;
           max-width: 767px;
         }
+
         @include resT {
           width: 580px;
           transform: scale(5)
@@ -1110,53 +1134,227 @@
     }
 
     .viewport-content {
-      border: 10px solid rgb(148, 90, 255);
+
+      // border: 10px solid rgb(148, 90, 255);
       .figcaption {
         color: #86868b;
         font-size: 14px;
         text-align: center;
-        @include resM{
+
+        @include resM {
           margin: 0 auto;
           max-width: 70%;
         }
-        @include resSM{
+
+        @include resSM {
           max-width: 90%;
         }
       }
-      .typography-area{
+
+      .typography-area {
         width: 65%;
         max-width: 888px;
         margin: 80px auto 0;
         display: grid;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-row-gap: 32px;
         grid-column-gap: 80px;
         justify-content: space-between;
-        .typography.large{
+
+        .typography.large {
           font-size: 40px;
         }
-        @include resD{
+
+        @include resD {
           width: 80%;
         }
-        @include resT{
+
+        @include resT {
           margin-top: 60px;
           grid-template-columns: repeat(1, 1fr);
-          .typography{
+
+          .typography {
             max-width: 450px;
           }
-          .typography.large{
+
+          .typography.large {
             font-size: 24px;
           }
         }
-        @include resM{
+
+        @include resM {
           margin-top: 40px;
-          .typography{
+
+          .typography {
             max-width: 300px;
           }
-        }
-        @include resSM{
         }
       }
     }
   }
+
+  .group-audio {
+    margin-top: 160px;
+
+    @include resT {
+      margin-top: 80px;
+    }
+
+    .headline {
+      @include resT {
+        text-align: left;
+        padding-left: 10%;
+      }
+
+      @include resM {
+        padding-left: 8.3333333333%;
+      }
+    }
+
+    .typography-area {
+      width: 63%;
+      max-width: 728px;
+      margin: 0 auto;
+      margin-top: 64px;
+      text-align: center;
+      
+      @include resD{
+        width: 65%;
+      }
+      @include resT {
+        width: 80%;
+        text-align: left;
+        margin-top: 32px;
+      }
+      
+      @include resM {
+        width: 83.888%;
+        margin-top: 24px;
+      }
+    }
+
+    .mix-area {
+      margin: 0 auto;
+      width: 66.667%;
+      max-width: 1111px;
+      margin-top: 64px;
+      @include resD{
+        width: 83.888%;
+      }
+      @include resT {
+        width: 83.888%;
+        margin-top: 32px;
+      }
+
+      @include resM {
+        width: 83.888%;
+      }
+    }
+    .cine-list {
+      display: flex;
+      gap: 40px;
+      margin-top: 64px;
+      flex-wrap: wrap;
+      line-height: 1.2857742857;
+  
+      @include resT {
+        column-gap: 80px;
+        row-gap: 40px;
+        margin-top: 32px;
+      }
+  
+      @include resM {
+        flex-direction: column;
+        margin-top: 24px;
+      }
+  
+      .cine-item {
+        flex: 1;
+        @include resT {
+          min-width: 165px;
+          max-width: 220px;
+        }
+  
+        @include resM {
+          max-width: 80%;
+        }
+  
+        @include resSM {
+          max-width: 100%;
+        }
+  
+        dt {
+          font-size: 21px;
+  
+          &::after {
+            content: "";
+            width: 100%;
+            height: 1px;
+            background: #979797;
+            display: block;
+            margin: 8px 0 10px;
+          }
+  
+          @include resM {
+            font-size: 19px;
+          }
+        }
+  
+        dd {
+          color: #86868b;
+  
+          @include resT {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+  .group-shot{
+    margin-top: 160px;
+    .headline{
+      @include resM{
+        text-align: left;
+        margin-left: 14.8888888%;
+        width: 70%;
+      }
+    }
+    .typography-area{
+      margin: 0 auto;
+      width: 50%;
+      text-align: center;
+      margin-top: 17px;
+      @include resD{
+        width: 64%;
+      }
+      @include resT{
+        width: 70%;
+      }
+      @include resM{
+        text-align: left;
+      }
+    }
+    .video-area{
+      margin: 0 auto;
+      width: 75%;
+      margin-top: 64px;
+      @include resT{
+        margin-top: 40px;
+      }
+      @include resM{
+        width: 90%;
+      }
+      @include resSM{
+        width: 100%;
+      }
+      iframe{
+        aspect-ratio: 16/9;
+        width: 100%;
+      }
+      .ytp-large-play-button-red-bg .ytp-large-play-button-bg{
+        display: none!important;
+      }
+    }
+  }
+
 }
