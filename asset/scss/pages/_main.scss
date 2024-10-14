@@ -1019,6 +1019,7 @@
 }
 
 .sc-dolby {
+	padding-bottom: var(--global-section-padding);
   .headline {
     font-size: 64px;
     line-height: 1.125;
@@ -1036,11 +1037,21 @@
   }
 
   .group-horse {
-
-
     .viewport-content {
-
       // border: 10px solid rgb(148, 90, 255);
+			margin-top: -25vh;
+			@include resD{
+				margin-top: -30vh;
+			}
+			@include resT{
+				margin-top: -35vh;
+			}
+			@include resM{
+				margin-top: -38vh;
+			}
+			@include resSM{
+				margin-top: -40vh;
+			}
       .figcaption {
         color: #86868b;
         font-size: 14px;
@@ -1439,4 +1450,31 @@
       }
     }
   }
+	.gallery-area{
+		max-width: 980px;
+    width: 83.3333%;
+		margin: 0 auto;
+		margin-top: 120px;
+		@include resSM{
+			width: 100%;
+		}
+		.swiper-slide{
+			figcaption{
+				margin-top: 172px;
+				text-align: center;
+				color: #86868b;
+				background: #000;
+				strong{
+					color: #fff;
+				}
+			}
+			
+		}
+		.swiper-navigation{
+			display: flex;
+			.zoom-list{
+				display: flex;
+			}
+		}
+	}
 }
