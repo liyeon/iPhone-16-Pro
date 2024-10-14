@@ -1396,7 +1396,7 @@
     .headline {
       width: 100%;
     }
-    .viewport-content{
+    .typo-wrap{
       margin-top: -18vh;
       @include resT{
         margin-top: -30vh;
@@ -1429,139 +1429,169 @@
         }
       }
     }
-  }
-
-  .zoom-area {
-    .bg-wrap {
-      transform: scale(5);
-      margin-left: 17%;
-      max-width: 1111px;
-      @include resT {
+    .zoom-area {
+      .bg-wrap {
+        transform: scale(5);
         margin-left: 17%;
+        max-width: 1111px;
+        @include resT {
+          margin-left: 17%;
+        }
+    
+        @include resM {
+          transform: scale(8);
+          margin-left: 35%;
+        }
+        @include resSM{
+          transform: scale(10);
+          margin-left: 39%;
+        }
       }
-  
-      @include resM {
-        transform: scale(8);
-        margin-left: 35%;
-      }
+    }
+    .gallery-area{
+      max-width: 980px;
+      width: 83.3333%;
+      margin: 0 auto;
+      margin-top: 120px;
+      position: relative;
       @include resSM{
-        transform: scale(10);
-        margin-left: 39%;
-      }
-    }
-  }
-	.gallery-area{
-		max-width: 980px;
-    width: 83.3333%;
-		margin: 0 auto;
-		margin-top: 120px;
-    position: relative;
-		@include resSM{
-			width: 100%;
-		}
-		.swiper-slide{
-			figcaption{
-				margin-top: 120px;
-				text-align: center;
-				color: #86868b;
-				background: #000;
-        @include resM{
-          margin-top: 80px;
-        }
-				strong{
-					color: #fff;
-				}
-			}
-			
-		}
-    .swiper-button-next,
-    .swiper-button-prev{
-      top: 0;
-      margin-top: 0;
-      width: 60px;
-      height: 100%;
-      color: #fff;
-      --swiper-navigation-size:12px;
-      font-weight: bold;
-      &::before{
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
         width: 100%;
+      }
+      .swiper-slide{
+        figcaption{
+          margin-top: 120px;
+          text-align: center;
+          color: #86868b;
+          background: #000;
+          @include resM{
+            margin-top: 80px;
+          }
+          strong{
+            color: #fff;
+          }
+        }
+        
+      }
+      .swiper-button-next,
+      .swiper-button-prev{
+        top: 0;
+        margin-top: 0;
+        width: 60px;
         height: 100%;
-        z-index: -1;
-      }
-      @include resM{
-        width: 40px;
-        white-space: nowrap;
-      }
-    }
-    .swiper-button-disabled{
-      opacity: 0;
-    }
-    .swiper-button-next{
-      right: 0;
-      &::before{
-        background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(19, 19, 22,1) 30%, rgba(19, 19, 22,1) 100%);
-      }
-    }
-    .swiper-button-prev{
-      left: 0;
-      &::before{
-        background: linear-gradient(90deg, rgba(19, 19, 22,1) 0%, rgba(19, 19, 22,1) 70%, rgba(0,0,0,0) 100%);
-      }
-    }
-		.swiper-navigation{
-      position: absolute;
-      bottom: 50px;
-      left: 0;
-      width: 100%;
-      .swiper-control{
-        display: flex;
-        align-items: center;
-        position: relative;
-        width: 87.5%;
-        overflow: hidden;
-        max-width: 710px;
-        height: 56px;
-        margin: 0 auto;
-        background: rgb(19, 19, 22);
-        border-radius: 999px;
+        color: #fff;
+        --swiper-navigation-size:12px;
+        font-weight: bold;
+        display: none;
+        &::before{
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+        }
         @include resM{
-          height: 44px;
-          font-size: 14px;
+          width: 40px;
+          white-space: nowrap;
         }
       }
-      @include resM{
-        bottom: 40px;
+      .swiper-button-disabled{
+        opacity: 0;
       }
-			.zoom-list{
+      .swiper-button-next{
+        @include resT{
+          display: block;
+        }
+        right: 0;
+        &::before{
+          background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(19, 19, 22,1) 30%, rgba(19, 19, 22,1) 100%);
+        }
+      }
+      .swiper-button-prev{
+        left: 0;
+        &::before{
+          background: linear-gradient(90deg, rgba(19, 19, 22,1) 0%, rgba(19, 19, 22,1) 70%, rgba(0,0,0,0) 100%);
+        }
+      }
+      .swiper-navigation{
         position: absolute;
-        left: 5px;
-        width: fit-content;
-        height: 80%;
-        display: flex;
-        align-items: center;
-        .zoom-item{
-          @include flexbox;
-          width: 100px;
-          height: 100%;
-          padding: 0 20px;
-          opacity: .8;
-          z-index: 1;
-          transition: background 1s ease-in, opacity .3 ease-in;
+        bottom: 50px;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        .swiper-control{
+          display: flex;
+          align-items: center;
+          position: relative;
+          width: 87.5%;
+          overflow: hidden;
+          max-width: 710px;
+          height: 56px;
+          margin: 0 auto;
+          background: rgb(19, 19, 22);
           border-radius: 999px;
           @include resM{
-            width: 80px;
-            white-space: nowrap;
-          }
-          &.active{
-            color: #000;
-            background: pink;
+            height: 44px;
+            font-size: 14px;
           }
         }
-			}
-		}
-	}
+        @include resM{
+          bottom: 40px;
+        }
+        .zoom-list{
+          position: absolute;
+          left: 5px;
+          width: fit-content;
+          height: 80%;
+          display: flex;
+          align-items: center;
+          overflow-x: auto;
+          .zoom-item{
+            @include flexbox;
+            width: 100px;
+            height: 100%;
+            padding: 0 20px;
+            opacity: .8;
+            z-index: 1;
+            transition: background 1s ease-in, opacity .3 ease-in;
+            border-radius: 999px;
+            @include resM{
+              width: 80px;
+              white-space: nowrap;
+            }
+            &.active{
+              color: #000;
+              background: #fff;
+            }
+          }
+        }
+      }
+    }
+    .media-wrap{
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+      margin-top: 120px;
+      gap: 100px;
+      padding-left: 13%;
+      width: 100%;
+      @include resM{
+        width: 70%;
+        padding-left: 0;
+        flex-direction: column;
+        margin-top: 80px;
+        gap: 60px;
+      }
+      .typography-area{
+        max-width: 415px;
+        flex-basis: 40%;
+        @include resM{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  
 }

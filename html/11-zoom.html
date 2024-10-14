@@ -36,7 +36,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="viewport-content">
+			<div class="viewport-content typo-wrap">
 				<div class="typography-area">
 					<p class="typography">
 						iPhone 16 Pro adds a second 48MP camera to the Pro camera system. The new 48MP Ultra Wide camera has a more
@@ -139,6 +139,16 @@
 					</div>
 				</div>
 			</div>
+			<div class="viewport-content media-wrap">
+				<div class="typography-area">
+					<p class="typography">
+						More zoom? Boom. Now you can shoot in 120 mm with the 5x Telephoto camera on both Pro models and get <strong>sharper close-ups from farther away</strong>. With multiple framing options, it’s like having seven pro lenses in your pocket, everywhere you go.
+					</p>
+				</div>
+				<div class="video-area">
+					<video src="../asset/video/lens.mp4" muted autoplay></video>
+				</div>
+			</div>
 		</div>
 		<button class="btn-plus">
 			Zoom in on 5x Telephoto
@@ -146,6 +156,7 @@
 	</section>
 
 	<script>
+
 		const zoomSwiper = new Swiper('.zoom-swiper', {
 			effect: 'fade',
 			speed: 800,
@@ -158,20 +169,31 @@
 			},
 			on: {
 				slideChange: function () {
-					updateActiveZoomItem(zoomSwiper.activeIndex); // 현재 활성 슬라이드 인덱스를 기반으로 갱신
-					const nextButton = document.querySelector('.swiper-button-prev');
-					if (this.activeIndex >= 3) { // 인덱스가 3 이상일 때 (네 번째 슬라이드부터)
-						nextButton.style.display = 'block'; // 버튼 보이기
+					// 현재 슬라이드 인덱스에 맞게 active 클래스를 업데이트
+					updateActiveZoomItem(this.activeIndex);
+
+					// prev 버튼 visibility 설정
+					const prevButton = document.querySelector('.zoom-swiper .swiper-button-prev');
+					if (this.activeIndex >= 2) {
+						prevButton.style.display = 'block';
 					} else {
-						nextButton.style.display = 'none'; // 버튼 숨기기
+						prevButton.style.display = 'none';
+					}
+					const totalSlides = this.slides.length;
+					// next 버튼 visibility 설정
+					const nextButton = document.querySelector('.zoom-swiper .swiper-button-next');
+					if (this.activeIndex >= totalSlides) {
+						nextButton.style.display = 'none';
+					} else {
+						nextButton.style.display = 'block';
 					}
 				}
 			},
-			breakpoint: {
-				1140: {
-
-				},
-			}
+		// 	breakpoints: {
+		// 		1140: {
+		// 			navigation: false,
+		// 	},
+		// }
 		});
 
 		document.querySelectorAll('.zoom-item button').forEach((button) => {
@@ -189,15 +211,19 @@
 			});
 		});
 
-		// 슬라이드 변경 시 active 클래스를 업데이트하는 함수
+		// 슬라이드 변경 시 active 클래스를 업데이트
 		function updateActiveZoomItem(index) {
 			const zoomItems = document.querySelectorAll('.zoom-item');
-			// 모든 zoom-item에서 active 클래스를 제거
+			const zoomList = document.querySelector('.zoom-list');
+			// active 클래스 제거
 			zoomItems.forEach(item => item.classList.remove('active'));
-			// 현재 슬라이드 인덱스에 맞는 zoom-item에 active 클래스 추가
 			if (zoomItems[index]) {
 				zoomItems[index].classList.add('active');
 			}
+				const itemWidth = zoomItems[index] ? zoomItems[index].getBoundingClientRect().width : 0;
+				console.log(itemWidth)
+				const translateXValue = -((index + 1) * itemWidth) + (zoomList.offsetWidth / 2 - itemWidth / 2);
+				zoomList.style.transform = `translateX(${translateXValue}px)`;
 		}
 
 		const zoomCover = gsap.timeline({
