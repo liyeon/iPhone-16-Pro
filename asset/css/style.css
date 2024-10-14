@@ -2937,6 +2937,9 @@ body.dimmed::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -2967,4 +2970,88 @@ body.dimmed::after {
   .sc-zoom .group-zoom .media-wrap .typography-area {
     width: 100%;
   }
+}
+
+.sc-photographic {
+  padding: var(--global-section-padding) 0;
+}
+.sc-photographic .headline-filter {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+@media (max-width: 734px) {
+  .sc-photographic .headline-filter {
+    gap: 35px;
+  }
+}
+.sc-photographic .headline-filter .filter {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 0;
+  white-space: nowrap;
+}
+@media (max-width: 734px) {
+  .sc-photographic .headline-filter .filter {
+    white-space: normal;
+    top: -17%;
+  }
+}
+.sc-photographic .headline-filter .t-enter {
+  display: none;
+}
+@media (max-width: 1440px) {
+  .sc-photographic .headline-filter .t-enter {
+    display: block;
+  }
+}
+.sc-photographic .group-clip .sticky-container {
+  height: 600vh;
+}
+.sc-photographic .group-clip .clip-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 25px;
+}
+.sc-photographic .group-clip .frame, .sc-photographic .group-clip .frame2, .sc-photographic .group-clip .frame3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 20px solid #000;
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 1;
+}
+.sc-photographic .group-clip .clip-item {
+  position: absolute;
+  --clip-progress: 0;
+  -webkit-clip-path: inset(0 var(--clip-progress) 0 0 round 20px);
+          clip-path: inset(0 var(--clip-progress) 0 0 round 20px);
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.sc-photographic .group-clip .clip-item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=style.css.map */
