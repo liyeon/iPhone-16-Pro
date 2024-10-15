@@ -23,19 +23,21 @@
     <div class="group-clip">
       <div class="sticky-container">
         <div class="sticky">
-          <div class="clip-box">
-            <div class="frame"></div>
+          <div class="clip-wrap">
+            <div class="frame-box">
+              <div class="frame"></div>
+              <div class="frame2"></div>
+              <div class="frame3"></div>
+            </div>
             <div class="clip-item bw">
               <img src="../asset/images/photographic/style3.jpg" alt="">
             </div>
-            <div class="frame2"></div>
             <div class="clip-item color">
               <img src="../asset/images/photographic/style2.jpg" alt="">
             </div>
-            <div class="frame3"></div>
-              <div class="clip-item default">
-                <img src="../asset/images/photographic/style1.jpg" alt="">
-              </div>
+            <div class="clip-item default">
+              <img src="../asset/images/photographic/style1.jpg" alt="">
+            </div>
           </div>
         </div>
       </div>
@@ -300,14 +302,15 @@
       .to(".group-clip .clip-item.default", {
         '--clip-progress': '100%',
       })
-      .to(".group-clip .frame", {
-        xPercent:-100,
-      },"<")
+      .to(".group-clip .frame-box", {
+        xPercent: -100,
+      }, "<")
       .to(".group-clip .clip-item.color", {
         '--clip-progress': '100%',
-      }).to(".group-clip .frame2", {
-        xPercent:-100,
-      },"<")
+      })
+      .to(".group-clip .frame-box", {
+        xPercent: -200,
+      }, "<")
   </script>
 </body>
 
