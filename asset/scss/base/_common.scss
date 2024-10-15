@@ -225,7 +225,6 @@ body.dimmed::after {
   font-weight: 600;
   line-height: 1.1;
   margin-bottom: 72px;
-
   @include resT {
     font-size: 64px;
   }
@@ -233,10 +232,24 @@ body.dimmed::after {
   @include resM {
     font-size: 40px;
   }
-
+  .t-enter{
+    display: none;
+    @include resD{
+      display: block;
+    }
+  }
+  .m-enter{
+    display: none;
+    @include resM{
+      display: block;
+    }
+  }
   .filter {
     padding: 80px;
     color: #fff;
+    @include resSM{
+      padding: 40px;
+    }
   }
 }
 
