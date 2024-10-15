@@ -3018,7 +3018,6 @@ body.dimmed::after {
 }
 .sc-photographic .group-clip {
   margin: 0 auto;
-  width: 90%;
 }
 .sc-photographic .group-clip .sticky-container {
   height: 600vh;
@@ -3045,6 +3044,9 @@ body.dimmed::after {
   z-index: 1;
   border-radius: 55px;
   border: 10px solid salmon;
+  background-size: cover; /* 전체 영역을 덮도록 설정 */
+  background-position: center; /* 그라디언트의 위치를 중앙으로 설정 */
+  background-repeat: no-repeat; /* 그라디언트 반복을 방지 */
 }
 .sc-photographic .group-clip .frame::before, .sc-photographic .group-clip .frame2::before, .sc-photographic .group-clip .frame3::before {
   content: "";

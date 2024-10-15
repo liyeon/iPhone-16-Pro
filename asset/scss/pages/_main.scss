@@ -1623,7 +1623,6 @@
   .group-clip{
     // aspect-ratio: 16/10;
     margin: 0 auto;
-    width: 90%;
     .sticky-container{
       height: 600vh;
     }
@@ -1649,6 +1648,12 @@
       z-index: 1;
       border-radius:55px;
       border: 10px solid salmon;
+
+			// radial-gradient(circle closest-side at 10% 20%,rgba(255, 255, 255, 0),blue,rgba(0, 0, 0, 0))
+			// ;
+			background-size: cover; /* 전체 영역을 덮도록 설정 */
+    background-position: center; /* 그라디언트의 위치를 중앙으로 설정 */
+    background-repeat: no-repeat; /* 그라디언트 반복을 방지 */
       &::before{
         content: '';
         @include pos-center;
