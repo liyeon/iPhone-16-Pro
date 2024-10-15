@@ -19,15 +19,23 @@
       <span class="filter" style="filter: url('#glow-1')">Photographic &nbsp;Style.</span><br>
       Change it up. <br class="t-enter">Change it back.
     </h2>
-
     <div class="group-clip">
       <div class="sticky-container">
         <div class="sticky">
           <div class="clip-wrap">
-            <div class="frame-box">
-              <div class="frame"></div>
-              <div class="frame2"></div>
-              <div class="frame3"></div>
+            <div class="frame-box" aria-hidden="true">
+              <div class="frame">
+                <div class="top"></div>
+                <div class="bottom"></div>
+              </div>
+              <div class="frame2">
+                <div class="top"></div>
+                <div class="bottom"></div>
+              </div>
+              <div class="frame3">
+                <div class="top"></div>
+                <div class="bottom"></div>
+              </div>
             </div>
             <div class="clip-item bw">
               <img src="../asset/images/photographic/style3.jpg" alt="">
@@ -42,7 +50,54 @@
         </div>
       </div>
     </div>
-
+    <div class="group-photo viewport-content">
+      <div class="typography-area">
+        <p class="typography">
+          Our latest generation of Photographic Styles gives you greater creative flexibility than ever before, so you
+          can <strong>make every photo even more you</strong>. And thanks to advances in our image pipeline, you can now
+          reverse any style, anytime.
+        </p>
+      </div>
+      <div class="choose-area">
+        <div class="typo-box">
+          <div class="box box1">
+            <em class="title">Lock in your look.</em>
+            <p class="typography">
+              We’ve created new styles that let you <strong>dial in your exact desired look with more advanced skin-tone
+                rendering</strong> and set it across your photos.
+            </p>
+          </div>
+          <div class="box box2">
+            <em class="title">Align with your aesthetic.</em>
+            <p class="typography">
+              Our improved image pipeline also enables more creative styles, which allow you to <strong>customize the
+                different moods of a photo</strong> through color.<br><br>
+              With the power of A18 Pro, you can see the style applied in a live preview — like professional color
+              grading in real time.
+            </p>
+          </div>
+          <div class="box box3">
+            <em class="title">Make the most of your megapixels.</em>
+            <p class="typography">
+              Personalize every style even more with the new control pad, which makes it <strong>easy to adjust tone and
+                color simultaneously</strong>. You can also use the slider to adjust the intensity of the specific
+              colors, instead of applying a one-size-fits-all approach.
+            </p>
+          </div>
+        </div>
+        <div class="media-box" aria-hidden="true">
+          <div class="thumb thumb3">
+            <img src="../asset/images/photographic/03.jpg" alt>
+          </div>
+          <div class="thumb thumb2">
+            <img src="../asset/images/photographic/02.jpg" alt>
+          </div>
+          <div class="thumb thumb1">
+            <img src="../asset/images/photographic/01.jpg" alt>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
   <div class="filter-container" data-component-list="TextGlow">
     <svg width="1440px" height="300px" viewBox="0 0 1440 300" xmlns="http://www.w3.org/2000/svg"
@@ -292,11 +347,12 @@
         trigger: ".group-clip",
         start: "top top",
         end: "bottom bottom",
-        markers: true,
+        markers: false,
         scrub: 1,
         invalidateOnRefresh: true,
       },
     });
+
 
     photographic
       .to(".group-clip .clip-item.default", {
@@ -314,6 +370,31 @@
       .to(".group-clip", {
         width: '90%',
       })
+
+    const photographicFrame = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".sc-photographic .choose-area",
+        start: "top top",
+        end: "bottom bottom",
+        markers: false,
+        scrub: 1,
+        invalidateOnRefresh: true,
+      },
+    });
+    gsap.set(".choose-area .box2",{autoAlpha:0})
+    gsap.set(".choose-area .box3",{autoAlpha:0})
+    photographicFrame
+    .to(".choose-area .thumb1", {
+      autoAlpha: 0,
+    })
+    .to(".choose-area .box2",{autoAlpha:1}, )
+    .to(".choose-area .thumb1", {
+      autoAlpha: 0,
+    })
+    .to(".choose-area .thumb2", {
+      autoAlpha: 0,
+    })
+    .to(".choose-area .box3",{autoAlpha:1},"<" )
 
   </script>
 </body>
