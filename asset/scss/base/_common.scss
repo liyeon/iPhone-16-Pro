@@ -1,34 +1,36 @@
 // common의 용도
 .blind {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	overflow: hidden;
-	clip: rect(0 0 0 0);
-	margin: -1px;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
 }
 
 ::selection {
-	// background-color: $color-primary;
-	// color: $color-white;
+  // background-color: $color-primary;
+  // color: $color-white;
 }
 
-body{
-	transition: opacity .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+body {
+  transition: opacity .6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-body.dimmed{
-	overflow: hidden;
-	opacity: 1;
+
+body.dimmed {
+  overflow: hidden;
+  opacity: 1;
 }
+
 body.dimmed::after {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: rgba(0, 0, 0, .8);
-	opacity: 1;
-	content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .8);
+  opacity: 1;
+  content: '';
 }
 
 .sticky {
@@ -160,7 +162,8 @@ body.dimmed::after {
   }
 }
 
-.typography-area,.typo-box {
+.typography-area,
+.typo-box {
   font-size: 21px;
   line-height: 1.4;
   letter-spacing: .011em;
@@ -186,12 +189,41 @@ body.dimmed::after {
       color: rgb(245, 245, 247);
     }
   }
+
+  .typography.large {
+    font-size: 40px;
+  }
+
+  @include resT {
+    .typography.large {
+      font-size: 24px;
+    }
+  }
 }
 
 .viewport-content {
   margin: 0 auto;
   width: 87.5%;
   max-width: 1680px;
+}
+
+
+.sc-dolby,.sc-a18{
+  .headline {
+    font-size: 64px;
+    line-height: 1.125;
+    font-weight: 600;
+    text-align: center;
+
+    @include resT {
+      font-size: 40px;
+    }
+
+    @include resM {
+      font-size: 32px;
+      width: 83.888%;
+    }
+  }
 }
 
 .headline-typo {
@@ -225,6 +257,7 @@ body.dimmed::after {
   font-weight: 600;
   line-height: 1.1;
   margin-bottom: 72px;
+
   @include resT {
     font-size: 64px;
   }
@@ -232,22 +265,28 @@ body.dimmed::after {
   @include resM {
     font-size: 40px;
   }
-  .t-enter{
+
+  .t-enter {
     display: none;
-    @include resD{
+
+    @include resD {
       display: block;
     }
   }
-  .m-enter{
+
+  .m-enter {
     display: none;
-    @include resM{
+
+    @include resM {
       display: block;
     }
   }
+
   .filter {
     padding: 80px;
     color: #fff;
-    @include resSM{
+
+    @include resSM {
       padding: 40px;
     }
   }
@@ -259,4 +298,95 @@ body.dimmed::after {
 
 .gradient {
   background: linear-gradient(180deg, rgb(0, 0, 0) 0%, #131313 50%);
+}
+
+.radius-gradient {
+  width: 75%;
+  max-width: 1400px;
+  border-radius: 18px;
+  background-image: linear-gradient(180deg, #0e0e0e 30%, rgba(14, 14, 14, 0) 80%);
+  padding: 72px 0 0 7.33333%;
+
+  @include resD {
+    width: 88%;
+  }
+
+  @include resT {
+    padding-top: 50px;
+  }
+
+  @include resM {
+    padding-top: 40px;
+  }
+
+  @include resSM {
+    padding-right: 7.33333%;
+  }
+}
+
+.select-wrap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 24px;
+
+  @include resM {
+    font-size: 21px;
+  }
+
+  @include resSM {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .select-box {
+    width: fit-content;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 40%;
+      right: 20px;
+      width: 6px;
+      height: 11px;
+      rotate: (90deg);
+      background-color: #fff;
+      mask-image: url(../images/icons/icon_arrow.svg);
+      mask-repeat: no-repeat;
+      pointer-events: none;
+    }
+
+    @include resSM {
+      width: 100%;
+    }
+  }
+
+  .select-label {
+    line-height: 1.1;
+  }
+
+  .select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px 0 22px;
+    height: 42px;
+    border-radius: 10em;
+    background-color: rgba(0, 0, 0, 0);
+    color: #f5f5f7;
+    border: 1px solid #86868b;
+    appearance: none;
+    text-overflow: ellipsis;
+    cursor: pointer;
+
+    @include resSM {
+      width: 100%;
+    }
+
+    &:focus {
+      border-color: rgb(0, 106, 255);
+    }
+
+  }
 }

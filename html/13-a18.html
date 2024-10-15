@@ -16,7 +16,7 @@
   <section class="sc-a18">
     <div class="group-media">
       <div class="video-area">
-        <video muted autoplay id="video" src="../asset/video/chip.mp4"></video>
+        <video muted autoplay src="../asset/video/chip.mp4"></video>
       </div>
     </div>
     <h2 class="headline-filter">
@@ -26,7 +26,9 @@
     <div class="group-core">
       <div class="typography-area">
         <p class="typography">
-          A <strong>phenomenally powerful chip</strong>, A18 Pro enables Apple Intelligence with a faster Neural Engine, an improved CPU and GPU, and a big jump in memory bandwidth. It also drives advanced video and photo features like Camera Control, and it delivers our best-ever graphics performance for AAA gaming.
+          A <strong>phenomenally powerful chip</strong>, A18 Pro enables Apple Intelligence with a faster Neural Engine,
+          an improved CPU and GPU, and a big jump in memory bandwidth. It also drives advanced video and photo features
+          like Camera Control, and it delivers our best-ever graphics performance for AAA gaming.
         </p>
       </div>
       <div class="grid-area typography-area">
@@ -40,17 +42,162 @@
           <strong>New 6-core CPU</strong>,<br> the fastest in a smartphone, runs complex workloads with less power
         </p>
         <p class="typography large">
-          <strong>17% increase in total system memory bandwidt</strong>h, the highest ever in iPhone, for outstanding performance
+          <strong>17% increase in total system memory bandwidt</strong>h, the highest ever in iPhone, for outstanding
+          performance
         </p>
       </div>
     </div>
     <div class="group-compare">
       <div class="radius-gradient">
-        <div class="compare-wrap">
-          <label for="iphone-model-select" class="compare-label">Compare with</label>
-          <select name="compare-iphone" id="iphone-model-select">
-            <option value="1">iPhone 12 Pro</option>
-          </select>
+        <div class="select-wrap">
+          <label for="iphone-model-select" class="select-label">Compare with</label>
+          <div class="select-box">
+            <select name="compare-iphone" id="iphone-model-select" class="select">
+              <option role="tab" value="iphone-12-pro" data-tab="#iphone-model-1" selected>iPhone 12 Pro</option>
+              <option role="tab" value="iphone-12-pro-max" data-tab="#iphone-model-2">iPhone 12 Pro Max</option>
+              <option role="tab" value="iphone-13-pro" data-tab="#iphone-model-3">iPhone 13 Pro</option>
+              <option role="tab" value="iphone-13-pro-max" data-tab="#iphone-model-4">iPhone 13 Pro Max</option>
+              <option role="tab" value="iphone-14-pro" data-tab="#iphone-model-5">iPhone 14 Pro</option>
+              <option role="tab" value="iphone-14-pro-max" data-tab="#iphone-model-6">iPhone 14 Pro Max</option>
+              <option role="tab" value="iphone-15-pro" data-tab="#iphone-model-7">iPhone 15 Pro</option>
+              <option role="tab" value="iphone-15-pro-max" data-tab="#iphone-model-8">iPhone 15 Pro Max</option>
+            </select>
+          </div>
+        </div>
+        <div class="option-wrap">
+          <div id="iphone-model-1" class="option-item on" role="tabpanel" data-name="iphone-12-pro">
+            <p>
+              <span>Up to</span>
+              <strong>60% faster</strong>
+              <span>6‑core CPU</span>
+            </p>
+            <p>
+              <span>Up to</span>
+              <strong>2x faster</strong>
+              <span>6‑core GPU</span>
+            </p>
+          </div>
+
+          <div id="iphone-model-2" class="option-item" role="tabpanel" data-name="iphone-12-pro-max">
+            <p>
+              <span>Up to</span>
+              <strong>60% faster</strong>
+              <span>6‑core CPU</span>
+            </p>
+            <p>
+              <span>Up to</span>
+              <strong>2x faster</strong>
+              <span>6‑core GPU</span>
+            </p>
+          </div>
+
+          <div id="iphone-model-3" class="option-item" role="tabpanel" data-name="iphone-13-pro">
+            <p>
+              <span>Up to</span>
+              <strong>40% faster</strong>
+              <span>6‑core CPU</span>
+            </p>
+            <p>
+              <span>Up to</span>
+              <strong>50% faster</strong>
+              <span>6‑core GPU</span>
+            </p>
+          </div>
+
+          <div id="iphone-model-4" class="option-item" role="tabpanel" data-name="iphone-13-pro-max">
+            <p>
+              <span>Up to</span>
+              <strong>40% faster</strong>
+              <span>6‑core CPU</span>
+            </p>
+            <p>
+              <span>Up to</span>
+              <strong>50% faster</strong>
+              <span>6‑core GPU</span>
+            </p>
+          </div>
+
+          <div id="iphone-model-5" class="option-item" role="tabpanel" data-name="iphone-14-pro">
+            <p>
+              <span>Up to</span>
+              <strong>30% faster</strong>
+              <span>6‑core CPU</span>
+            </p>
+            <p>
+              <span>Up to</span>
+              <strong>40% faster</strong>
+              <span>6‑core GPU</span>
+            </p>
+          </div>
+
+          <div id="iphone-model-6" class="option-item" role="tabpanel" data-name="iphone-14-pro-max">
+            <p>
+              <span>Up to</span>
+              <strong>30% faster</strong>
+              <span>6‑core CPU</span>
+            </p>
+            <p>
+              <span>Up to</span>
+              <strong>40% faster</strong>
+              <span>6‑core GPU</span>
+            </p>
+          </div>
+
+          <div id="iphone-model-7" class="option-item" role="tabpanel" data-name="iphone-15-pro">
+            <p>
+              <span>Up to</span>
+              <strong>15% faster</strong>
+              <span>6‑core CPU</span>
+            </p>
+            <p>
+              <span>Up to</span>
+              <strong>20% faster</strong>
+              <span>6‑core GPU</span>
+            </p>
+          </div>
+
+          <div id="iphone-model-8" class="option-item" role="tabpanel" data-name="iphone-15-pro-max">
+            <p>
+              <span>Up to</span>
+              <strong>15% faster</strong>
+              <span>6‑core CPU</span>
+            </p>
+            <p>
+              <span>Up to</span>
+              <strong>20% faster</strong>
+              <span>6‑core GPU</span>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="group-game">
+      <div class="game-area">
+        <figure>
+          <div class="thumb">
+            <img src="../asset/images/gaming.jpg" alt>
+          </div>
+          <figcaption>DEATH STRANDING DIRECTOR’S CUT</figcaption>
+        </figure>
+      </div>
+      <div class="viewport-content">
+        <h3 class="headline">
+          Gaming.<br>   
+          In a whole new light.
+        </h3>
+        <div class="typography-area">
+          <p class="typography">
+            With up to two times faster hardware-accelerated ray tracing, A18 Pro <strong>makes games look and feel beautifully lifelike</strong> — with more fluid graphics and realistic lighting.
+          </p>
+          <p class="typography">
+            And with Game Mode in iOS 18, you’ll get better sustained frame rates for continuous play and improved responsiveness if you’re using wireless controllers and AirPods.
+          </p>
+        </div>
+        <div class="typography-area">
+          <p class="typography large">
+            <strong>Up to 2x faster hardware-accelerated ray tracing</strong> than A17 Pro
+          </p>
         </div>
       </div>
     </div>
@@ -297,6 +444,12 @@
       </defs>
     </svg>
   </div>
+  <script>
+    $('#iphone-model-select').change(function () {
+      tabName = $(this).find('option:selected').data('tab');
+      $(tabName).addClass('on').siblings().removeClass('on');
+    });
+  </script>
 </body>
 
 </html>

@@ -1018,23 +1018,6 @@
 
 .sc-dolby {
   padding-bottom: var(--global-section-padding);
-
-  .headline {
-    font-size: 64px;
-    line-height: 1.125;
-    font-weight: 600;
-    text-align: center;
-
-    @include resT {
-      font-size: 40px;
-    }
-
-    @include resM {
-      font-size: 32px;
-      width: 83.888%;
-    }
-  }
-
   .group-horse {
     .viewport-content {
       // border: 10px solid rgb(148, 90, 255);
@@ -1081,10 +1064,6 @@
         grid-column-gap: 80px;
         justify-content: space-between;
 
-        .typography.large {
-          font-size: 40px;
-        }
-
         @include resD {
           width: 80%;
         }
@@ -1097,9 +1076,6 @@
             max-width: 450px;
           }
 
-          .typography.large {
-            font-size: 24px;
-          }
         }
 
         @include resM {
@@ -1903,7 +1879,12 @@
 
 .sc-a18 {
   .group-media {
+    width: 100%;
+
     .video-area {
+      margin: 0 auto;
+      @include flexbox;
+
       @include resM {
         width: 100%;
         height: 80vh;
@@ -2021,15 +2002,74 @@
       margin-top: 80px;
     }
 
-    .radius-gradient {
-      width: 75%;
-      max-width: 1400px;
-      border-radius: 18px;
-      background-image: linear-gradient(180deg, #0e0e0e 30%, rgba(14, 14, 14, 0) 80%);
-      padding: 72px 0 0 72px;
+    .option-wrap {
+      margin-top: 56px;
 
+      .option-item {
+        display: none;
+
+        &.on {
+          display: flex;
+        }
+
+        color: #86868b;
+        font-size: 17px;
+        line-height: 1.2353641176;
+        gap: 20%;
+
+        @include resT {
+          gap: 35%;
+        }
+
+        @include resM {
+          flex-direction: column;
+          gap: 48px;
+        }
+
+        p {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+          gap: 5px;
+
+          strong {
+            font-size: 28px;
+            background-image: linear-gradient(270deg, #f5e3d9 40%, #fdc9ae);
+            background-clip: text;
+            -webkit-text-fill-color: rgba(0, 0, 0, 0);
+            font-weight: 600;
+
+            @include resT {}
+          }
+        }
+      }
+    }
+  }
+
+  .group-game {
+    margin-top: 160px;
+    .game-area {
+      figure{
+        display: flex;
+        flex-direction: column;
+        .thumb{
+          order: 2;
+        }
+        figcaption{
+          order: 1;
+          text-align: center;
+          font-size: 12px;
+          color: #86868b;
+        }
+      }
+    }
+
+    .typography-area {
       @include resT {
-        width: 88%;
+        .typography.large {
+          font-size: 28px;
+        }
       }
     }
   }
