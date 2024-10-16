@@ -2049,12 +2049,14 @@
 
   .group-game {
     margin-top: 160px;
+    @include column-flexbox;
     .game-area {
       figure{
         display: flex;
         flex-direction: column;
         .thumb{
           order: 2;
+          width: 100%;
         }
         figcaption{
           order: 1;
@@ -2064,7 +2066,9 @@
         }
       }
     }
-
+    .viewport-content{
+      margin-top: -190px;
+    }
     .typography-area {
       @include resT {
         .typography.large {

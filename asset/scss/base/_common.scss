@@ -208,7 +208,8 @@ body.dimmed::after {
 }
 
 
-.sc-dolby,.sc-a18{
+.sc-dolby,
+.sc-a18 {
   .headline {
     font-size: 64px;
     line-height: 1.125;
@@ -292,6 +293,12 @@ body.dimmed::after {
   }
 }
 
+.shadow {
+  background-image: linear-gradient(0deg, rgb(255, 255, 255), #757575);
+  background-clip: text;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+}
+
 .filter-container {
   display: none;
 }
@@ -370,15 +377,18 @@ body.dimmed::after {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px 0 22px;
+    padding: 0 30px 0 22px;
     height: 42px;
     border-radius: 10em;
     background-color: rgba(0, 0, 0, 0);
-    color: #f5f5f7;
     border: 1px solid #86868b;
     appearance: none;
     text-overflow: ellipsis;
     cursor: pointer;
+
+    option {
+      color: #000;
+    }
 
     @include resSM {
       width: 100%;
