@@ -2269,90 +2269,111 @@
 		@include resT {
 			margin-top: 40px;
 		}
+
 		width: 100%;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		align-items: center;
-		@include resM{
-			grid-template-columns: repeat(1,1fr);
+
+		@include resM {
+			grid-template-columns: repeat(1, 1fr);
 		}
-		.media-area{
+
+		.media-area {
 			max-width: 416px;
-			@include resM{
+
+			@include resM {
 				margin-top: 40px;
 				max-width: 100%;
 				@include flexbox;
-				.thumb{
+
+				.thumb {
 					width: 228px;
 				}
 			}
 		}
-		.typography-area{
+
+		.typography-area {
 			max-width: 80%;
 			display: flex;
 			flex-direction: column;
 			align-items: flex-start;
 			row-gap: 40px;
-			.large{
+
+			.large {
 				font-size: 28px;
 				line-height: 1.1;
-				@include resT{
+
+				@include resT {
 					font-size: 24px;
 				}
-				@include resM{
+
+				@include resM {
 					font-size: 21px;
 				}
 			}
-			@include resM{
+
+			@include resM {
 				max-width: 100%;
 			}
-			&.column{
+
+			&.column {
 				display: grid;
 				grid-column: 1/3;
 				max-width: 100%;
 				width: 100%;
-				grid-template-columns: repeat(2,1fr);
+				grid-template-columns: repeat(2, 1fr);
 				justify-items: start;
 				margin-top: 96px;
-				.typography:first-child{
+
+				.typography:first-child {
 					padding-right: 25%;
-					@include resT{
+
+					@include resT {
 						padding-right: 10%;
 					}
-					@include resM{
+
+					@include resM {
 						order: 1;
 					}
 				}
-				.typography:not(:first-child){
-					@include resM{
+
+				.typography:not(:first-child) {
+					@include resM {
 						order: 3;
 					}
 				}
-				@include resM{
+
+				@include resM {
 					grid-column: 1/2;
-					grid-template-columns: repeat(1,1fr);
-					
+					grid-template-columns: repeat(1, 1fr);
+
 				}
-				.link-more{
+
+				.link-more {
 					grid-column: 1/3;
-					@include resM{
+
+					@include resM {
 						grid-column: 1/2;
 						order: 2;
 					}
 				}
 			}
-			&.border{
+
+			&.border {
 				max-width: 100%;
 				grid-column: 1/3;
 				margin-top: 40px;
 				padding-top: 40px;
 				position: relative;
 				padding-right: 25%;
-				@include resM{
+
+				@include resM {
 					grid-column: 1/2;
 					padding-right: 0;
 				}
-				&::after{
+
+				&::after {
 					content: "";
 					position: absolute;
 					top: 0;
@@ -2366,60 +2387,194 @@
 	}
 }
 
-.sc-designed{
-	
+.sc-designed {
+
 	padding-bottom: var(--global-section-padding);
-	.link-more{
+
+	.link-more {
 		font-size: 19px;
 		margin-top: 64px;
 	}
-	.viewport-content{
+
+	.viewport-content {
 		padding: 0 7%;
-		&:not(:first-child){
+
+		&:not(:first-child) {
 			display: flex;
 			flex-direction: column;
 			gap: 128px;
-			@include resT{
+
+			@include resT {
 				gap: 80px;
 			}
 		}
 	}
-	.headline-typo{
+
+	.headline-typo {
 		padding-bottom: 64px;
-		@include resM{
+
+		@include resM {
 			padding-bottom: 40px;
 		}
 	}
-	.subheadline{
+
+	.subheadline {
 		font-size: 40px;
 		font-weight: 600;
 		margin-bottom: 40px;
-		@include resT{
+
+		@include resT {
 			font-size: 28px;
 			margin-bottom: 30px;
 		}
 	}
-	.typography-area{
+
+	.typography-area {
 		font-size: 21px;
 		display: flex;
 		column-gap: 10%;
-		@include resT{
+
+		@include resT {
 			font-size: 14px;
 			flex-wrap: wrap;
 		}
-		@include resM{
+
+		@include resM {
 			flex-direction: column;
 			padding-right: 20%;
 			row-gap: 34px;
 		}
-		.typo-item{
+
+		.typo-item {
 			flex: 1;
 			display: flex;
 			flex-direction: column;
 			gap: 18px;
-			.icon{
-				@include resM{
+
+			.icon {
+				@include resM {
 					max-width: 28px;
+				}
+			}
+		}
+	}
+}
+
+.sc-significant,
+.sc-buy,
+.sc-keep {
+	padding-top: var(--global-section-padding);
+	background: rgb(29, 29, 31);
+}
+
+.sc-significant {
+	.group-accordion {
+		max-height: 784px;
+		background: #000;
+		border-radius: 28px;
+		overflow: hidden;
+		padding: 8%;
+		position: relative;
+		@include resT{
+			max-height: 858px;
+			padding-bottom: 3%;
+		}
+		.accordion-list {
+			width: 350px;
+			@include resT{
+				width: 100%;
+			}
+			.accordion-item+.accordion-item{
+				.btn-accordion{
+					border-top: 1px solid rgba(255, 255, 255, 0.24);
+				}
+			}
+			.accordion-item {
+				width: 100%;
+				&.on{
+					.content{
+						display: block;
+					}
+					.btn-accordion::after{
+						rotate: (-90deg);
+					}
+				}
+				.btn-accordion {
+					width: 100%;
+					font-size: 28px;
+					font-weight: 600;
+					padding: 24px 0;
+					text-align: left;
+					@include resT{
+						width: 100%;
+						font-size: 24px;
+					}
+					@include resM {
+						font-size: 21px;
+					}
+					@include flexbox(between);
+					&::after {
+						content: '';
+						width: 24px;
+						aspect-ratio: 1/1;
+						background-color: rgba(255, 255, 255, 0.24);
+						mask-image: url(../images/icons/icon_arrow.svg);
+						mask-repeat: no-repeat;
+						mask-size: contain;
+						mask-position: center center;
+						rotate: (90deg);
+						transition: rotate .3s;
+					}
+				}
+
+				
+				.content {
+					display: none;
+					line-height: 1.5;
+					.img-box{
+						position: absolute;
+						top: 50%;
+						transform: translateY(-50%);
+						min-width: max-content;
+						left: 55%;
+						@include resD{
+							left: 52%;
+						}
+						&.mac{
+							left: 35%;
+							@include resD{
+								left: 45%;
+							}
+						}
+						@include resT{
+							position: static;
+							@include flexbox;
+							padding-top: 38px;
+							padding-bottom: 40px;
+							transform: translateY(0);
+							img{
+								width: 320px;
+							}
+						}
+						@include resM{
+							padding-top: 30px;
+							padding-bottom: 48px;
+							img{
+								width: 250px;
+							}
+						}
+					}
+					.desc-box {
+						opacity: .8;
+						padding-right: 15%;
+						padding-bottom: 40px;
+						@include resT{
+							padding-bottom: 0;
+						}
+						@include resM {
+							font-size: 14px;
+						}
+					}
 				}
 			}
 		}
