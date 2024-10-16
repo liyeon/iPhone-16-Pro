@@ -177,10 +177,6 @@ body.dimmed::after {
     line-height: 1.2;
   }
 
-  @include resSM {
-    font-size: 17px;
-  }
-
   .typography {
     font-weight: 600;
     color: rgb(134, 134, 139);
@@ -278,18 +274,19 @@ body.dimmed::after {
 }
 
 .t-enter {
-	display: none;
+  display: none;
 
-	@include resD {
-		display: block;
-	}
+  @include resD {
+    display: block;
+  }
 }
 
 .m-enter {
-	display: none;
-	@include resM {
-		display: block;
-	}
+  display: none;
+
+  @include resM {
+    display: block;
+  }
 }
 
 .shadow {
@@ -397,5 +394,57 @@ body.dimmed::after {
       border-color: $sk-glyph-blue;
     }
 
+  }
+}
+
+.group-compare {
+  margin-top: 128px;
+  @include column-flexbox;
+
+  @include resT {
+    margin-top: 80px;
+  }
+
+  .option-wrap {
+    margin-top: 56px;
+
+    .option-item {
+      display: none;
+
+      &.on {
+        display: flex;
+      }
+
+      color: #86868b;
+      font-size: 17px;
+      line-height: 1.2353641176;
+      gap: 20%;
+
+      @include resT {
+        gap: 35%;
+      }
+
+      @include resM {
+        flex-direction: column;
+        gap: 48px;
+      }
+
+      p {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 5px;
+        font-weight: 600;
+        strong {
+          font-size: 28px;
+          background-image: linear-gradient(270deg, #f5e3d9 40%, #fdc9ae);
+          background-clip: text;
+          -webkit-text-fill-color: rgba(0, 0, 0, 0);
+
+          @include resT {}
+        }
+      }
+    }
   }
 }

@@ -1995,63 +1995,9 @@
 		}
 	}
 
-	.group-compare {
-		margin-top: 128px;
-		@include column-flexbox;
-
-		@include resT {
-			margin-top: 80px;
-		}
-
-		.option-wrap {
-			margin-top: 56px;
-
-			.option-item {
-				display: none;
-
-				&.on {
-					display: flex;
-				}
-
-				color: #86868b;
-				font-size: 17px;
-				line-height: 1.2353641176;
-				gap: 20%;
-
-				@include resT {
-					gap: 35%;
-				}
-
-				@include resM {
-					flex-direction: column;
-					gap: 48px;
-				}
-
-				p {
-					display: flex;
-					flex-direction: column;
-					align-items: flex-start;
-					justify-content: center;
-					gap: 5px;
-
-					strong {
-						font-size: 28px;
-						background-image: linear-gradient(270deg, #f5e3d9 40%, #fdc9ae);
-						background-clip: text;
-						-webkit-text-fill-color: rgba(0, 0, 0, 0);
-						font-weight: 600;
-
-						@include resT {}
-					}
-				}
-			}
-		}
-	}
-
 	.group-game {
 		margin-top: 160px;
 		@include column-flexbox;
-
 		.game-area {
 			figure {
 				display: flex;
@@ -2134,13 +2080,107 @@
 .sc-battery{
   padding: var(--global-section-aap-padding) 0;
   .viewport-content{
-    width: 73%;
+    width: 60%;
+    @include resD{
+      width: 73%;
+    }
   }
   .headline-filter{
     text-align: left;
     width: 100%;
     .filter{
-      padding: 80px 0;
+      box-sizing: border-box;
+      padding: 0 0 60px 0;
+    }
+  }
+  .group-battery{
+    display: flex;
+    flex-direction: column;
+  }
+  .typography-area{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 80px;
+    justify-items: center;
+    @include resT{
+      margin-top: -30px;
+      grid-template-columns: repeat(1,1fr);
+      justify-items: start;
+      row-gap: 60px;
+    }
+    @include resM{
+      margin-top: 0;
+      order: 2;
+    }
+    .time-wrap,.desc-wrap{
+      display: flex;
+      flex-direction: column;
+      
+    }
+    .desc-wrap{
+      gap: 20px;
+      @include resT{
+        width: 78%;
+      }
+      @include resM{
+        width: 100%;
+      }
+    }
+    .time-wrap{
+      gap: 40px;
+      @include resT{
+        flex-direction: row;
+        gap: 100px;
+      }
+      @include resM{
+        gap: 60px;
+        row-gap: 40px;
+        flex-wrap: wrap;
+      }
+    }
+    .typography.time{
+      font-size: 17px;
+      line-height: 1.2;
+      strong{
+        font-size: 40px;
+      }
+    }
+  }
+  .bg-area{
+    margin-top: 96px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50px;
+    @include resM{
+      margin-top: -30px;
+      margin-bottom: 40px;
+      border-radius: 20px;
+    }
+    &::after{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(../images/video-frame.png);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: -1px 0;
+      z-index: 1;
+    }
+    .item{
+      clip-path: inset(4% 1.5% round 40px);
+      @include resM{
+        clip-path: inset(4% 1.5% round 20px);
+      }
+      width: 100%;
+      height: 100%;
+      video{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
   }
 }
