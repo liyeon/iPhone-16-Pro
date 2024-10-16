@@ -230,7 +230,15 @@ body.dimmed::after {
   color: $sk-body-text-color;
   transition: font-size .3s;
   padding-bottom: 80px;
-
+  &.large{
+    font-size: 80px;
+    @include resT{
+      font-size: 64px;
+    }
+    @include resM{
+      font-size: 40px;
+    }
+  }
   @include resT {
     font-size: 48px;
     padding-bottom: 64px;
