@@ -267,22 +267,6 @@ body.dimmed::after {
     font-size: 40px;
   }
 
-  .t-enter {
-    display: none;
-
-    @include resD {
-      display: block;
-    }
-  }
-
-  .m-enter {
-    display: none;
-
-    @include resM {
-      display: block;
-    }
-  }
-
   .filter {
     padding: 80px;
     color: #fff;
@@ -291,6 +275,21 @@ body.dimmed::after {
       padding: 40px;
     }
   }
+}
+
+.t-enter {
+	display: none;
+
+	@include resD {
+		display: block;
+	}
+}
+
+.m-enter {
+	display: none;
+	@include resM {
+		display: block;
+	}
 }
 
 .shadow {
@@ -395,7 +394,7 @@ body.dimmed::after {
     }
 
     &:focus {
-      border-color: rgb(0, 106, 255);
+      border-color: $sk-glyph-blue;
     }
 
   }

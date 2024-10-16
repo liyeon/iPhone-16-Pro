@@ -459,22 +459,6 @@ body.dimmed::after {
     font-size: 40px;
   }
 }
-.headline-filter .t-enter {
-  display: none;
-}
-@media (max-width: 1440px) {
-  .headline-filter .t-enter {
-    display: block;
-  }
-}
-.headline-filter .m-enter {
-  display: none;
-}
-@media (max-width: 734px) {
-  .headline-filter .m-enter {
-    display: block;
-  }
-}
 .headline-filter .filter {
   padding: 80px;
   color: #fff;
@@ -482,6 +466,24 @@ body.dimmed::after {
 @media (max-width: 482px) {
   .headline-filter .filter {
     padding: 40px;
+  }
+}
+
+.t-enter {
+  display: none;
+}
+@media (max-width: 1440px) {
+  .t-enter {
+    display: block;
+  }
+}
+
+.m-enter {
+  display: none;
+}
+@media (max-width: 734px) {
+  .m-enter {
+    display: block;
   }
 }
 
@@ -616,7 +618,7 @@ body.dimmed::after {
   }
 }
 .select-wrap .select:focus {
-  border-color: rgb(0, 106, 255);
+  border-color: rgb(41, 151, 255);
 }
 
 .btn {
@@ -3727,7 +3729,65 @@ body.dimmed::after {
   margin-top: -190px;
 }
 @media (max-width: 1068px) {
+  .sc-a18 .group-game .viewport-content {
+    margin-top: -110px;
+  }
+}
+@media (max-width: 734px) {
+  .sc-a18 .group-game .viewport-content {
+    margin-top: -60px;
+  }
+}
+.sc-a18 .group-game .viewport-content .headline {
+  margin: 0 auto;
+}
+@media (max-width: 1068px) {
+  .sc-a18 .group-game .viewport-content .headline {
+    font-size: 56px;
+  }
+}
+@media (max-width: 734px) {
+  .sc-a18 .group-game .viewport-content .headline {
+    font-size: 40px;
+  }
+}
+.sc-a18 .group-game .typography-area {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 53%;
+  margin: 0 auto;
+  margin-top: 40px;
+  gap: 50px;
+}
+@media (max-width: 1068px) {
+  .sc-a18 .group-game .typography-area {
+    width: 66%;
+    margin-top: 56px;
+  }
+}
+@media (max-width: 734px) {
+  .sc-a18 .group-game .typography-area {
+    width: 83%;
+    gap: 40px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.sc-a18 .group-game .typography-area .typography.large {
+  grid-column: 1/3;
+  line-height: 1.2;
+  text-align: center;
+  padding: 0 13%;
+}
+@media (max-width: 1068px) {
   .sc-a18 .group-game .typography-area .typography.large {
+    font-size: 40px;
+    padding: 0 2%;
+  }
+}
+@media (max-width: 734px) {
+  .sc-a18 .group-game .typography-area .typography.large {
+    grid-column: 1/2;
     font-size: 28px;
+    text-align: left;
   }
 }/*# sourceMappingURL=style.css.map */
