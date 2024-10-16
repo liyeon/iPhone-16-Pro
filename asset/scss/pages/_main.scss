@@ -2278,6 +2278,14 @@
 		}
 		.media-area{
 			max-width: 416px;
+			@include resM{
+				margin-top: 40px;
+				max-width: 100%;
+				@include flexbox;
+				.thumb{
+					width: 228px;
+				}
+			}
 		}
 		.typography-area{
 			max-width: 80%;
@@ -2291,9 +2299,12 @@
 				@include resT{
 					font-size: 24px;
 				}
+				@include resM{
+					font-size: 21px;
+				}
 			}
-			.link-more{
-				white-space: nowrap;
+			@include resM{
+				max-width: 100%;
 			}
 			&.column{
 				display: grid;
@@ -2308,9 +2319,26 @@
 					@include resT{
 						padding-right: 10%;
 					}
+					@include resM{
+						order: 1;
+					}
+				}
+				.typography:not(:first-child){
+					@include resM{
+						order: 3;
+					}
+				}
+				@include resM{
+					grid-column: 1/2;
+					grid-template-columns: repeat(1,1fr);
+					
 				}
 				.link-more{
 					grid-column: 1/3;
+					@include resM{
+						grid-column: 1/2;
+						order: 2;
+					}
 				}
 			}
 			&.border{
@@ -2322,6 +2350,7 @@
 				padding-right: 25%;
 				@include resM{
 					grid-column: 1/2;
+					padding-right: 0;
 				}
 				&::after{
 					content: "";

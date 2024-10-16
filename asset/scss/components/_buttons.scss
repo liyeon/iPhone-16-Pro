@@ -41,7 +41,22 @@
     text-decoration: underline;
   }
 }
+.link-more.icon{
+  display: block;
+  &::after{
+    content: none;
+  }
+  .ic-arrow{
+    display: inline-block;
+    aspect-ratio: 1/1;
+    height: 11px;
+    background-color: $sk-body-link-color;
+    mask-image: url(../images/icons/icon_arrow.svg);
+    mask-repeat: no-repeat;
+    mask-size: contain;
+  }
 
+}
 .btn-film {
   color: $sk-body-link-color;
   @include flexbox;
