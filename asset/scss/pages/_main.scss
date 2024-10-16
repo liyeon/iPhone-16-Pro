@@ -2475,44 +2475,56 @@
 		overflow: hidden;
 		padding: 8%;
 		position: relative;
-		@include resT{
+
+		@include resT {
 			max-height: 858px;
 			padding-bottom: 3%;
 		}
+
 		.accordion-list {
 			width: 350px;
-			@include resT{
+
+			@include resT {
 				width: 100%;
 			}
-			.accordion-item+.accordion-item{
-				.btn-accordion{
+
+			.accordion-item+.accordion-item {
+				.btn-accordion {
 					border-top: 1px solid rgba(255, 255, 255, 0.24);
 				}
 			}
+
 			.accordion-item {
 				width: 100%;
-				&.on{
-					.content{
+
+				&.on {
+					.content {
 						display: block;
 					}
-					.btn-accordion::after{
+
+					.btn-accordion::after {
 						rotate: (-90deg);
 					}
 				}
+
 				.btn-accordion {
 					width: 100%;
 					font-size: 28px;
 					font-weight: 600;
 					padding: 24px 0;
 					text-align: left;
-					@include resT{
+
+					@include resT {
 						width: 100%;
 						font-size: 24px;
 					}
+
 					@include resM {
 						font-size: 21px;
 					}
+
 					@include flexbox(between);
+
 					&::after {
 						content: '';
 						width: 24px;
@@ -2527,52 +2539,177 @@
 					}
 				}
 
-				
+
 				.content {
 					display: none;
 					line-height: 1.5;
-					.img-box{
+
+					.img-box {
 						position: absolute;
 						top: 50%;
 						transform: translateY(-50%);
 						min-width: max-content;
 						left: 55%;
-						@include resD{
+
+						@include resD {
 							left: 52%;
 						}
-						&.mac{
+
+						&.mac {
 							left: 35%;
-							@include resD{
+
+							@include resD {
 								left: 45%;
 							}
 						}
-						@include resT{
+
+						@include resT {
 							position: static;
 							@include flexbox;
 							padding-top: 38px;
 							padding-bottom: 40px;
 							transform: translateY(0);
-							img{
+
+							img {
 								width: 320px;
 							}
 						}
-						@include resM{
+
+						@include resM {
 							padding-top: 30px;
 							padding-bottom: 48px;
-							img{
+
+							img {
 								width: 250px;
 							}
 						}
 					}
+
 					.desc-box {
 						opacity: .8;
 						padding-right: 15%;
 						padding-bottom: 40px;
-						@include resT{
+
+						@include resT {
 							padding-bottom: 0;
 						}
+
 						@include resM {
 							font-size: 14px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.sc-buy {
+	.group-top {
+		display: flex;
+		justify-content: space-between;
+			@include resM{
+				flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+			text-align: left;
+			.headline-typo{
+				padding-bottom: 20px;
+			}
+				margin-bottom: 40px;
+			}
+	}
+
+	.group-swiper {
+		.swiper-area {
+			.swiper {
+				padding: 10px 0;
+				.swiper-wrapper {	
+					margin-left: -33%;
+					@include resD{
+						margin-left: -30%;
+					}
+					@include resT{
+						margin-left: -27%;
+					}
+					@include resM{
+						margin-left: -20%;
+					}
+					@include resSM{
+						margin-left: 0;
+					}
+					.swiper-slide {
+						width: 405px;
+						height: 320px;
+						transition: scale .3s ease;
+						z-index: 1;
+						@include resD{
+							width: 372px;
+						}
+						@include resT{
+							width: 344px;
+							height: 310px;
+						}
+						@include resM{
+							width: 304px;
+							height: 275px;
+						}
+						&:hover{
+							scale:1.0174418604651163;
+						}
+						button{
+							background: #000;
+							border-radius: 28px;
+							overflow: hidden;
+							width: 100%;
+							height: 100%;
+							padding: 30px;
+							display: flex;
+							flex-direction: column;
+							gap: 10px;
+							text-align: left;
+							padding-bottom: 50px;
+							position: relative;
+							@include resM{
+								padding: 25px;
+								padding-bottom: 30px;
+							}
+							h3{
+								font-size: 28px;
+								font-weight: 600;
+								line-height: 1.2;
+								@include resT{
+									font-size: 24px;
+								}
+								@include resM{
+									font-size: 21px;
+								}
+							}
+							p{
+								padding-right: 20%;
+								line-height: 1.3;
+								@include resM{
+									font-size: 14px;
+								}
+							}
+							&::after{
+								content: '';
+								position: absolute;
+								right: 30px;
+								bottom: 30px;
+								width: 36px;
+								aspect-ratio: 1/1;
+								border-radius: 100%;
+								background-color: #fff;
+								background-image: url(../images/icons/buy/plus.svg);
+								background-position: center center;
+								background-repeat: no-repeat;
+								@include resM{
+									right: 20px;
+									bottom: 20px;
+								}
+							}
+							
 						}
 					}
 				}

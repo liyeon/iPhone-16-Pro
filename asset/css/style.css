@@ -233,53 +233,53 @@ body.dimmed::after {
           flex: 1;
 }
 
-.sc-titanium .swiper-area, .sc-camera .swiper-area, .sc-ios18 .swiper-area {
+.sc-titanium .swiper-area, .sc-camera .swiper-area, .sc-ios18 .swiper-area, .sc-buy .swiper-area {
   position: relative;
   padding-bottom: 90px;
 }
 @media (max-width: 1068px) {
-  .sc-titanium .swiper-area, .sc-camera .swiper-area, .sc-ios18 .swiper-area {
+  .sc-titanium .swiper-area, .sc-camera .swiper-area, .sc-ios18 .swiper-area, .sc-buy .swiper-area {
     padding-bottom: 70px;
   }
 }
 @media (max-width: 734px) {
-  .sc-titanium .swiper-area, .sc-camera .swiper-area, .sc-ios18 .swiper-area {
+  .sc-titanium .swiper-area, .sc-camera .swiper-area, .sc-ios18 .swiper-area, .sc-buy .swiper-area {
     padding-bottom: 60px;
   }
 }
-.sc-titanium .swiper-area .swiper .swiper-wrapper, .sc-camera .swiper-area .swiper .swiper-wrapper, .sc-ios18 .swiper-area .swiper .swiper-wrapper {
+.sc-titanium .swiper-area .swiper .swiper-wrapper, .sc-camera .swiper-area .swiper .swiper-wrapper, .sc-ios18 .swiper-area .swiper .swiper-wrapper, .sc-buy .swiper-area .swiper .swiper-wrapper {
   margin-left: -25%;
 }
 @media (max-width: 1068px) {
-  .sc-titanium .swiper-area .swiper .swiper-wrapper, .sc-camera .swiper-area .swiper .swiper-wrapper, .sc-ios18 .swiper-area .swiper .swiper-wrapper {
+  .sc-titanium .swiper-area .swiper .swiper-wrapper, .sc-camera .swiper-area .swiper .swiper-wrapper, .sc-ios18 .swiper-area .swiper .swiper-wrapper, .sc-buy .swiper-area .swiper .swiper-wrapper {
     margin-left: -15%;
   }
 }
-.sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide {
+.sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-buy .swiper-area .swiper .swiper-wrapper .swiper-slide {
   width: 550px;
 }
 @media (max-width: 1440px) {
-  .sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide {
+  .sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-buy .swiper-area .swiper .swiper-wrapper .swiper-slide {
     width: 520px;
   }
 }
 @media (max-width: 1068px) {
-  .sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide {
+  .sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-buy .swiper-area .swiper .swiper-wrapper .swiper-slide {
     width: 462px;
   }
 }
 @media (max-width: 734px) {
-  .sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide {
+  .sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-buy .swiper-area .swiper .swiper-wrapper .swiper-slide {
     width: 295px;
   }
 }
-.sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide figure .thumb, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide figure .thumb, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide figure .thumb {
+.sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide figure .thumb, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide figure .thumb, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide figure .thumb, .sc-buy .swiper-area .swiper .swiper-wrapper .swiper-slide figure .thumb {
   width: 100%;
   aspect-ratio: 1/1;
   border-radius: 18px;
   overflow: hidden;
 }
-.sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption {
+.sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption, .sc-buy .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption {
   font-size: 17px;
   line-height: 1.4705882353;
   font-weight: 600;
@@ -288,17 +288,17 @@ body.dimmed::after {
   width: 70%;
   color: #86868b;
 }
-.sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption strong, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption strong, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption strong {
+.sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption strong, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption strong, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption strong, .sc-buy .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption strong {
   color: #fff;
 }
 @media (max-width: 734px) {
-  .sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption {
+  .sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption, .sc-buy .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption {
     width: 80%;
     font-size: 14px;
     padding: 20px 5px 0px 34px;
   }
 }
-.sc-titanium .swiper-area .swiper-navigation, .sc-camera .swiper-area .swiper-navigation, .sc-ios18 .swiper-area .swiper-navigation {
+.sc-titanium .swiper-area .swiper-navigation, .sc-camera .swiper-area .swiper-navigation, .sc-ios18 .swiper-area .swiper-navigation, .sc-buy .swiper-area .swiper-navigation {
   position: absolute;
   right: 6%;
   bottom: 0;
@@ -312,7 +312,8 @@ body.dimmed::after {
 .sc-titanium .swiper-area .swiper-navigation .swiper-button-next,
 .sc-titanium .swiper-area .swiper-navigation .swiper-button-prev, .sc-camera .swiper-area .swiper-navigation .swiper-button-next,
 .sc-camera .swiper-area .swiper-navigation .swiper-button-prev, .sc-ios18 .swiper-area .swiper-navigation .swiper-button-next,
-.sc-ios18 .swiper-area .swiper-navigation .swiper-button-prev {
+.sc-ios18 .swiper-area .swiper-navigation .swiper-button-prev, .sc-buy .swiper-area .swiper-navigation .swiper-button-next,
+.sc-buy .swiper-area .swiper-navigation .swiper-button-prev {
   position: static;
   width: 36px;
   height: 36px;
@@ -322,7 +323,8 @@ body.dimmed::after {
 .sc-titanium .swiper-area .swiper-navigation .swiper-button-next::after,
 .sc-titanium .swiper-area .swiper-navigation .swiper-button-prev::after, .sc-camera .swiper-area .swiper-navigation .swiper-button-next::after,
 .sc-camera .swiper-area .swiper-navigation .swiper-button-prev::after, .sc-ios18 .swiper-area .swiper-navigation .swiper-button-next::after,
-.sc-ios18 .swiper-area .swiper-navigation .swiper-button-prev::after {
+.sc-ios18 .swiper-area .swiper-navigation .swiper-button-prev::after, .sc-buy .swiper-area .swiper-navigation .swiper-button-next::after,
+.sc-buy .swiper-area .swiper-navigation .swiper-button-prev::after {
   font-size: 12px;
   font-weight: bold;
   color: rgba(255, 255, 255, 0.8);
@@ -4403,5 +4405,154 @@ body.dimmed::after {
 @media (max-width: 734px) {
   .sc-significant .group-accordion .accordion-list .accordion-item .content .desc-box {
     font-size: 14px;
+  }
+}
+
+.sc-buy .group-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media (max-width: 734px) {
+  .sc-buy .group-top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    text-align: left;
+    margin-bottom: 40px;
+  }
+  .sc-buy .group-top .headline-typo {
+    padding-bottom: 20px;
+  }
+}
+.sc-buy .group-swiper .swiper-area .swiper {
+  padding: 10px 0;
+}
+.sc-buy .group-swiper .swiper-area .swiper .swiper-wrapper {
+  margin-left: -33%;
+}
+@media (max-width: 1440px) {
+  .sc-buy .group-swiper .swiper-area .swiper .swiper-wrapper {
+    margin-left: -30%;
+  }
+}
+@media (max-width: 1068px) {
+  .sc-buy .group-swiper .swiper-area .swiper .swiper-wrapper {
+    margin-left: -27%;
+  }
+}
+@media (max-width: 734px) {
+  .sc-buy .group-swiper .swiper-area .swiper .swiper-wrapper {
+    margin-left: -20%;
+  }
+}
+@media (max-width: 482px) {
+  .sc-buy .group-swiper .swiper-area .swiper .swiper-wrapper {
+    margin-left: 0;
+  }
+}
+.sc-buy .group-swiper .swiper-area .swiper .swiper-wrapper .swiper-slide {
+  width: 405px;
+  height: 320px;
+  -webkit-transition: scale 0.3s ease;
+  transition: scale 0.3s ease;
+  z-index: 1;
+}
+@media (max-width: 1440px) {
+  .sc-buy .group-swiper .swiper-area .swiper .swiper-wrapper .swiper-slide {
+    width: 372px;
+  }
+}
+@media (max-width: 1068px) {
+  .sc-buy .group-swiper .swiper-area .swiper .swiper-wrapper .swiper-slide {
+    width: 344px;
+    height: 310px;
+  }
+}
+@media (max-width: 734px) {
+  .sc-buy .group-swiper .swiper-area .swiper .swiper-wrapper .swiper-slide {
+    width: 304px;
+    height: 275px;
+  }
+}
+.sc-buy .group-swiper .swiper-area .swiper .swiper-wrapper .swiper-slide:hover {
+  scale: 1.0174418605;
+}
+.sc-buy .group-swiper .swiper-area .swiper .swiper-wrapper .swiper-slide button {
+  background: #000;
+  border-radius: 28px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  padding-bottom: 50px;
+  position: relative;
+}
+@media (max-width: 734px) {
+  .sc-buy .group-swiper .swiper-area .swiper .swiper-wrapper .swiper-slide button {
+    padding: 25px;
+    padding-bottom: 30px;
+  }
+}
+.sc-buy .group-swiper .swiper-area .swiper .swiper-wrapper .swiper-slide button h3 {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+@media (max-width: 1068px) {
+  .sc-buy .group-swiper .swiper-area .swiper .swiper-wrapper .swiper-slide button h3 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 734px) {
+  .sc-buy .group-swiper .swiper-area .swiper .swiper-wrapper .swiper-slide button h3 {
+    font-size: 21px;
+  }
+}
+.sc-buy .group-swiper .swiper-area .swiper .swiper-wrapper .swiper-slide button p {
+  padding-right: 20%;
+  line-height: 1.3;
+}
+@media (max-width: 734px) {
+  .sc-buy .group-swiper .swiper-area .swiper .swiper-wrapper .swiper-slide button p {
+    font-size: 14px;
+  }
+}
+.sc-buy .group-swiper .swiper-area .swiper .swiper-wrapper .swiper-slide button::after {
+  content: "";
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  width: 36px;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+  background-color: #fff;
+  background-image: url(../images/icons/buy/plus.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+@media (max-width: 734px) {
+  .sc-buy .group-swiper .swiper-area .swiper .swiper-wrapper .swiper-slide button::after {
+    right: 20px;
+    bottom: 20px;
   }
 }/*# sourceMappingURL=style.css.map */
