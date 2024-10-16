@@ -2130,3 +2130,17 @@
 		}
 	}
 }
+
+.sc-battery{
+  padding: var(--global-section-aap-padding) 0;
+  .viewport-content{
+    width: 73%;
+  }
+  .headline-filter{
+    text-align: left;
+    width: 100%;
+    .filter{
+      padding: 80px 0;
+    }
+  }
+}

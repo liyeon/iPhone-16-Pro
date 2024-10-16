@@ -3790,4 +3790,18 @@ body.dimmed::after {
     font-size: 28px;
     text-align: left;
   }
+}
+
+.sc-battery {
+  padding: var(--global-section-aap-padding) 0;
+}
+.sc-battery .viewport-content {
+  width: 73%;
+}
+.sc-battery .headline-filter {
+  text-align: left;
+  width: 100%;
+}
+.sc-battery .headline-filter .filter {
+  padding: 80px 0;
 }/*# sourceMappingURL=style.css.map */
