@@ -67,14 +67,14 @@ body.dimmed::after {
     }
   }
 
+}
+.sc-titanium,.sc-camera,.sc-ios18{
   .swiper-area {
     position: relative;
     padding-bottom: 90px;
-
     @include resT {
       padding-bottom: 70px;
     }
-
     @include resM {
       padding-bottom: 60px;
     }
@@ -161,7 +161,6 @@ body.dimmed::after {
     }
   }
 }
-
 .typography-area,
 .typo-box {
   font-size: 21px;

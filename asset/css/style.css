@@ -232,64 +232,54 @@ body.dimmed::after {
       -ms-flex: 1;
           flex: 1;
 }
-.sc-titanium .swiper-area,
-.sc-camera .swiper-area {
+
+.sc-titanium .swiper-area, .sc-camera .swiper-area, .sc-ios18 .swiper-area {
   position: relative;
   padding-bottom: 90px;
 }
 @media (max-width: 1068px) {
-  .sc-titanium .swiper-area,
-  .sc-camera .swiper-area {
+  .sc-titanium .swiper-area, .sc-camera .swiper-area, .sc-ios18 .swiper-area {
     padding-bottom: 70px;
   }
 }
 @media (max-width: 734px) {
-  .sc-titanium .swiper-area,
-  .sc-camera .swiper-area {
+  .sc-titanium .swiper-area, .sc-camera .swiper-area, .sc-ios18 .swiper-area {
     padding-bottom: 60px;
   }
 }
-.sc-titanium .swiper-area .swiper .swiper-wrapper,
-.sc-camera .swiper-area .swiper .swiper-wrapper {
+.sc-titanium .swiper-area .swiper .swiper-wrapper, .sc-camera .swiper-area .swiper .swiper-wrapper, .sc-ios18 .swiper-area .swiper .swiper-wrapper {
   margin-left: -25%;
 }
 @media (max-width: 1068px) {
-  .sc-titanium .swiper-area .swiper .swiper-wrapper,
-  .sc-camera .swiper-area .swiper .swiper-wrapper {
+  .sc-titanium .swiper-area .swiper .swiper-wrapper, .sc-camera .swiper-area .swiper .swiper-wrapper, .sc-ios18 .swiper-area .swiper .swiper-wrapper {
     margin-left: -15%;
   }
 }
-.sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide,
-.sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide {
+.sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide {
   width: 550px;
 }
 @media (max-width: 1440px) {
-  .sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide,
-  .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide {
+  .sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide {
     width: 520px;
   }
 }
 @media (max-width: 1068px) {
-  .sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide,
-  .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide {
+  .sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide {
     width: 462px;
   }
 }
 @media (max-width: 734px) {
-  .sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide,
-  .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide {
+  .sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide {
     width: 295px;
   }
 }
-.sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide figure .thumb,
-.sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide figure .thumb {
+.sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide figure .thumb, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide figure .thumb, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide figure .thumb {
   width: 100%;
   aspect-ratio: 1/1;
   border-radius: 18px;
   overflow: hidden;
 }
-.sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption,
-.sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption {
+.sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption {
   font-size: 17px;
   line-height: 1.4705882353;
   font-weight: 600;
@@ -298,20 +288,17 @@ body.dimmed::after {
   width: 70%;
   color: #86868b;
 }
-.sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption strong,
-.sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption strong {
+.sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption strong, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption strong, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption strong {
   color: #fff;
 }
 @media (max-width: 734px) {
-  .sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption,
-  .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption {
+  .sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption {
     width: 80%;
     font-size: 14px;
     padding: 20px 5px 0px 34px;
   }
 }
-.sc-titanium .swiper-area .swiper-navigation,
-.sc-camera .swiper-area .swiper-navigation {
+.sc-titanium .swiper-area .swiper-navigation, .sc-camera .swiper-area .swiper-navigation, .sc-ios18 .swiper-area .swiper-navigation {
   position: absolute;
   right: 6%;
   bottom: 0;
@@ -323,9 +310,9 @@ body.dimmed::after {
   gap: 15px;
 }
 .sc-titanium .swiper-area .swiper-navigation .swiper-button-next,
-.sc-titanium .swiper-area .swiper-navigation .swiper-button-prev,
-.sc-camera .swiper-area .swiper-navigation .swiper-button-next,
-.sc-camera .swiper-area .swiper-navigation .swiper-button-prev {
+.sc-titanium .swiper-area .swiper-navigation .swiper-button-prev, .sc-camera .swiper-area .swiper-navigation .swiper-button-next,
+.sc-camera .swiper-area .swiper-navigation .swiper-button-prev, .sc-ios18 .swiper-area .swiper-navigation .swiper-button-next,
+.sc-ios18 .swiper-area .swiper-navigation .swiper-button-prev {
   position: static;
   width: 36px;
   height: 36px;
@@ -333,9 +320,9 @@ body.dimmed::after {
   border-radius: 100%;
 }
 .sc-titanium .swiper-area .swiper-navigation .swiper-button-next::after,
-.sc-titanium .swiper-area .swiper-navigation .swiper-button-prev::after,
-.sc-camera .swiper-area .swiper-navigation .swiper-button-next::after,
-.sc-camera .swiper-area .swiper-navigation .swiper-button-prev::after {
+.sc-titanium .swiper-area .swiper-navigation .swiper-button-prev::after, .sc-camera .swiper-area .swiper-navigation .swiper-button-next::after,
+.sc-camera .swiper-area .swiper-navigation .swiper-button-prev::after, .sc-ios18 .swiper-area .swiper-navigation .swiper-button-next::after,
+.sc-ios18 .swiper-area .swiper-navigation .swiper-button-prev::after {
   font-size: 12px;
   font-weight: bold;
   color: rgba(255, 255, 255, 0.8);
@@ -730,6 +717,7 @@ body.dimmed::after {
           justify-content: center;
   gap: 5px;
   position: relative;
+  font-weight: 600;
 }
 .link-more::after {
   content: "";
@@ -3931,4 +3919,13 @@ body.dimmed::after {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.sc-ios18 {
+  padding: var(--global-section-aap-padding) 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgb(0, 0, 0)), color-stop(60%, rgb(0, 0, 0)), color-stop(80%, rgb(19, 19, 19)));
+  background: linear-gradient(180deg, rgb(0, 0, 0), rgb(0, 0, 0) 60%, rgb(19, 19, 19) 80%);
+}
+.sc-ios18 .link-more {
+  margin-top: 80px;
 }/*# sourceMappingURL=style.css.map */
