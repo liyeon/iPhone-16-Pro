@@ -8,11 +8,6 @@
   margin: -1px;
 }
 
-::selection {
-  // background-color: $color-primary;
-  // color: $color-white;
-}
-
 body {
   transition: opacity .6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }

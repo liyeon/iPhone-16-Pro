@@ -2605,59 +2605,55 @@
 }
 
 .sc-buy {
-	.group-top {
-		display: flex;
-		justify-content: space-between;
-			@include resM{
-				flex-direction: column;
-			justify-content: flex-start;
-			align-items: flex-start;
-			text-align: left;
-			.headline-typo{
-				padding-bottom: 20px;
-			}
-				margin-bottom: 40px;
-			}
-	}
-
 	.group-swiper {
 		.swiper-area {
 			.swiper {
 				padding: 10px 0;
-				.swiper-wrapper {	
+
+				.swiper-wrapper {
 					margin-left: -33%;
-					@include resD{
+
+					@include resD {
 						margin-left: -30%;
 					}
-					@include resT{
+
+					@include resT {
 						margin-left: -27%;
 					}
-					@include resM{
+
+					@include resM {
 						margin-left: -20%;
 					}
-					@include resSM{
+
+					@include resSM {
 						margin-left: 0;
 					}
+
 					.swiper-slide {
 						width: 405px;
 						height: 320px;
 						transition: scale .3s ease;
 						z-index: 1;
-						@include resD{
+
+						@include resD {
 							width: 372px;
 						}
-						@include resT{
+
+						@include resT {
 							width: 344px;
 							height: 310px;
 						}
-						@include resM{
+
+						@include resM {
 							width: 304px;
 							height: 275px;
 						}
-						&:hover{
-							scale:1.0174418604651163;
+
+						&:hover {
+							scale: 1.0174418604651163;
 						}
-						button{
+
+						button {
 							background: #000;
 							border-radius: 28px;
 							overflow: hidden;
@@ -2670,29 +2666,36 @@
 							text-align: left;
 							padding-bottom: 50px;
 							position: relative;
-							@include resM{
+
+							@include resM {
 								padding: 25px;
 								padding-bottom: 30px;
 							}
-							h3{
+
+							h3 {
 								font-size: 28px;
 								font-weight: 600;
 								line-height: 1.2;
-								@include resT{
+
+								@include resT {
 									font-size: 24px;
 								}
-								@include resM{
+
+								@include resM {
 									font-size: 21px;
 								}
 							}
-							p{
+
+							p {
 								padding-right: 20%;
 								line-height: 1.3;
-								@include resM{
+
+								@include resM {
 									font-size: 14px;
 								}
 							}
-							&::after{
+
+							&::after {
 								content: '';
 								position: absolute;
 								right: 30px;
@@ -2704,14 +2707,266 @@
 								background-image: url(../images/icons/buy/plus.svg);
 								background-position: center center;
 								background-repeat: no-repeat;
-								@include resM{
+
+								@include resM {
 									right: 20px;
 									bottom: 20px;
 								}
 							}
-							
+
 						}
 					}
+				}
+			}
+		}
+	}
+}
+
+.sc-buy,
+.sc-keep {
+	.group-top {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+
+		.headline-typo {
+			padding-bottom: 0;
+		}
+
+		padding-bottom: 80px;
+
+		@include resT {
+			padding-bottom: 64px;
+		}
+
+		@include resM {
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+			text-align: left;
+			padding-bottom: 40px;
+
+			.headline-typo {
+				padding-bottom: 20px;
+			}
+
+		}
+	}
+}
+
+.sc-keep {
+
+	// conic-gradient(from 90deg, rgba(255, 255, 255, 0.08) 0deg, rgba(255, 255, 255, 0.48) 64.8deg, rgba(255, 255, 255, 0.48) 115.2deg, rgba(255, 255, 255, 0.08) 180deg, rgba(255, 255, 255, 0) 208.8deg, rgba(255, 255, 255, 0) 331.2deg, rgba(255, 255, 255, 0.08) 360deg);
+	.group-explore {
+		width: 100%;
+		border-radius: 28px;
+		background: #000;
+		padding-top: 120px;
+		padding-bottom: 120px;
+
+		@include resT {
+			background: transparent;
+			padding: 0;
+		}
+
+		.explore-content {
+			display: flex;
+			margin: 0 auto;
+			width: 60%;
+			@include resD{
+				width: 75%;
+			}
+			@include resT {
+				width: 80%;
+			}
+
+			@include resM {
+				width: 100%;
+			}
+		}
+
+		.product-area {
+			flex: 1;
+			@include column-flexbox(start);
+			padding-bottom: var(--global-section-aap-padding);
+			.product-wrap {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 20px;
+				@include resM{
+					align-items: flex-start;
+				}
+				.item-color {
+					.color-list {
+						@include flexbox;
+						gap: 5px;
+					}
+
+					.color-item {
+						background: var(--bg-color);
+						border-radius: 50%;
+						width: 12px;
+						aspect-ratio: 1/1;
+						position: relative;
+						box-shadow: inset 0px -4px 0px -3px rgba(255, 255, 255, .5);
+
+						&.desert {
+							--bg-color: #bfa48f;
+						}
+
+						&.natural {
+							--bg-color: #c2bcb2;
+						}
+
+						&.white {
+							--bg-color: #f2f1ed;
+						}
+
+						&.black {
+							--bg-color: #3c3c3d;
+						}
+
+						&.blue {
+							--bg-color: #9aadf6;
+						}
+
+						&.green {
+							--bg-color: #b0d4d2;
+						}
+
+						&.pink {
+							--bg-color: #f2adda;
+						}
+					}
+				}
+			}
+
+			.item-img {
+				display: block;
+				width: 100%;
+				max-width: 257px;
+				overflow: hidden;
+				img{
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+				@include resD{
+					max-width: 233px;
+					height: 312px;
+				}
+				@include resT {
+					max-width: 212px;
+					height: 290px;
+				}
+	
+				@include resM {
+					max-width: 181px;
+					height: 240px;
+				}
+				@include resSM {
+					max-width: 130px;
+					height: 175px;
+				}
+			}
+
+			.btn {
+				font-size: 17px;
+				width: 130px;
+				height: 44px;
+				@include resM{
+					width: 100px;
+					height: 36px;
+					font-size: 14px;
+				}
+			}
+
+			.item-headline {
+				@include column-flexbox;
+				gap: 9px;
+				font-weight: 600;
+				font-size: 28px;
+				@include resM{
+					align-items: flex-start;
+					font-size: 21px;
+				}
+				.badge {
+					color: rgb(255, 121, 27);
+					font-size: 12px;
+				}
+
+			}
+
+			.item-content {
+				@include column-flexbox;
+				gap: 20px;
+				text-align: center;
+				padding-bottom: 54px;
+				p {
+					font-weight: bold;
+					margin-bottom: 20px;
+					@include resT{
+						max-width: 200px;
+					}
+					@include resSM{
+						padding-right: 10%;
+					}
+				}
+				@include resM{
+					align-items: flex-start;
+					font-size: 14px;
+					p{
+						text-align: left;
+						padding-right: 5%;
+					}
+				}
+				
+				.current {
+					height: 44px;
+					color: rgb(210, 210, 215);
+					@include resM{
+						height: 36px;
+					}
+				}
+			}
+			.specification-list{
+				width: 100%;
+				position: relative;
+				&::after{
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 1px;
+					background-color: #424245;
+				}
+			}
+			.specification-item{
+				display: flex;
+				flex-direction: column;
+				margin-top: 40px;
+				font-size: 12px;
+				text-align: center;
+				@include resM{
+					align-items: flex-start;
+					text-align: left;
+						padding-right: 5%;
+				}
+				@include resSM{
+					padding-right: 10%;
+				}
+				figure{
+					@include column-flexbox;
+					gap: 10px;
+					@include resM{
+						align-items: flex-start;
+					}
+				}
+				.thumb{}
+				figcaption{
+					line-height: 1.5;
 				}
 			}
 		}
