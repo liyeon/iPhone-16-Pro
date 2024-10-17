@@ -171,6 +171,24 @@ body {
   transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+body.blur {
+  overflow: hidden;
+  opacity: 1;
+}
+body.blur::after {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  opacity: 1;
+  content: "";
+  background: rgba(36, 36, 36, 0.6);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+}
+
 body.dimmed {
   overflow: hidden;
   opacity: 1;
@@ -233,53 +251,86 @@ body.dimmed::after {
           flex: 1;
 }
 
-.sc-titanium .swiper-area, .sc-camera .swiper-area, .sc-ios18 .swiper-area, .sc-buy .swiper-area {
+.sc-titanium .swiper-area,
+.sc-camera .swiper-area,
+.sc-ios18 .swiper-area,
+.sc-buy .swiper-area {
   position: relative;
   padding-bottom: 90px;
 }
 @media (max-width: 1068px) {
-  .sc-titanium .swiper-area, .sc-camera .swiper-area, .sc-ios18 .swiper-area, .sc-buy .swiper-area {
+  .sc-titanium .swiper-area,
+  .sc-camera .swiper-area,
+  .sc-ios18 .swiper-area,
+  .sc-buy .swiper-area {
     padding-bottom: 70px;
   }
 }
 @media (max-width: 734px) {
-  .sc-titanium .swiper-area, .sc-camera .swiper-area, .sc-ios18 .swiper-area, .sc-buy .swiper-area {
+  .sc-titanium .swiper-area,
+  .sc-camera .swiper-area,
+  .sc-ios18 .swiper-area,
+  .sc-buy .swiper-area {
     padding-bottom: 60px;
   }
 }
-.sc-titanium .swiper-area .swiper .swiper-wrapper, .sc-camera .swiper-area .swiper .swiper-wrapper, .sc-ios18 .swiper-area .swiper .swiper-wrapper, .sc-buy .swiper-area .swiper .swiper-wrapper {
+.sc-titanium .swiper-area .swiper .swiper-wrapper,
+.sc-camera .swiper-area .swiper .swiper-wrapper,
+.sc-ios18 .swiper-area .swiper .swiper-wrapper,
+.sc-buy .swiper-area .swiper .swiper-wrapper {
   margin-left: -25%;
 }
 @media (max-width: 1068px) {
-  .sc-titanium .swiper-area .swiper .swiper-wrapper, .sc-camera .swiper-area .swiper .swiper-wrapper, .sc-ios18 .swiper-area .swiper .swiper-wrapper, .sc-buy .swiper-area .swiper .swiper-wrapper {
+  .sc-titanium .swiper-area .swiper .swiper-wrapper,
+  .sc-camera .swiper-area .swiper .swiper-wrapper,
+  .sc-ios18 .swiper-area .swiper .swiper-wrapper,
+  .sc-buy .swiper-area .swiper .swiper-wrapper {
     margin-left: -15%;
   }
 }
-.sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-buy .swiper-area .swiper .swiper-wrapper .swiper-slide {
+.sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide,
+.sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide,
+.sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide,
+.sc-buy .swiper-area .swiper .swiper-wrapper .swiper-slide {
   width: 550px;
 }
 @media (max-width: 1440px) {
-  .sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-buy .swiper-area .swiper .swiper-wrapper .swiper-slide {
+  .sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide,
+  .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide,
+  .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide,
+  .sc-buy .swiper-area .swiper .swiper-wrapper .swiper-slide {
     width: 520px;
   }
 }
 @media (max-width: 1068px) {
-  .sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-buy .swiper-area .swiper .swiper-wrapper .swiper-slide {
+  .sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide,
+  .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide,
+  .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide,
+  .sc-buy .swiper-area .swiper .swiper-wrapper .swiper-slide {
     width: 462px;
   }
 }
 @media (max-width: 734px) {
-  .sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide, .sc-buy .swiper-area .swiper .swiper-wrapper .swiper-slide {
+  .sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide,
+  .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide,
+  .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide,
+  .sc-buy .swiper-area .swiper .swiper-wrapper .swiper-slide {
     width: 295px;
   }
 }
-.sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide figure .thumb, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide figure .thumb, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide figure .thumb, .sc-buy .swiper-area .swiper .swiper-wrapper .swiper-slide figure .thumb {
+.sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide figure .thumb,
+.sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide figure .thumb,
+.sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide figure .thumb,
+.sc-buy .swiper-area .swiper .swiper-wrapper .swiper-slide figure .thumb {
   width: 100%;
   aspect-ratio: 1/1;
   border-radius: 18px;
   overflow: hidden;
 }
-.sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption, .sc-buy .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption {
+.sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption,
+.sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption,
+.sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption,
+.sc-buy .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption {
   font-size: 17px;
   line-height: 1.4705882353;
   font-weight: 600;
@@ -288,17 +339,26 @@ body.dimmed::after {
   width: 70%;
   color: #86868b;
 }
-.sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption strong, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption strong, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption strong, .sc-buy .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption strong {
+.sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption strong,
+.sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption strong,
+.sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption strong,
+.sc-buy .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption strong {
   color: #fff;
 }
 @media (max-width: 734px) {
-  .sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption, .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption, .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption, .sc-buy .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption {
+  .sc-titanium .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption,
+  .sc-camera .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption,
+  .sc-ios18 .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption,
+  .sc-buy .swiper-area .swiper .swiper-wrapper .swiper-slide figure figcaption {
     width: 80%;
     font-size: 14px;
     padding: 20px 5px 0px 34px;
   }
 }
-.sc-titanium .swiper-area .swiper-navigation, .sc-camera .swiper-area .swiper-navigation, .sc-ios18 .swiper-area .swiper-navigation, .sc-buy .swiper-area .swiper-navigation {
+.sc-titanium .swiper-area .swiper-navigation,
+.sc-camera .swiper-area .swiper-navigation,
+.sc-ios18 .swiper-area .swiper-navigation,
+.sc-buy .swiper-area .swiper-navigation {
   position: absolute;
   right: 6%;
   bottom: 0;
@@ -310,9 +370,12 @@ body.dimmed::after {
   gap: 15px;
 }
 .sc-titanium .swiper-area .swiper-navigation .swiper-button-next,
-.sc-titanium .swiper-area .swiper-navigation .swiper-button-prev, .sc-camera .swiper-area .swiper-navigation .swiper-button-next,
-.sc-camera .swiper-area .swiper-navigation .swiper-button-prev, .sc-ios18 .swiper-area .swiper-navigation .swiper-button-next,
-.sc-ios18 .swiper-area .swiper-navigation .swiper-button-prev, .sc-buy .swiper-area .swiper-navigation .swiper-button-next,
+.sc-titanium .swiper-area .swiper-navigation .swiper-button-prev,
+.sc-camera .swiper-area .swiper-navigation .swiper-button-next,
+.sc-camera .swiper-area .swiper-navigation .swiper-button-prev,
+.sc-ios18 .swiper-area .swiper-navigation .swiper-button-next,
+.sc-ios18 .swiper-area .swiper-navigation .swiper-button-prev,
+.sc-buy .swiper-area .swiper-navigation .swiper-button-next,
 .sc-buy .swiper-area .swiper-navigation .swiper-button-prev {
   position: static;
   width: 36px;
@@ -321,9 +384,12 @@ body.dimmed::after {
   border-radius: 100%;
 }
 .sc-titanium .swiper-area .swiper-navigation .swiper-button-next::after,
-.sc-titanium .swiper-area .swiper-navigation .swiper-button-prev::after, .sc-camera .swiper-area .swiper-navigation .swiper-button-next::after,
-.sc-camera .swiper-area .swiper-navigation .swiper-button-prev::after, .sc-ios18 .swiper-area .swiper-navigation .swiper-button-next::after,
-.sc-ios18 .swiper-area .swiper-navigation .swiper-button-prev::after, .sc-buy .swiper-area .swiper-navigation .swiper-button-next::after,
+.sc-titanium .swiper-area .swiper-navigation .swiper-button-prev::after,
+.sc-camera .swiper-area .swiper-navigation .swiper-button-next::after,
+.sc-camera .swiper-area .swiper-navigation .swiper-button-prev::after,
+.sc-ios18 .swiper-area .swiper-navigation .swiper-button-next::after,
+.sc-ios18 .swiper-area .swiper-navigation .swiper-button-prev::after,
+.sc-buy .swiper-area .swiper-navigation .swiper-button-next::after,
 .sc-buy .swiper-area .swiper-navigation .swiper-button-prev::after {
   font-size: 12px;
   font-weight: bold;
@@ -864,6 +930,8 @@ body.dimmed::after {
 
 .header {
   width: 100%;
+  position: relative;
+  z-index: 9999;
 }
 .header .gnb {
   max-width: 1024px;
@@ -992,6 +1060,7 @@ body.dimmed::after {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: relative;
 }
 @media (max-width: 833px) {
   .header .lnb .group-lnb {
@@ -1017,6 +1086,32 @@ body.dimmed::after {
 }
 .header .lnb .group-lnb .lnb-area .btn-arrow {
   display: none;
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+.header .lnb .group-lnb .lnb-area .btn-arrow.on::after {
+  rotate: -90deg;
+}
+.header .lnb .group-lnb .lnb-area .btn-arrow::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  rotate: 90deg;
+  background-color: #fff;
+  width: 100%;
+  aspect-ratio: 1/1;
+  -webkit-mask-image: url(../images/icons/icon_arrow.svg);
+          mask-image: url(../images/icons/icon_arrow.svg);
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-transition: rotate 0.5s ease;
+  transition: rotate 0.5s ease;
 }
 @media (max-width: 833px) {
   .header .lnb .group-lnb .lnb-area .btn-arrow {
@@ -1034,7 +1129,15 @@ body.dimmed::after {
 }
 @media (max-width: 833px) {
   .header .lnb-list {
+    width: 100%;
+    position: absolute;
+    top: 99%;
+    z-index: 2;
+    left: 0;
     display: none;
+    background: #19191a;
+    padding: 15px 0 34px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.24);
   }
 }
 .header .lnb-item {
@@ -1043,9 +1146,20 @@ body.dimmed::after {
   letter-spacing: 0.05em;
   font-size: 0.65rem;
   opacity: 0.7;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 .header .lnb-item:hover {
   opacity: 1;
+}
+@media (max-width: 833px) {
+  .header .lnb-item {
+    font-size: 14px;
+    padding-left: 32px;
+  }
+  .header .lnb-item:not(:first-child) {
+    margin-top: 15px;
+  }
 }
 .header .lnb-item.active {
   opacity: 1;
@@ -1053,37 +1167,22 @@ body.dimmed::after {
 .header .lnb-item.active ::after {
   content: "";
   position: absolute;
-  top: 200%;
+  top: calc(200% - 1px);
   left: 0;
   height: 1px;
   width: 100%;
   background-color: #fff;
   opacity: 0.8;
 }
-.header .lnb .btn-arrow svg {
-  -webkit-animation: animateLine 0.32s ease-in-out forwards;
-          animation: animateLine 0.32s ease-in-out forwards;
-}
-@-webkit-keyframes animateLine {
-  0% {
-    points: 15.265 0.835 8 8.167 0.735 0.835;
-  }
-  50% {
-    points: 15.25 4.5 8 4.5 0.75 4.5;
-  }
-  100% {
-    points: 15.265 8.165 8 0.835 0.735 8.165;
-  }
-}
-@keyframes animateLine {
-  0% {
-    points: 15.265 0.835 8 8.167 0.735 0.835;
-  }
-  50% {
-    points: 15.25 4.5 8 4.5 0.75 4.5;
-  }
-  100% {
-    points: 15.265 8.165 8 0.835 0.735 8.165;
+@media (max-width: 833px) {
+  .header .lnb-item.active ::after {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    left: 16px;
+    height: 10px;
+    width: 1px;
   }
 }
 

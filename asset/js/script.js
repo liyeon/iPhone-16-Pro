@@ -1,3 +1,4 @@
+// header
 window.addEventListener('scroll', function() {
   const scrollTop = window.scrollY || window.pageYOffset;
   // console.log(scrollTop)
@@ -9,50 +10,34 @@ window.addEventListener('scroll', function() {
 });
 
 
-
-// SVG 요소 클릭 이벤트 처리
-const chevronIcon = document.querySelector('[data-chevron-icon]');
-
-chevronIcon.addEventListener('click', () => {
-  const polyline = chevronIcon.querySelector('polyline');
-  const expandAnimation = polyline.querySelector('[data-chevron-animate="expand"]');
-  const collapseAnimation = polyline.querySelector('[data-chevron-animate="collapse"]');
-  
-  // 현재 상태에 따라 애니메이션 실행
-  const currentState = polyline.getAttribute('data-chevron-animate');
-
-  if (currentState === 'expand') {
-    collapseAnimation.beginElement();  // collapse 애니메이션 실행
-    polyline.setAttribute('data-chevron-animate', 'collapse');  // 상태 변경
+$('.header .btn-arrow').click(function (e) { 
+  e.stopPropagation();  // 클릭 이벤트가 상위로 전파되지 않도록 설정
+  if ($('.header .btn-arrow').hasClass('on')) {
+    $('.lnb-list').stop().slideUp();
+    $('body').removeClass('blur');
+    $('.header .btn-arrow').removeClass('on');
   } else {
-    expandAnimation.beginElement();  // expand 애니메이션 실행
-    polyline.setAttribute('data-chevron-animate', 'expand');  // 상태 변경
+    $('.lnb-list').stop().slideDown();
+    $('body').addClass('blur');
+    $('.header .btn-arrow').addClass('on');
   }
 });
 
-// fetch('../asset/json/footer.json')
-// .then((res) => res.json())
-// .then((json) => {
-// let html = ``;
-
-// // 각 heading과 그에 따른 items 처리
-// json.forEach((section) => {
-// html += `<div class="directory-area">`;
-// html += `<strong class="title">${section.heading}</strong>`;
-// html += `<ul class="directory-list">`;
-
-// // 각 section의 items 처리
-// section.items.forEach((item) => {
-// html += `<li class="directory-item"><a href="#">${item}</a></li>`;
-// });
-
-// html += `</ul>`;
-// html += `</div>`;
-// });
-
-// const container = document.querySelector('.nav-directory');
-// container.innerHTML = html;
-// })
-// .catch((error) => {
-// console.error('FOOTER JSON ERROR:', error);
-// });
+$(document).click(function (e) { 
+  if (!$(e.target).closest('.header').length) {
+    if ($('.header .btn-arrow').hasClass('on')) {
+      $('.lnb-list').stop().slideUp();
+      $('body').removeClass('blur');
+      $('.header .btn-arrow').removeClass('on');
+    }
+  }
+});
+// footer
+$('.directory-box .title').click(function (e) {
+  if ($(this).parent().hasClass('active')) {
+    $(this).parent().removeClass('active');
+  } else {
+    $('.directory-box').removeClass('active');
+    $(this).parent().addClass('active');
+  }
+});

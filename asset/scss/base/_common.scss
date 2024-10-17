@@ -12,6 +12,24 @@ body {
   transition: opacity .6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+body.blur {
+  overflow: hidden;
+  opacity: 1;
+
+  &::after {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: 1;
+    content: '';
+    background:rgba(36, 36, 36, 0.6);
+    backdrop-filter: blur(20px);
+  }
+}
+
 body.dimmed {
   overflow: hidden;
   opacity: 1;
@@ -63,13 +81,19 @@ body.dimmed::after {
   }
 
 }
-.sc-titanium,.sc-camera,.sc-ios18,.sc-buy{
+
+.sc-titanium,
+.sc-camera,
+.sc-ios18,
+.sc-buy {
   .swiper-area {
     position: relative;
     padding-bottom: 90px;
+
     @include resT {
       padding-bottom: 70px;
     }
+
     @include resM {
       padding-bottom: 60px;
     }
@@ -156,6 +180,7 @@ body.dimmed::after {
     }
   }
 }
+
 .typography-area,
 .typo-box {
   font-size: 21px;
@@ -225,15 +250,19 @@ body.dimmed::after {
   color: $sk-body-text-color;
   transition: font-size .3s;
   padding-bottom: 80px;
-  &.large{
+
+  &.large {
     font-size: 80px;
-    @include resT{
+
+    @include resT {
       font-size: 64px;
     }
-    @include resM{
+
+    @include resM {
       font-size: 40px;
     }
   }
+
   @include resT {
     font-size: 48px;
     padding-bottom: 64px;
@@ -438,6 +467,7 @@ body.dimmed::after {
         justify-content: center;
         gap: 5px;
         font-weight: 600;
+
         strong {
           font-size: 28px;
           background-image: linear-gradient(270deg, #f5e3d9 40%, #fdc9ae);
