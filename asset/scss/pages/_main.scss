@@ -407,14 +407,23 @@
 
 
 	.group-control {
-		@include pos-center-x;
+		position: fixed;
+		left: 50%;
+		transform: translateX(-50%);
 		z-index: 1;
-		bottom: 75px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		bottom: 50px;
+		@include flexbox;
 		width: 280px;
 		gap: 14px;
+		opacity: 0;
+		visibility: hidden;
+		scale: (0);
+		transition: scale .3s, opacity .3s;
+		&.on{
+			opacity: 1;
+			visibility: visible;
+			scale: (1);
+		}
 	}
 
 	.btn-controls {
@@ -424,12 +433,6 @@
 		background: rgba(66, 66, 69, 0.7);
 		border-radius: 100%;
 		@include flexbox;
-		// opacity: 0;
-		// transform: scale(0.5);
-		transition: background-color 100ms linear, opacity 200ms ease-out 0ms, transform 200ms ease-out 0ms;
-		// transform: scale(1);
-		transition: background-color linear 100ms, opacity 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset)*var(--aap-stagger-fast)*1ms), transform 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset)*var(--aap-stagger-fast)*1ms);
-
 		svg {
 			fill: currentColor;
 			display: none;
@@ -541,10 +544,21 @@
 	}
 
 	.group-nav {
-		@include pos-center-x;
+		opacity: 0;
+		visibility: hidden;
+		scale: 0;
+		position: fixed;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 50px;
+		transition: opacity .3s, scale .3s;
 		@include column-flexbox;
 		gap: 10px;
-
+		&.on{
+			opacity: 1;
+			visibility: visible;
+			scale: 1;
+		}
 		.product-name {
 			font-size: 12px;
 			color: #fff;
@@ -581,7 +595,6 @@
 				overflow: hidden;
 				--product-bg: #000;
 				cursor: pointer;
-
 				&.active {
 					border: 2px solid rgb(245, 245, 247);
 				}
@@ -695,15 +708,14 @@
 
 			.gallery-tab-item {
 				display: flex;
-
 				&.active {
-					a {
+					button {
 						color: #fff;
 						border-color: #fff;
 					}
 				}
 
-				a {
+				button {
 					text-align: center;
 					color: #86868b;
 					border-bottom: 1px solid #86868b;
@@ -721,8 +733,13 @@
 			}
 
 			.gallery-item {
+				display: none;
+				&.on{
+					display: block;
+				}
 				@include resT {
 					margin-top: 70px;
+					display: block;
 				}
 
 				&#gallery1 .box {
@@ -846,7 +863,7 @@
 								display: none;
 							}
 
-							.play {
+							.active {
 								display: block;
 							}
 						}
@@ -2755,7 +2772,7 @@
 }
 
 .sc-keep {
-
+	padding-bottom: var(--global-section-aap-padding);
 	// conic-gradient(from 90deg, rgba(255, 255, 255, 0.08) 0deg, rgba(255, 255, 255, 0.48) 64.8deg, rgba(255, 255, 255, 0.48) 115.2deg, rgba(255, 255, 255, 0.08) 180deg, rgba(255, 255, 255, 0) 208.8deg, rgba(255, 255, 255, 0) 331.2deg, rgba(255, 255, 255, 0.08) 360deg);
 	.group-explore {
 		width: 100%;
@@ -2788,7 +2805,6 @@
 		.product-area {
 			flex: 1;
 			@include column-flexbox(start);
-			padding-bottom: var(--global-section-aap-padding);
 			.product-wrap {
 				display: flex;
 				flex-direction: column;
@@ -2846,6 +2862,7 @@
 				display: block;
 				width: 100%;
 				max-width: 257px;
+				height: 344px;
 				overflow: hidden;
 				img{
 					width: 100%;

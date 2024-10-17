@@ -911,10 +911,18 @@ body.dimmed::after {
   padding: 0 15px 0 20px;
   font-size: 17px;
   font-weight: 600;
-  position: absolute;
+  position: fixed;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  bottom: 50px;
+  scale: 0;
+  -webkit-transition: scale 0.3s ease-in-out;
+  transition: scale 0.3s ease-in-out;
+  z-index: 5;
+}
+.btn-plus.on {
+  scale: 1;
 }
 .btn-plus::after {
   content: "";
@@ -2006,23 +2014,33 @@ body.dimmed::after {
           transition-delay: 1.2s;
 }
 .sc-highlights .group-control {
-  position: absolute;
+  position: fixed;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   z-index: 1;
-  bottom: 75px;
+  bottom: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 280px;
   gap: 14px;
+  opacity: 0;
+  visibility: hidden;
+  scale: 0;
+  -webkit-transition: scale 0.3s, opacity 0.3s;
+  transition: scale 0.3s, opacity 0.3s;
+}
+.sc-highlights .group-control.on {
+  opacity: 1;
+  visibility: visible;
+  scale: 1;
 }
 .sc-highlights .btn-controls {
   height: 55px;
@@ -2039,14 +2057,6 @@ body.dimmed::after {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-transition: background-color 100ms linear, opacity 200ms ease-out 0ms, -webkit-transform 200ms ease-out 0ms;
-  transition: background-color 100ms linear, opacity 200ms ease-out 0ms, -webkit-transform 200ms ease-out 0ms;
-  transition: background-color 100ms linear, opacity 200ms ease-out 0ms, transform 200ms ease-out 0ms;
-  transition: background-color 100ms linear, opacity 200ms ease-out 0ms, transform 200ms ease-out 0ms, -webkit-transform 200ms ease-out 0ms;
-  -webkit-transition: background-color linear 100ms, opacity 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms), -webkit-transform 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms);
-  transition: background-color linear 100ms, opacity 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms), -webkit-transform 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms);
-  transition: background-color linear 100ms, opacity 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms), transform 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms);
-  transition: background-color linear 100ms, opacity 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms), transform 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms), -webkit-transform 400ms cubic-bezier(0.3, 2, 0.5, 1) calc(var(--animation-offset) * var(--aap-stagger-fast) * 1ms);
 }
 .sc-highlights .btn-controls svg {
   fill: currentColor;
@@ -2162,10 +2172,16 @@ body.dimmed::after {
   opacity: 1;
 }
 .sc-closer .group-nav {
-  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  scale: 0;
+  position: fixed;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  bottom: 50px;
+  -webkit-transition: opacity 0.3s, scale 0.3s;
+  transition: opacity 0.3s, scale 0.3s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2180,6 +2196,11 @@ body.dimmed::after {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 10px;
+}
+.sc-closer .group-nav.on {
+  opacity: 1;
+  visibility: visible;
+  scale: 1;
 }
 .sc-closer .group-nav .product-name {
   font-size: 12px;
@@ -2345,11 +2366,11 @@ body.dimmed::after {
   display: -ms-flexbox;
   display: flex;
 }
-.sc-intelligence .group-gallery .gallery-tab-list .gallery-tab-item.active a {
+.sc-intelligence .group-gallery .gallery-tab-list .gallery-tab-item.active button {
   color: #fff;
   border-color: #fff;
 }
-.sc-intelligence .group-gallery .gallery-tab-list .gallery-tab-item a {
+.sc-intelligence .group-gallery .gallery-tab-list .gallery-tab-item button {
   text-align: center;
   color: #86868b;
   border-bottom: 1px solid #86868b;
@@ -2364,9 +2385,16 @@ body.dimmed::after {
     width: 90%;
   }
 }
+.sc-intelligence .group-gallery .gallery-item-area .gallery-item {
+  display: none;
+}
+.sc-intelligence .group-gallery .gallery-item-area .gallery-item.on {
+  display: block;
+}
 @media (max-width: 1068px) {
   .sc-intelligence .group-gallery .gallery-item-area .gallery-item {
     margin-top: 70px;
+    display: block;
   }
 }
 .sc-intelligence .group-gallery .gallery-item-area .gallery-item#gallery1 .box:nth-child(2) {
@@ -2486,7 +2514,7 @@ body.dimmed::after {
 .sc-intelligence .group-gallery .gallery-item-area .gallery-item .item-wrap .box .btn-controls svg {
   display: none;
 }
-.sc-intelligence .group-gallery .gallery-item-area .gallery-item .item-wrap .box .btn-controls .play {
+.sc-intelligence .group-gallery .gallery-item-area .gallery-item .item-wrap .box .btn-controls .active {
   display: block;
 }
 .sc-intelligence .group-gallery .gallery-item-area .gallery-item .item-wrap .box-desc {
@@ -4675,6 +4703,9 @@ body.dimmed::after {
   }
 }
 
+.sc-keep {
+  padding-bottom: var(--global-section-aap-padding);
+}
 .sc-keep .group-explore {
   width: 100%;
   border-radius: 28px;
@@ -4727,7 +4758,6 @@ body.dimmed::after {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  padding-bottom: var(--global-section-aap-padding);
 }
 .sc-keep .group-explore .product-area .product-wrap {
   display: -webkit-box;
@@ -4795,6 +4825,7 @@ body.dimmed::after {
   display: block;
   width: 100%;
   max-width: 257px;
+  height: 344px;
   overflow: hidden;
 }
 .sc-keep .group-explore .product-area .item-img img {

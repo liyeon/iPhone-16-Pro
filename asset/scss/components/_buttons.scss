@@ -116,7 +116,16 @@
   padding: 0 15px 0 20px;
   font-size: 17px;
   font-weight: 600;
-  @include pos-center-x;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 50px;
+  scale: 0;
+  transition: scale .3s ease-in-out;
+  z-index: 5;
+  &.on{
+    scale: 1;
+  }
   &::after{
     content: '';
     width: 36px;
