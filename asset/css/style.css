@@ -1967,6 +1967,7 @@ body.dimmed::after {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  pointer-events: none;
 }
 .sc-highlights .highlights-swiper .swiper-wrapper .swiper-slide {
   border-radius: 28px;
@@ -2014,6 +2015,8 @@ body.dimmed::after {
           transition-delay: 1.2s;
 }
 .sc-highlights .group-control {
+  -webkit-transform-origin: left;
+          transform-origin: left;
   position: fixed;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -2034,8 +2037,8 @@ body.dimmed::after {
   opacity: 0;
   visibility: hidden;
   scale: 0;
-  -webkit-transition: scale 0.3s, opacity 0.3s;
-  transition: scale 0.3s, opacity 0.3s;
+  -webkit-transition: scale 0.3s cubic-bezier(0.6, 0.08), opacity 0.3s, visibility 0.3s;
+  transition: scale 0.3s cubic-bezier(0.6, 0.08), opacity 0.3s, visibility 0.3s;
 }
 .sc-highlights .group-control.on {
   opacity: 1;
@@ -2099,17 +2102,37 @@ body.dimmed::after {
   width: 48px;
   border-radius: 20px;
 }
+.sc-highlights .swiper-pagination-bullet-active::before {
+  -webkit-animation: bulletWidth 2s linear forwards;
+          animation: bulletWidth 2s linear forwards;
+}
 .sc-highlights .swiper-pagination-bullet::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: var(--width);
+  width: 0;
   height: 100%;
   background-color: rgb(245, 245, 247);
   -webkit-transition: width 7s linear, background-color 7s ease-in;
   transition: width 7s linear, background-color 7s ease-in;
   border-radius: 20px;
+}
+@-webkit-keyframes bulletWidth {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes bulletWidth {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 .sc-closer {
