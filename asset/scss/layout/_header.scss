@@ -173,17 +173,18 @@
       display: flex;
       justify-content: space-between;
       gap: 24px;
-
       @include responsive('t') {
         width: 100%;
         position: absolute;
         top: 99%;
-        z-index: 2;
         left: 0;
-        display: none;
+        gap: 0;
         background: #19191a;
         padding: 15px 0 34px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+        flex-direction: column;
+        z-index: 21;
+        display: none;
       }
     }
 

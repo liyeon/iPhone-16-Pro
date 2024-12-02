@@ -15,7 +15,6 @@ body {
 body.blur {
   overflow: hidden;
   opacity: 1;
-
   &::after {
     position: fixed;
     top: 0;
@@ -27,6 +26,7 @@ body.blur {
     content: '';
     background:rgba(36, 36, 36, 0.6);
     backdrop-filter: blur(20px);
+    z-index: 20;
   }
 }
 
