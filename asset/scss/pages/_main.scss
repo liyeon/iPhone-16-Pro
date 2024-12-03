@@ -421,7 +421,7 @@
 		opacity: 0;
 		visibility: hidden;
 		scale: (0);
-		transition: scale .3s cubic-bezier(0.6,0.08), opacity .3s, visibility .3s;
+		transition: scale 0.3s cubic-bezier(0.6, 0.08, 0.67, 1.14), opacity 0.3s, visibility 0.3s;
 		&.on{
 			opacity: 1;
 			visibility: visible;
@@ -461,41 +461,41 @@
 		position: relative;
 		width: 8px;
 		height: 8px;
-		background-color: rgb(245, 245, 247, 0.8);
+		background-color: rgb(138, 138, 138);
 		opacity: 1;
 		overflow: hidden;
-		transition: width .7s;
 		cursor: pointer;
 		border-radius: 20px;
-		--width: 0;
 		&-active{
 			width: 48px;
 			border-radius: 20px;
+			--playstate:paused;
+			// running
 			&::before{
 				// 완성값
-				animation: bulletWidth 2s linear forwards;
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 0;
+				height: 100%;
+				background-color: rgb(245, 245, 247);
+				border-radius: 20px;
+				animation: bulletWidth 7s linear forwards;
+				animation-play-state: var(--playstate);
 			}
 		}
-		&::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 0;
-			height: 100%;
-			// background-color: rgb(255, 0, 0);
-			background-color: rgb(245, 245, 247);
-			transition: width 7s linear, background-color 7s ease-in;
-			border-radius: 20px;
-		}
+
 	}
 
 	/* bullet의 프로그레스바 */
 	@keyframes bulletWidth{
-		0%{
-			width:0%;
+		0% {
+			width: 0%;
 		}
-		100%{width:100%}
+		100% {
+			width: 100%;
+		}
 	}
 }
 
@@ -562,8 +562,9 @@
 		position: fixed;
 		left: 50%;
 		transform: translateX(-50%);
+		transform-origin: left;
 		bottom: 50px;
-		transition: opacity .3s, scale .3s;
+		transition: scale 0.3s cubic-bezier(0.6, 0.08, 0.67, 1.14), opacity 0.3s, visibility 0.3s;
 		@include column-flexbox;
 		gap: 10px;
 		&.on{
@@ -1051,22 +1052,22 @@
 	.group-horse {
 		.viewport-content {
 			// border: 10px solid rgb(148, 90, 255);
-			margin-top: -25vh;
+			margin-top: -15vh;
 
 			@include resD {
-				margin-top: -30vh;
+				margin-top: -20vh;
 			}
 
 			@include resT {
-				margin-top: -35vh;
+				margin-top: -25vh;
 			}
 
 			@include resM {
-				margin-top: -38vh;
+				margin-top: -28vh;
 			}
 
 			@include resSM {
-				margin-top: -40vh;
+				margin-top: -30vh;
 			}
 
 			.figcaption {

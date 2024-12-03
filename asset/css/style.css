@@ -918,8 +918,10 @@ body.dimmed::after {
           transform: translateX(-50%);
   bottom: 50px;
   scale: 0;
-  -webkit-transition: scale 0.3s ease-in-out;
-  transition: scale 0.3s ease-in-out;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: scale 0.3s cubic-bezier(0.6, 0.08, 0.67, 1.14);
+  transition: scale 0.3s cubic-bezier(0.6, 0.08, 0.67, 1.14);
   z-index: 5;
 }
 .btn-plus.on {
@@ -2043,8 +2045,8 @@ body.dimmed::after {
   opacity: 0;
   visibility: hidden;
   scale: 0;
-  -webkit-transition: scale 0.3s cubic-bezier(0.6, 0.08), opacity 0.3s, visibility 0.3s;
-  transition: scale 0.3s cubic-bezier(0.6, 0.08), opacity 0.3s, visibility 0.3s;
+  -webkit-transition: scale 0.3s cubic-bezier(0.6, 0.08, 0.67, 1.14), opacity 0.3s, visibility 0.3s;
+  transition: scale 0.3s cubic-bezier(0.6, 0.08, 0.67, 1.14), opacity 0.3s, visibility 0.3s;
 }
 .sc-highlights .group-control.on {
   opacity: 1;
@@ -2095,24 +2097,18 @@ body.dimmed::after {
   position: relative;
   width: 8px;
   height: 8px;
-  background-color: rgba(245, 245, 247, 0.8);
+  background-color: rgb(138, 138, 138);
   opacity: 1;
   overflow: hidden;
-  -webkit-transition: width 0.7s;
-  transition: width 0.7s;
   cursor: pointer;
   border-radius: 20px;
-  --width: 0;
 }
 .sc-highlights .swiper-pagination-bullet-active {
   width: 48px;
   border-radius: 20px;
+  --playstate:paused;
 }
 .sc-highlights .swiper-pagination-bullet-active::before {
-  -webkit-animation: bulletWidth 2s linear forwards;
-          animation: bulletWidth 2s linear forwards;
-}
-.sc-highlights .swiper-pagination-bullet::before {
   content: "";
   position: absolute;
   top: 0;
@@ -2120,9 +2116,11 @@ body.dimmed::after {
   width: 0;
   height: 100%;
   background-color: rgb(245, 245, 247);
-  -webkit-transition: width 7s linear, background-color 7s ease-in;
-  transition: width 7s linear, background-color 7s ease-in;
   border-radius: 20px;
+  -webkit-animation: bulletWidth 7s linear forwards;
+          animation: bulletWidth 7s linear forwards;
+  -webkit-animation-play-state: var(--playstate);
+          animation-play-state: var(--playstate);
 }
 @-webkit-keyframes bulletWidth {
   0% {
@@ -2208,9 +2206,11 @@ body.dimmed::after {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  -webkit-transform-origin: left;
+          transform-origin: left;
   bottom: 50px;
-  -webkit-transition: opacity 0.3s, scale 0.3s;
-  transition: opacity 0.3s, scale 0.3s;
+  -webkit-transition: scale 0.3s cubic-bezier(0.6, 0.08, 0.67, 1.14), opacity 0.3s, visibility 0.3s;
+  transition: scale 0.3s cubic-bezier(0.6, 0.08, 0.67, 1.14), opacity 0.3s, visibility 0.3s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2716,26 +2716,26 @@ body.dimmed::after {
   padding-bottom: var(--global-section-padding);
 }
 .sc-dolby .group-horse .viewport-content {
-  margin-top: -25vh;
+  margin-top: -15vh;
 }
 @media (max-width: 1440px) {
   .sc-dolby .group-horse .viewport-content {
-    margin-top: -30vh;
+    margin-top: -20vh;
   }
 }
 @media (max-width: 1068px) {
   .sc-dolby .group-horse .viewport-content {
-    margin-top: -35vh;
+    margin-top: -25vh;
   }
 }
 @media (max-width: 734px) {
   .sc-dolby .group-horse .viewport-content {
-    margin-top: -38vh;
+    margin-top: -28vh;
   }
 }
 @media (max-width: 482px) {
   .sc-dolby .group-horse .viewport-content {
-    margin-top: -40vh;
+    margin-top: -30vh;
   }
 }
 .sc-dolby .group-horse .viewport-content .figcaption {
