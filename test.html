@@ -134,6 +134,7 @@
 		})
 		const slide2 = new Swiper('.slide2',{
 			slidesPerView:'auto',
+			
 		})
 
 		$('.slide2 .swiper-slide').click(function (e) { 
@@ -142,7 +143,6 @@
 			$(this).addClass('active').siblings().removeClass('active');
 			slide1.slideTo($(this).index())
 			slide2.slideTo($(this).index())
-
 		});
 	</script>
 </body>

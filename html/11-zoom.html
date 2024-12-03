@@ -39,7 +39,8 @@
 			<div class="viewport-content typo-wrap">
 				<div class="typography-area">
 					<p class="typography">
-						iPhone 16 Pro adds a second 48MP camera to the Pro camera system. The new 48MP Ultra Wide camera has a more
+						iPhone 16 Pro adds a second 48MP camera to the Pro camera system. The new 48MP Ultra Wide camera has a
+						more
 						advanced quad-pixel sensor for super-high-resolution 48MP ProRAW and HEIF photos with autofocus.
 					</p>
 					<p class="typography">
@@ -122,17 +123,17 @@
 							</li>
 						</ul>
 						<div class="swiper-navigation">
-							<div class="swiper-control">
-								<button class="swiper-button-prev"></button>
-								<ol class="zoom-list">
-									<li class="zoom-item active"><button data-zoom-index="0">Macro</button></li>
-									<li class="zoom-item"><button data-zoom-index="1">13 mm</button></li>
-									<li class="zoom-item"><button data-zoom-index="2">24 mm</button></li>
-									<li class="zoom-item"><button data-zoom-index="3">28 mm</button></li>
-									<li class="zoom-item"><button data-zoom-index="4">35 mm</button></li>
-									<li class="zoom-item"><button data-zoom-index="5">46 mm</button></li>
-									<li class="zoom-item"><button data-zoom-index="6">120 mm</button></li>
+							<div class="swiper-control swiper">
+								<ol class="zoom-list swiper-wrapper">
+									<li class="zoom-item swiper-slide"><button data-zoom-index="0">Macro</button></li>
+									<li class="zoom-item swiper-slide"><button data-zoom-index="1">13 mm</button></li>
+									<li class="zoom-item swiper-slide"><button data-zoom-index="2">24 mm</button></li>
+									<li class="zoom-item swiper-slide"><button data-zoom-index="3">28 mm</button></li>
+									<li class="zoom-item swiper-slide"><button data-zoom-index="4">35 mm</button></li>
+									<li class="zoom-item swiper-slide"><button data-zoom-index="5">46 mm</button></li>
+									<li class="zoom-item swiper-slide"><button data-zoom-index="6">120 mm</button></li>
 								</ol>
+								<button class="swiper-button-prev"></button>
 								<button class="swiper-button-next"></button>
 							</div>
 						</div>
@@ -142,7 +143,9 @@
 			<div class="viewport-content media-wrap">
 				<div class="typography-area">
 					<p class="typography">
-						More zoom? Boom. Now you can shoot in 120 mm with the 5x Telephoto camera on both Pro models and get <strong>sharper close-ups from farther away</strong>. With multiple framing options, it’s like having seven pro lenses in your pocket, everywhere you go.
+						More zoom? Boom. Now you can shoot in 120 mm with the 5x Telephoto camera on both Pro models and get
+						<strong>sharper close-ups from farther away</strong>. With multiple framing options, it’s like having
+						seven pro lenses in your pocket, everywhere you go.
 					</p>
 				</div>
 				<div class="video-area">
@@ -157,81 +160,13 @@
 
 	<script>
 
-		const zoomSwiper = new Swiper('.zoom-swiper', {
-			effect: 'fade',
-			speed: 800,
-			slidesPerView: 1,
-			grabCursor: true,
-			centeredSlides: true,
-			navigation: {
-				nextEl: '.swiper-button-next',
-				prevEl: '.swiper-button-prev',
-			},
-			on: {
-				slideChange: function () {
-					// 현재 슬라이드 인덱스에 맞게 active 클래스를 업데이트
-					updateActiveZoomItem(this.activeIndex);
-
-					// prev 버튼 visibility 설정
-					const prevButton = document.querySelector('.zoom-swiper .swiper-button-prev');
-					if (this.activeIndex >= 2) {
-						prevButton.style.display = 'block';
-					} else {
-						prevButton.style.display = 'none';
-					}
-					const totalSlides = this.slides.length;
-					// next 버튼 visibility 설정
-					const nextButton = document.querySelector('.zoom-swiper .swiper-button-next');
-					if (this.activeIndex >= totalSlides) {
-						nextButton.style.display = 'none';
-					} else {
-						nextButton.style.display = 'block';
-					}
-				}
-			},
-		// 	breakpoints: {
-		// 		1140: {
-		// 			navigation: false,
-		// 	},
-		// }
-		});
-
-		document.querySelectorAll('.zoom-item button').forEach((button) => {
-			button.addEventListener('click', function () {
-				const zoomItems = document.querySelectorAll('.zoom-item');
-				// 모든 zoom-item에서 active 클래스를 제거
-				zoomItems.forEach(item => item.classList.remove('active'));
-				// 클릭한 버튼의 부모 요소에 active 클래스 추가
-				const parentZoomItem = this.closest('.zoom-item');
-				parentZoomItem.classList.add('active');
-
-				// 클릭한 버튼에 해당하는 슬라이드로 이동
-				const zoomIndex = this.getAttribute('data-zoom-index');
-				zoomSwiper.slideTo(zoomIndex); // 해당 슬라이드로 이동
-			});
-		});
-
-		// 슬라이드 변경 시 active 클래스를 업데이트
-		function updateActiveZoomItem(index) {
-			const zoomItems = document.querySelectorAll('.zoom-item');
-			const zoomList = document.querySelector('.zoom-list');
-			// active 클래스 제거
-			zoomItems.forEach(item => item.classList.remove('active'));
-			if (zoomItems[index]) {
-				zoomItems[index].classList.add('active');
-			}
-				const itemWidth = zoomItems[index] ? zoomItems[index].getBoundingClientRect().width : 0;
-				console.log(itemWidth)
-				const translateXValue = -((index + 1) * itemWidth) + (zoomList.offsetWidth / 2 - itemWidth / 2);
-				zoomList.style.transform = `translateX(${translateXValue}px)`;
-		}
 
 		const zoomCover = gsap.timeline({
 			scrollTrigger: {
 				trigger: ".zoom-area",
 				start: "top top",
 				end: "bottom bottom",
-				// markers: true,
+				markers: false,
 				scrub: 1,
 				invalidateOnRefresh: true,
 			},
@@ -239,15 +174,19 @@
 
 		zoomCover
 			.to(".zoom-area .bg-wrap", {
-				'--opacity': 0,
+				"--opacity": 0,
 			})
-			.to(".zoom-area .headline", {
-				yPercent: -200,
-				autoAlpha: 0
-			}, "<")
+			.to(
+				".zoom-area .headline",
+				{
+					yPercent: -200,
+					autoAlpha: 0,
+				},
+				"<"
+			)
 			.to(".zoom-area .bg-wrap", {
 				scale: 1,
-				marginLeft: 0
+				marginLeft: 0,
 			});
 	</script>
 </body>
