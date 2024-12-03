@@ -1,84 +1,3 @@
-// header
-window.addEventListener("scroll", function () {
-  const scrollTop = window.scrollY || window.pageYOffset;
-  // console.log(scrollTop)
-  if (scrollTop >= 200) {
-    document.querySelector(".lnb").classList.add("scroll");
-  } else {
-    document.querySelector(".lnb").classList.remove("scroll");
-  }
-});
-
-$(document).click(function (e) {
-  if (!$(e.target).closest(".header").length) {
-    if ($(".header .btn-arrow").hasClass("on")) {
-      $(".lnb-list").stop().slideUp();
-      $("body").removeClass("blur");
-      $(".header .btn-arrow").removeClass("on");
-    }
-  }
-});
-
-// footer
-$(".directory-box .title").click(function (e) {
-  if ($(this).parent().hasClass("active")) {
-    $(this).parent().removeClass("active");
-  } else {
-    $(".directory-box").removeClass("active");
-    $(this).parent().addClass("active");
-  }
-});
-
-// 동영상 반응형 적용
-// 모든 비디오 요소에 대해 소스를 업데이트하는 함수
-function updateAllVideoSources() {
-  const videoElements = document.querySelectorAll("video[data-video-path]");
-  videoElements.forEach(updateVideoSource);
-}
-
-// 특정 비디오 요소의 소스를 업데이트하는 함수
-function updateVideoSource(element) {
-  const width = window.innerWidth;
-  let videoFileName = "";
-
-  // 브라우저 크기에 따라 파일명 설정
-  if (width <= 480) {
-    videoFileName = "xsmall.mp4";
-  } else if (width <= 734) {
-    videoFileName = "small.mp4";
-  } else if (width <= 1068) {
-    videoFileName = "medium.mp4";
-  } else if (width <= 1440) {
-    videoFileName = "large.mp4";
-  } else {
-    videoFileName = "xlarge.mp4";
-  }
-
-  // 동적으로 비디오 소스 설정
-  const basePath = element.getAttribute("data-video-path");
-  const newSource = `${basePath}${videoFileName}`;
-
-  // 소스가 없거나 변경되었으면 새로운 소스 추가
-  if (
-    !element.querySelector("source") ||
-    element.querySelector("source").src !== newSource
-  ) {
-    // 기존 소스 제거
-    element.innerHTML = "";
-
-    // 새로운 소스 추가
-    const sourceElement = document.createElement("source");
-    sourceElement.src = newSource;
-    sourceElement.type = "video/mp4";
-    element.appendChild(sourceElement);
-    element.load(); // 비디오 로드
-  }
-}
-
-// 윈도우 크기 변경 시 모든 비디오 소스를 업데이트
-window.addEventListener("resize", updateAllVideoSources);
-window.addEventListener("load", updateAllVideoSources);
-
 // intro
 gsap.defaults({
   ease: "none",
@@ -86,7 +5,6 @@ gsap.defaults({
 let mm = gsap.matchMedia();
 const intro = gsap.timeline({});
 const introVideo = document.querySelector("#introVideo");
-// mm.add("(max-width: 480px)", () => {})
 
 gsap.set(
   ".sc-intro .headline, .sc-intro .img-headline, .sc-intro .price-area",
@@ -94,10 +12,10 @@ gsap.set(
 );
 introVideo.addEventListener("ended", () => {
   intro
-    .to(".sc-intro .video-box", { autoAlpha: 0 }) // 동영상 숨기기
-    .to(".sc-intro .headline", { autoAlpha: 1, scale: 1 }) // headline 나타나기
-    .to(".sc-intro .img-headline", { autoAlpha: 1, scale: 1 }, "-=0.25") // img-headline 나타나기
-    .to(".sc-intro .price-area", { autoAlpha: 1, scale: 1 }, "-=0.25"); // price-area 나타나기
+    .to(".sc-intro .video-box", { autoAlpha: 0 }) 
+    .to(".sc-intro .headline", { autoAlpha: 1, scale: 1 }) 
+    .to(".sc-intro .img-headline", { autoAlpha: 1, scale: 1 }, "-=0.25") 
+    .to(".sc-intro .price-area", { autoAlpha: 1, scale: 1 }, "-=0.25"); 
 });
 //intro
 
@@ -125,9 +43,14 @@ ScrollTrigger.create({
     gsap.to(
       ".highlights-swiper .swiper-slide",
       { autoAlpha: 1, yPercent: 0, scale: 1 },
-      "-=0.25"
+      "-=0.5"
     );
     $(".sc-highlights .group-control").addClass("on");
+    highlightsSwiper.update();
+    highlightsSwiper.autoplay.start(); // 자동 재생 시작
+    $('.sc-highlights .swiper-pagination-bullet-active').css({
+      '--playstate': 'running',  
+    });
   },
   onLeaveBack: () => {
     $(".sc-highlights .group-control").removeClass("on");
@@ -154,18 +77,13 @@ const highlightsSwiper = new Swiper(".highlights-swiper", {
   loop: false,
   on: {
     init: function () {
+      this.autoplay.stop();
       // 처음 실행
       const activeSlide = this.slides[this.activeIndex];
       // 비디오 재생
       const video = activeSlide.querySelector("video");
       if (video) {
         video.play();
-      }
-      const activeBullet = document.querySelector(
-        ".swiper-pagination-bullet-active"
-      );
-      if (activeBullet) {
-        $(activeBullet).css("--width", "100%");
       }
     },
     // 슬라이드 전환이 시작될 때 실행
@@ -177,20 +95,7 @@ const highlightsSwiper = new Swiper(".highlights-swiper", {
           $(caption).css("--caption-opacity", 0);
           $(caption).css("--caption-x", "100%");
         });
-      // 모든 bullet의 프로그레스바 초기화
-      document
-        .querySelectorAll(".swiper-pagination-bullet")
-        .forEach((bullet) => {
-          $(bullet).css("--width", 0);
-        });
 
-      // 현재 활성화된 bullet의 프로그레스바 시작
-      const activeBullet = document.querySelector(
-        ".swiper-pagination-bullet-active"
-      );
-      if (activeBullet) {
-        $(activeBullet).css("--width", "100%");
-      }
       toggleControlButton("pause");
     },
     // 슬라이드 전환이 완료되었을 때 실행
@@ -235,8 +140,15 @@ function toggleControlButton(state) {
 
   if (state === "play") {
     playButton.classList.add("active");
+    
+    $('.sc-highlights .swiper-pagination-bullet-active').css({
+      '--playstate': 'paused',  
+    });
   } else if (state === "pause") {
     pauseButton.classList.add("active");
+    $('.sc-highlights .swiper-pagination-bullet-active').css({
+      '--playstate': 'running',  
+    });
   } else if (state === "replay") {
     replayButton.classList.add("active");
   }
@@ -531,11 +443,6 @@ const zoomSwiper = new Swiper(".zoom-swiper", {
       }
     },
   },
-  // 	breakpoints: {
-  // 		1140: {
-  // 			navigation: false,
-  // 	},
-  // }
 });
 
 document.querySelectorAll(".zoom-item button").forEach((button) => {
