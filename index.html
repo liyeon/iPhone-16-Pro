@@ -18,7 +18,6 @@
   <!-- jquery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- script -->
-  <script src="./asset/js/video.js" defer></script>
   <script src="./asset/js/common.js" defer></script>
   <script src="./asset/js/script.js" defer></script>
 </head>
@@ -280,8 +279,9 @@
     </section>
     <!-- closer -->
     <section class="sc-closer">
+      <h2 class="blind">제품별 색상</h2>
       <div class="viewport-content">
-        <h2 class="headline-typo">Take a closer look.</h2>
+        <strong class="headline-typo">Take a closer look.</strong>
       </div>
       <div class="group-product">
         <div class="product-item on" id="product1" role="tabpanel">
@@ -866,7 +866,7 @@
                 <li class="swiper-slide">
                   <figure>
                     <div class="thumb">
-                      <img src="./asset/images/zoom/01-macro.jpg" alt>
+                      <img src="../asset/images/zoom/01-macro.jpg" alt>
                     </div>
                     <figcaption>
                       <strong>0.5x</strong> Macro
@@ -876,7 +876,7 @@
                 <li class="swiper-slide">
                   <figure>
                     <div class="thumb">
-                      <img src="./asset/images/zoom/02-13mm.jpg" alt>
+                      <img src="../asset/images/zoom/02-13mm.jpg" alt>
                     </div>
                     <figcaption>
                       <strong>0.5x</strong> Ultra Wide
@@ -886,7 +886,7 @@
                 <li class="swiper-slide">
                   <figure>
                     <div class="thumb">
-                      <img src="./asset/images/zoom/03-24mm.jpg" alt>
+                      <img src="../asset/images/zoom/03-24mm.jpg" alt>
                     </div>
                     <figcaption>
                       <strong>1x</strong> Fusion 24 mm
@@ -896,7 +896,7 @@
                 <li class="swiper-slide">
                   <figure>
                     <div class="thumb">
-                      <img src="./asset/images/zoom/04-28mm.jpg" alt>
+                      <img src="../asset/images/zoom/04-28mm.jpg" alt>
                     </div>
                     <figcaption>
                       <strong>1.2x</strong> Fusion 28 mm
@@ -906,7 +906,7 @@
                 <li class="swiper-slide">
                   <figure>
                     <div class="thumb">
-                      <img src="./asset/images/zoom/05-35mm.jpg" alt>
+                      <img src="../asset/images/zoom/05-35mm.jpg" alt>
                     </div>
                     <figcaption>
                       <strong>1.5x</strong> Fusion 35 mm
@@ -916,7 +916,7 @@
                 <li class="swiper-slide">
                   <figure>
                     <div class="thumb">
-                      <img src="./asset/images/zoom/06-48mm.jpg" alt>
+                      <img src="../asset/images/zoom/06-48mm.jpg" alt>
                     </div>
                     <figcaption>
                       <strong>2x</strong> Telephoto
@@ -926,7 +926,7 @@
                 <li class="swiper-slide">
                   <figure>
                     <div class="thumb">
-                      <img src="./asset/images/zoom/07-120mm.jpg" alt>
+                      <img src="../asset/images/zoom/07-120mm.jpg" alt>
                     </div>
                     <figcaption>
                       <strong>5x</strong> Telephoto
@@ -934,20 +934,21 @@
                   </figure>
                 </li>
               </ul>
-              <div class="swiper-navigation">
-                <div class="swiper-control swiper">
-                  <ol class="zoom-list swiper-wrapper">
-                    <li class="zoom-item swiper-slide"><button data-zoom-index="0">Macro</button></li>
-                    <li class="zoom-item swiper-slide"><button data-zoom-index="1">13 mm</button></li>
-                    <li class="zoom-item swiper-slide"><button data-zoom-index="2">24 mm</button></li>
-                    <li class="zoom-item swiper-slide"><button data-zoom-index="3">28 mm</button></li>
-                    <li class="zoom-item swiper-slide"><button data-zoom-index="4">35 mm</button></li>
-                    <li class="zoom-item swiper-slide"><button data-zoom-index="5">46 mm</button></li>
-                    <li class="zoom-item swiper-slide"><button data-zoom-index="6">120 mm</button></li>
-                  </ol>
-                  <button class="swiper-button-prev"></button>
-                  <button class="swiper-button-next"></button>
-                </div>
+  
+            </div>
+            <div class="zoom-swiper__container">
+              <div class="zoom-swiper2 swiper">
+                <ol class="zoom-list swiper-wrapper">
+                  <li class="zoom-item swiper-slide active"><button>Macro</button></li>
+                  <li class="zoom-item swiper-slide"><button>13 mm</button></li>
+                  <li class="zoom-item swiper-slide"><button>24 mm</button></li>
+                  <li class="zoom-item swiper-slide"><button>28 mm</button></li>
+                  <li class="zoom-item swiper-slide"><button>35 mm</button></li>
+                  <li class="zoom-item swiper-slide"><button>46 mm</button></li>
+                  <li class="zoom-item swiper-slide"><button>120 mm</button></li>
+                </ol>
+                <button class="swiper-button-prev"></button>
+                <button class="swiper-button-next"></button>
               </div>
             </div>
           </div>

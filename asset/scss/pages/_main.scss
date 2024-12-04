@@ -1483,130 +1483,120 @@
 				width: 100%;
 			}
 
-			.swiper-slide {
-				figcaption {
-					margin-top: 120px;
-					text-align: center;
-					color: #86868b;
-					background: #000;
-
-					@include resM {
-						margin-top: 80px;
+			.zoom-swiper {
+				.swiper-slide {
+					pointer-events: none;
+					figcaption {
+						margin-top: 120px;
+						text-align: center;
+						color: #86868b;
+						background: #000;
+						@include resM {
+							margin-top: 80px;
+						}
+						strong {
+							color: #fff;
+						}
 					}
-
-					strong {
+	
+				}
+			}
+			.zoom-swiper__container{
+				width: 100%;
+				height: 56px;
+				max-width: 710px;
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				bottom: 50px;
+				background-color: rgb(51,51,54);
+				z-index: 5;
+				border-radius: 999px;
+				overflow: hidden;
+				@include resM{
+					height: 44px;
+					bottom: 40px;
+				}
+				.swiper-button-disabled{
+					display: none;
+				}
+				.swiper-button-next{
+					right:0;
+					background: linear-gradient(90deg, rgba(0,0,0, 0) 0%, rgba(51,51,54, 1) 30%, rgba(51,51,54, 1) 100%);
+				}
+				.swiper-button-prev{
+					left: 0;
+					background: linear-gradient(90deg, rgba(51,51,54, 1) 0%, rgba(51,51,54, 1) 70%, rgba(0, 0, 0, 0) 100%);
+				}
+				.swiper-button-prev,
+				.swiper-button-next{
+					width: 44px;
+					height: 100%;
+					border: none;
+					top: 0;
+					margin-top: 0;
+					&::after{
+						font-size: 12px;
+						font-weight: bold;
 						color: #fff;
 					}
 				}
-
 			}
-
-			.swiper-button-next,
-			.swiper-button-prev {
-				top: 0;
-				margin-top: 0;
-				width: 60px;
+			.zoom-swiper2{
+				position: relative;
 				height: 100%;
-				color: #fff;
-				--swiper-navigation-size: 12px;
-				font-weight: bold;
-				display: none;
-
-				&::before {
-					content: '';
-					position: absolute;
-					top: 0;
-					right: 0;
-					width: 100%;
-					height: 100%;
-					z-index: -1;
-				}
-
-				@include resM {
-					width: 40px;
-					white-space: nowrap;
-				}
-			}
-
-			.swiper-button-disabled {
-				opacity: 0;
-			}
-
-			.swiper-button-next {
-				@include resT {
-					display: block;
-				}
-
-				right: 0;
-
-				&::before {
-					background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(19, 19, 22, 1) 30%, rgba(19, 19, 22, 1) 100%);
-				}
-			}
-
-			.swiper-button-prev {
-				left: 0;
-
-				&::before {
-					background: linear-gradient(90deg, rgba(19, 19, 22, 1) 0%, rgba(19, 19, 22, 1) 70%, rgba(0, 0, 0, 0) 100%);
-				}
-			}
-
-			.swiper-navigation {
-				position: absolute;
-				bottom: 50px;
-				left: 0;
-				width: 100%;
-				z-index: 10;
-				.swiper-control {
-					display: flex;
-					align-items: center;
-					position: relative;
-					width: 87.5%;
-					overflow: hidden;
-					max-width: 710px;
-					height: 56px;
-					margin: 0 auto;
-					background: rgb(19, 19, 22);
+				.curr{
+					@include pos-center-y;
+					width: 95px;
+					height: 44px;
+					left: 5px;
+					background: #fff;
 					border-radius: 999px;
-
-					@include resM {
-						height: 44px;
-						font-size: 14px;
+					transition: .3s;
+					@include resT{
+						display: none;
 					}
 				}
-
-				@include resM {
-					bottom: 40px;
-				}
-
-				.zoom-list {
-					position: absolute;
-					left: 5px;
-					width: fit-content;
-					height: 80%;
+				
+				.zoom-list{
+					width: 100%;
+					height: 100%;
 					display: flex;
-					align-items: center;
-					overflow-x: auto;
-
-					.zoom-item {
-						@include flexbox;
+					justify-content: space-between;
+					
+				}
+				.zoom-item{
+					width: auto;
+					height: 100%;
+					color: rgba(255, 255, 255, 0.8);
+					@include resM{
+						font-size: 14px;
+					}
+					&.active{
+						color: #000;
+						font-weight: bold;
+						button{
+							color: #000;
+						font-weight: bold;
+						}
+						button::before{
+							content: '';
+							position: absolute;
+							width: 90%;
+							height: 85%;
+							border-radius: 999px;
+							background-color: #fff;
+							z-index: -1;
+						}
+					}
+					button{
+						display: flex;
+						align-items: center;
+						justify-content: center;
 						width: 100px;
 						height: 100%;
-						padding: 0 20px;
-						opacity: .8;
-						z-index: 1;
-						transition: background 1s ease-in, opacity .3 ease-in;
-						border-radius: 999px;
-
-						@include resM {
-							width: 80px;
-							white-space: nowrap;
-						}
-
-						&.active {
-							color: #000;
-							background: #fff;
+						@include resM{
+							width: 78px;
 						}
 					}
 				}
