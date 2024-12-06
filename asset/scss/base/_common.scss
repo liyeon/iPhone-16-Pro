@@ -295,11 +295,11 @@ body.dimmed::after {
   }
 
   .filter {
-    padding: 80px;
+    padding: 80px 0;
     color: #fff;
 
     @include resSM {
-      padding: 40px;
+      padding: 40px 0;
     }
   }
 }

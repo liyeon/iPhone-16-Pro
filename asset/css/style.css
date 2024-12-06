@@ -523,12 +523,12 @@ body.dimmed::after {
   }
 }
 .headline-filter .filter {
-  padding: 80px;
+  padding: 80px 0;
   color: #fff;
 }
 @media (max-width: 482px) {
   .headline-filter .filter {
-    padding: 40px;
+    padding: 40px 0;
   }
 }
 
