@@ -2543,6 +2543,10 @@ body.dimmed::after {
 }
 .sc-intelligence .group-gallery .gallery-item-area .gallery-item .item-wrap .box .btn-controls svg {
   display: none;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .sc-intelligence .group-gallery .gallery-item-area .gallery-item .item-wrap .box .btn-controls .active {
   display: block;
@@ -3636,6 +3640,8 @@ body.dimmed::after {
   .sc-photographic .group-photo .choose-area .media-box img {
     width: 100%;
     height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 .sc-photographic .group-photo .choose-area .media-box .thumb {
